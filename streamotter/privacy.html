@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StreamOtter — Privacy Policy</title>
+<style>
+  :root { --bg:#fafafa; --ink:#18181b; --muted:#6b7280; --accent:#0f766e; --line:#e5e7eb; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple SD Gothic Neo",sans-serif; }
+  .wrap { max-width:720px; margin:0 auto; padding:48px 24px 96px; }
+  .crumb { font-size:14px; margin-bottom:28px; }
+  .crumb a { color:var(--muted); text-decoration:none; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  .eff { color:var(--muted); font-size:14px; margin:0 0 34px; }
+  h2 { font-size:20px; margin:40px 0 10px; padding-top:22px; border-top:1px solid var(--line); }
+  h3 { font-size:16.5px; margin:22px 0 6px; }
+  p, li { color:#374151; }
+  a { color:var(--accent); }
+  b.no { color:#111; }
+  table { width:100%; border-collapse:collapse; font-size:14.5px; margin:10px 0 18px; }
+  th, td { text-align:left; padding:8px 10px; border:1px solid var(--line); vertical-align:top; }
+  th { background:#f3f4f6; font-weight:600; white-space:nowrap; }
+  td code { font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="crumb"><a href="./">← StreamOtter</a></nav>
+  <h1>StreamOtter Privacy Policy</h1>
+  <p class="eff">Effective date: 2026-07-07 · Queue1Lab</p>
+
+  <h2>English</h2>
+  <p>StreamOtter is a browser extension designed with privacy first.</p>
+  <p><b class="no">Data we collect: none.</b></p>
+  <ul>
+    <li><b>No remote servers</b> — stream detection, downloading, decryption, and merging all
+        happen entirely inside your browser on your device. No video, URL, or browsing data
+        ever leaves it.</li>
+    <li><b>No accounts</b> — no sign-up, no login, no email collection.</li>
+    <li><b>No analytics or tracking</b> — no analytics, ad SDKs, telemetry, or remote code.</li>
+    <li><b>Local storage only</b> — settings and license state live in
+        <code>chrome.storage.local</code> on your device; download progress is kept temporarily
+        in browser session storage.</li>
+  </ul>
+
+  <h3>Sole exception — license activation (purchasers only)</h3>
+  <p>If you purchase a Pro license and activate your key, the license key you enter is sent to
+     our payment processor Lemon Squeezy (lemonsqueezy.com) to verify its validity, and is
+     re-checked periodically (at most once every 3 days). Nothing other than the license key
+     is transmitted, and this never occurs if you don't activate a license.</p>
+
+  <h3>Permission usage</h3>
+  <table>
+    <tr><th>Permission</th><th>Purpose</th></tr>
+    <tr><td><code>webRequest</code>, access to all sites</td>
+        <td>Inspects only the URL and Content-Type of responses to detect media (HLS/DASH/MP4)
+            playing in the current tab. Response bodies are never read or stored.</td></tr>
+    <tr><td><code>downloads</code></td>
+        <td>Saves the finished file to your Downloads folder.</td></tr>
+    <tr><td><code>storage</code></td>
+        <td>Stores settings and license state on your device.</td></tr>
+    <tr><td><code>offscreen</code></td>
+        <td>Runs download/merge work in a background document.</td></tr>
+    <tr><td><code>tabs</code></td>
+        <td>Groups detected media per tab and updates the badge.</td></tr>
+    <tr><td><code>scripting</code></td>
+        <td>Reads the page's video poster image once when the popup opens, to show a thumbnail.</td></tr>
+    <tr><td><code>notifications</code></td>
+        <td>Notifies you when a download completes or fails (can be disabled in options).</td></tr>
+    <tr><td><code>declarativeNetRequest</code></td>
+        <td>Sets the Referer header only on the extension's own download requests.
+            Page requests are never modified.</td></tr>
+  </table>
+  <p>Contact: <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a></p>
+
+  <h2>한국어</h2>
+  <p>StreamOtter는 프라이버시를 최우선으로 설계된 브라우저 확장입니다.</p>
+  <p><b class="no">수집하는 데이터: 없음.</b></p>
+  <ul>
+    <li><b>원격 서버 없음</b> — 스트림 감지, 다운로드, 복호화, 병합의 전 과정이 사용자 기기의
+        브라우저 안에서만 처리됩니다. 영상·URL·시청 기록이 외부로 전송되지 않습니다.</li>
+    <li><b>계정 없음</b> — 회원가입, 로그인, 이메일 수집이 없습니다.</li>
+    <li><b>분석/추적 없음</b> — 애널리틱스, 광고 SDK, 텔레메트리, 원격 코드가 일절 없습니다.</li>
+    <li><b>로컬 저장</b> — 설정과 라이선스 상태는 <code>chrome.storage.local</code>(사용자
+        기기)에만 저장되고, 다운로드 진행 상태는 브라우저 세션 저장소에 임시로 유지됩니다.</li>
+  </ul>
+
+  <h3>유일한 예외 — 라이선스 활성화 (구매자에 한함)</h3>
+  <p>Pro 라이선스를 구매해 키를 활성화하면, 입력한 라이선스 키가 결제 처리사인
+     Lemon Squeezy(lemonsqueezy.com)의 라이선스 검증 API로 전송되어 유효성을 확인하며,
+     이후 주기적으로(최대 3일에 1회) 재검증됩니다. 라이선스 키 외의 어떤 데이터도 전송되지
+     않으며, 라이선스를 활성화하지 않으면 이 통신은 전혀 발생하지 않습니다.</p>
+
+  <h3>권한 사용 목적</h3>
+  <table>
+    <tr><th>권한</th><th>목적</th></tr>
+    <tr><td><code>webRequest</code>, 모든 사이트 접근</td>
+        <td>현재 탭이 재생하는 미디어(HLS/DASH/MP4)를 감지하기 위해 응답의 URL·Content-Type만
+            확인합니다. 응답 본문을 읽거나 저장하지 않습니다.</td></tr>
+    <tr><td><code>downloads</code></td>
+        <td>완성된 파일을 사용자 다운로드 폴더에 저장합니다.</td></tr>
+    <tr><td><code>storage</code></td>
+        <td>설정·라이선스를 기기에 저장합니다.</td></tr>
+    <tr><td><code>offscreen</code></td>
+        <td>다운로드·병합 작업을 백그라운드 문서에서 처리합니다.</td></tr>
+    <tr><td><code>tabs</code></td>
+        <td>감지된 미디어를 탭별로 구분하고 배지를 갱신합니다.</td></tr>
+    <tr><td><code>scripting</code></td>
+        <td>팝업을 열 때 해당 페이지의 영상 포스터 이미지를 한 번 읽어 썸네일로 표시합니다.</td></tr>
+    <tr><td><code>notifications</code></td>
+        <td>다운로드 완료·실패를 알립니다(옵션에서 끌 수 있음).</td></tr>
+    <tr><td><code>declarativeNetRequest</code></td>
+        <td>확장 자신의 다운로드 요청에만 Referer 헤더를 설정합니다. 웹페이지의 요청은
+            변경하지 않습니다.</td></tr>
+  </table>
+  <p>문의: <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a></p>
+</div>
+</body>
+</html>

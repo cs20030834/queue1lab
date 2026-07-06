@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StreamOtter — In-Browser Stream Downloader for Chrome</title>
+<meta name="description" content="StreamOtter detects non-DRM HLS/DASH/MP4 streams and downloads, decrypts, and merges them entirely inside your browser. No companion app, no server, no account.">
+<style>
+  :root { --bg:#fafafa; --ink:#18181b; --muted:#6b7280; --accent:#0f766e; --line:#e5e7eb; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple SD Gothic Neo",sans-serif;
+         -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px 96px; }
+  .crumb { font-size:14px; margin-bottom:28px; }
+  .crumb a { color:var(--muted); text-decoration:none; }
+  header { display:flex; align-items:center; gap:14px; margin-bottom:8px; }
+  h1 { font-size:30px; margin:0; letter-spacing:-0.02em; }
+  .tag { color:var(--muted); margin:0 0 30px; font-size:17px; }
+  h2 { font-size:20px; margin:40px 0 12px; }
+  ul { padding-left:20px; } li { margin-bottom:8px; color:#374151; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 22px; }
+  a { color:var(--accent); }
+  .cta { display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+         font-weight:700; padding:10px 22px; border-radius:10px; margin:6px 0 0; }
+  .cta.soon { background:#99f6e4; color:#134e4a; pointer-events:none; }
+  .note { background:#fffbeb; border:1px solid #fde68a; border-radius:14px; padding:16px 22px;
+          color:#78350f; font-size:15px; }
+  .note b { color:#78350f; }
+  footer { margin-top:56px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); padding-top:20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="crumb"><a href="../">← Queue1Lab</a></nav>
+  <header>
+    <svg width="52" height="52" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="0" width="24" height="24" rx="5.3" fill="url(#g)"/>
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#0f766e"/>
+      </linearGradient></defs>
+      <g fill="#fff">
+        <path d="M12 4.6c.7 0 1.2.5 1.2 1.2v6.1l2.1-2.1a1.15 1.15 0 0 1 1.63 1.63l-4.1 4.1c-.45.45-1.18.45-1.63 0l-4.1-4.1A1.15 1.15 0 0 1 8.73 9.8l2.07 2.07V5.8c0-.7.5-1.2 1.2-1.2z"/>
+      </g>
+      <path d="M4.2 18.2c1.3-1 2.6-1 3.9 0s2.6 1 3.9 0 2.6-1 3.9 0 2.6 1 3.9 0" stroke="#99f6e4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <h1>StreamOtter</h1>
+  </header>
+  <p class="tag">Download non-DRM streams right in your browser — no companion app, no server, no account.</p>
+
+  <a class="cta soon" href="#">Chrome Web Store — coming soon</a>
+
+  <h2>What it does</h2>
+  <ul>
+    <li><b>One-click detection</b> — spots HLS, DASH, and direct MP4 media playing in the current tab and shows quality, duration, and estimated size.</li>
+    <li><b>Everything happens locally</b> — segment download, AES-128 decryption, and merging (ffmpeg.wasm) all run inside your browser. Nothing is uploaded anywhere.</li>
+    <li><b>Proper audio</b> — separate audio/video renditions are muxed together, so you never end up with a silent file.</li>
+    <li><b>Subtitles</b> — downloads WebVTT subtitle tracks alongside the video.</li>
+    <li><b>Live recording</b> (Pro) — record a live stream and save it the moment you hit stop.</li>
+    <li><b>Batch downloads &amp; audio extraction</b> (Pro) — queue multiple downloads, or grab audio-only as M4A.</li>
+  </ul>
+
+  <h2>What it deliberately does not do</h2>
+  <div class="note">
+    <b>YouTube is blocked at the code level</b> and DRM-protected streams (Widevine,
+    SAMPLE-AES) are rejected — StreamOtter is built for legitimately accessible, non-DRM
+    media such as your own hosted videos, course platforms, and embeds you are entitled to save.
+    Always respect each site's terms of service and copyright law.
+  </div>
+
+  <h2>Privacy</h2>
+  <div class="card">
+    StreamOtter collects no data. Detection, downloading, decryption, and merging never leave
+    your device. Read the full <a href="privacy.html">Privacy Policy</a>.
+  </div>
+
+  <h2>Pricing</h2>
+  <div class="card">
+    Free: unlimited direct MP4 downloads, 3 stream merges per day (up to 720p), subtitles,
+    plus a 7-day Pro trial.<br>
+    <b>Pro lifetime license — launch price $14, one-time (regular $19)</b>, 3 devices:
+    unlimited merges at original quality, batch downloads, M4A audio extraction, and live recording.
+  </div>
+
+  <h2>Support</h2>
+  <div class="card">
+    Found a bug or have a request? Open an issue at
+    <a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a>
+    or email <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>.
+  </div>
+
+  <footer>© 2026 Queue1Lab · <a href="privacy.html">Privacy Policy</a></footer>
+</div>
+</body>
+</html>
