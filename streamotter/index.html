@@ -12,8 +12,11 @@
          font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple SD Gothic Neo",sans-serif;
          -webkit-font-smoothing:antialiased; }
   .wrap { max-width:760px; margin:0 auto; padding:48px 24px 96px; }
-  .crumb { font-size:14px; margin-bottom:28px; }
+  .topbar { display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; }
+  .crumb { font-size:14px; }
   .crumb a { color:var(--muted); text-decoration:none; }
+  select#lang { font:inherit; font-size:13.5px; color:var(--ink); background:#fff;
+                border:1px solid var(--line); border-radius:8px; padding:4px 8px; }
   header { display:flex; align-items:center; gap:14px; margin-bottom:8px; }
   h1 { font-size:30px; margin:0; letter-spacing:-0.02em; }
   .tag { color:var(--muted); margin:0 0 30px; font-size:17px; }
@@ -32,7 +35,18 @@
 </head>
 <body>
 <div class="wrap">
-  <nav class="crumb"><a href="../">← Queue1Lab</a></nav>
+  <div class="topbar">
+    <nav class="crumb"><a href="../">← Queue1Lab</a></nav>
+    <select id="lang" aria-label="Language">
+      <option value="en">English</option>
+      <option value="ko">한국어</option>
+      <option value="ja">日本語</option>
+      <option value="es">Español</option>
+      <option value="pt">Português (BR)</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+    </select>
+  </div>
   <header>
     <svg width="52" height="52" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <rect x="0" y="0" width="24" height="24" rx="5.3" fill="url(#g)"/>
@@ -46,50 +60,248 @@
     </svg>
     <h1>StreamOtter</h1>
   </header>
-  <p class="tag">Download non-DRM streams right in your browser — no companion app, no server, no account.</p>
+  <p class="tag" data-i18n="tag">Download non-DRM streams right in your browser — no companion app, no server, no account.</p>
 
-  <a class="cta soon" href="#">Chrome Web Store — coming soon</a>
+  <a class="cta soon" href="#" data-i18n="cta">Chrome Web Store — coming soon</a>
 
-  <h2>What it does</h2>
+  <h2 data-i18n="h_what">What it does</h2>
   <ul>
-    <li><b>One-click detection</b> — spots HLS, DASH, and direct MP4 media playing in the current tab and shows quality, duration, and estimated size.</li>
-    <li><b>Everything happens locally</b> — segment download, AES-128 decryption, and merging (ffmpeg.wasm) all run inside your browser. Nothing is uploaded anywhere.</li>
-    <li><b>Proper audio</b> — separate audio/video renditions are muxed together, so you never end up with a silent file.</li>
-    <li><b>Subtitles</b> — downloads WebVTT subtitle tracks alongside the video.</li>
-    <li><b>Live recording</b> (Pro) — record a live stream and save it the moment you hit stop.</li>
-    <li><b>Batch downloads &amp; audio extraction</b> (Pro) — queue multiple downloads, or grab audio-only as M4A.</li>
+    <li data-i18n="f1"><b>One-click detection</b> — spots HLS, DASH, and direct MP4 media playing in the current tab and shows quality, duration, and estimated size.</li>
+    <li data-i18n="f2"><b>Everything happens locally</b> — segment download, AES-128 decryption, and merging (ffmpeg.wasm) all run inside your browser. Nothing is uploaded anywhere.</li>
+    <li data-i18n="f3"><b>Proper audio</b> — separate audio/video renditions are muxed together, so you never end up with a silent file.</li>
+    <li data-i18n="f4"><b>Subtitles</b> — downloads WebVTT subtitle tracks alongside the video.</li>
+    <li data-i18n="f5"><b>Live recording</b> (Pro) — record a live stream and save it the moment you hit stop.</li>
+    <li data-i18n="f6"><b>Batch downloads &amp; audio extraction</b> (Pro) — queue multiple downloads, or grab audio-only as M4A.</li>
   </ul>
 
-  <h2>What it deliberately does not do</h2>
-  <div class="note">
+  <h2 data-i18n="h_not">What it deliberately does not do</h2>
+  <div class="note" data-i18n="note">
     <b>YouTube is blocked at the code level</b> and DRM-protected streams (Widevine,
     SAMPLE-AES) are rejected — StreamOtter is built for legitimately accessible, non-DRM
     media such as your own hosted videos, course platforms, and embeds you are entitled to save.
     Always respect each site's terms of service and copyright law.
   </div>
 
-  <h2>Privacy</h2>
-  <div class="card">
+  <h2 data-i18n="h_privacy">Privacy</h2>
+  <div class="card" data-i18n="p_privacy">
     StreamOtter collects no data. Detection, downloading, decryption, and merging never leave
     your device. Read the full <a href="privacy.html">Privacy Policy</a>.
   </div>
 
-  <h2>Pricing</h2>
-  <div class="card">
+  <h2 data-i18n="h_pricing">Pricing</h2>
+  <div class="card" data-i18n="p_pricing">
     Free: unlimited direct MP4 downloads, 3 stream merges per day (up to 720p), subtitles,
     plus a 7-day Pro trial.<br>
     <b>Pro lifetime license — launch price $14, one-time (regular $19)</b>, 3 devices:
     unlimited merges at original quality, batch downloads, M4A audio extraction, and live recording.
   </div>
 
-  <h2>Support</h2>
-  <div class="card">
+  <h2 data-i18n="h_support">Support</h2>
+  <div class="card" data-i18n="p_support">
     Found a bug or have a request? Open an issue at
     <a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a>
     or email <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>.
   </div>
 
-  <footer>© 2026 Queue1Lab · <a href="privacy.html">Privacy Policy</a></footer>
+  <footer>© 2026 Queue1Lab · <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a></footer>
 </div>
+
+<script>
+const ISSUES = '<a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a>';
+const MAIL = '<a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>';
+const PP = '<a href="privacy.html">';
+
+const I18N = {
+en: {
+  _title: 'StreamOtter — In-Browser Stream Downloader for Chrome',
+  _desc: 'StreamOtter detects non-DRM HLS/DASH/MP4 streams and downloads, decrypts, and merges them entirely inside your browser. No companion app, no server, no account.',
+  tag: 'Download non-DRM streams right in your browser — no companion app, no server, no account.',
+  cta: 'Chrome Web Store — coming soon',
+  h_what: 'What it does',
+  f1: '<b>One-click detection</b> — spots HLS, DASH, and direct MP4 media playing in the current tab and shows quality, duration, and estimated size.',
+  f2: '<b>Everything happens locally</b> — segment download, AES-128 decryption, and merging (ffmpeg.wasm) all run inside your browser. Nothing is uploaded anywhere.',
+  f3: '<b>Proper audio</b> — separate audio/video renditions are muxed together, so you never end up with a silent file.',
+  f4: '<b>Subtitles</b> — downloads WebVTT subtitle tracks alongside the video.',
+  f5: '<b>Live recording</b> (Pro) — record a live stream and save it the moment you hit stop.',
+  f6: '<b>Batch downloads &amp; audio extraction</b> (Pro) — queue multiple downloads, or grab audio-only as M4A.',
+  h_not: 'What it deliberately does not do',
+  note: '<b>YouTube is blocked at the code level</b> and DRM-protected streams (Widevine, SAMPLE-AES) are rejected — StreamOtter is built for legitimately accessible, non-DRM media such as your own hosted videos, course platforms, and embeds you are entitled to save. Always respect each site’s terms of service and copyright law.',
+  h_privacy: 'Privacy',
+  p_privacy: 'StreamOtter collects no data. Detection, downloading, decryption, and merging never leave your device. Read the full ' + PP + 'Privacy Policy</a>.',
+  h_pricing: 'Pricing',
+  p_pricing: 'Free: unlimited direct MP4 downloads, 3 stream merges per day (up to 720p), subtitles, plus a 7-day Pro trial.<br><b>Pro lifetime license — launch price $14, one-time (regular $19)</b>, 3 devices: unlimited merges at original quality, batch downloads, M4A audio extraction, and live recording.',
+  h_support: 'Support',
+  p_support: 'Found a bug or have a request? Open an issue at ' + ISSUES + ' or email ' + MAIL + '.',
+  footer_privacy: 'Privacy Policy',
+},
+ko: {
+  _title: 'StreamOtter — 브라우저 안에서 끝나는 스트림 다운로더',
+  _desc: 'StreamOtter는 비DRM HLS/DASH/MP4 스트림을 감지해 다운로드·복호화·병합까지 전부 브라우저 안에서 처리합니다. 별도 앱, 서버, 계정이 필요 없습니다.',
+  tag: '비DRM 스트림을 브라우저 안에서 바로 다운로드 — 별도 앱, 서버, 계정이 필요 없습니다.',
+  cta: 'Chrome 웹스토어 — 곧 출시',
+  h_what: '주요 기능',
+  f1: '<b>원클릭 감지</b> — 현재 탭에서 재생 중인 HLS·DASH·MP4 미디어를 감지하고 화질·길이·예상 용량을 표시합니다.',
+  f2: '<b>전 과정 로컬 처리</b> — 세그먼트 다운로드, AES-128 복호화, 병합(ffmpeg.wasm)까지 전부 브라우저 안에서 실행됩니다. 어디에도 업로드되지 않습니다.',
+  f3: '<b>오디오 누락 없음</b> — 분리된 오디오/비디오 트랙을 자동으로 먹싱해 소리 없는 파일이 생기지 않습니다.',
+  f4: '<b>자막</b> — WebVTT 자막 트랙을 영상과 함께 다운로드합니다.',
+  f5: '<b>라이브 녹화</b> (Pro) — 라이브 스트림을 녹화하고 중지하는 순간 바로 저장합니다.',
+  f6: '<b>배치 다운로드 &amp; 오디오 추출</b> (Pro) — 여러 다운로드를 큐에 넣거나 M4A로 오디오만 추출합니다.',
+  h_not: '일부러 지원하지 않는 것',
+  note: '<b>YouTube는 코드 레벨에서 차단</b>되어 있고 DRM 보호 스트림(Widevine, SAMPLE-AES)은 거부됩니다 — StreamOtter는 직접 호스팅한 영상, 강의 플랫폼, 저장 권한이 있는 임베드 등 합법적으로 접근 가능한 비DRM 미디어를 위한 도구입니다. 각 사이트의 이용약관과 저작권법을 준수하세요.',
+  h_privacy: '개인정보',
+  p_privacy: 'StreamOtter는 어떤 데이터도 수집하지 않습니다. 감지·다운로드·복호화·병합은 사용자 기기를 벗어나지 않습니다. 전체 ' + PP + '개인정보처리방침</a>을 확인하세요.',
+  h_pricing: '가격',
+  p_pricing: '무료: MP4 직링크 무제한, 스트림 병합 하루 3회(최대 720p), 자막, 7일 Pro 체험 포함.<br><b>Pro 평생 라이선스 — 런치 가격 $14 일회 결제(정가 $19)</b>, 3기기: 원본 화질 무제한 병합, 배치 다운로드, M4A 오디오 추출, 라이브 녹화.',
+  h_support: '지원',
+  p_support: '버그나 요청이 있나요? ' + ISSUES + '에 이슈를 남기거나 ' + MAIL + '로 메일을 보내주세요.',
+  footer_privacy: '개인정보처리방침',
+},
+ja: {
+  _title: 'StreamOtter — ブラウザ内で完結するストリームダウンローダー',
+  _desc: 'StreamOtter は非DRMの HLS/DASH/MP4 ストリームを検出し、ダウンロード・復号・結合をすべてブラウザ内で処理します。追加アプリもサーバーもアカウントも不要。',
+  tag: '非DRMストリームをブラウザ内で直接ダウンロード — 追加アプリもサーバーもアカウントも不要。',
+  cta: 'Chrome ウェブストア — 近日公開',
+  h_what: 'できること',
+  f1: '<b>ワンクリック検出</b> — 現在のタブで再生中の HLS・DASH・MP4 メディアを検出し、画質・再生時間・推定サイズを表示します。',
+  f2: '<b>すべてローカルで処理</b> — セグメントのダウンロード、AES-128 復号、結合(ffmpeg.wasm)まで、すべてブラウザ内で実行。どこにもアップロードされません。',
+  f3: '<b>音声も確実に</b> — 分離された音声/映像トラックを自動で結合するため、無音ファイルになりません。',
+  f4: '<b>字幕</b> — WebVTT 字幕トラックを動画と一緒にダウンロードします。',
+  f5: '<b>ライブ録画</b>(Pro)— ライブ配信を録画し、停止した瞬間に保存します。',
+  f6: '<b>一括ダウンロード &amp; 音声抽出</b>(Pro)— 複数のダウンロードをキューに入れたり、M4A で音声だけ抽出できます。',
+  h_not: 'あえて対応しないもの',
+  note: '<b>YouTube はコードレベルでブロック</b>されており、DRM 保護ストリーム(Widevine、SAMPLE-AES)は拒否されます。StreamOtter は、自分でホストした動画、講座プラットフォーム、保存する権利のある埋め込みなど、正当にアクセスできる非DRMメディアのためのツールです。各サイトの利用規約と著作権法を必ず守ってください。',
+  h_privacy: 'プライバシー',
+  p_privacy: 'StreamOtter はデータを一切収集しません。検出・ダウンロード・復号・結合が端末の外に出ることはありません。詳しくは' + PP + 'プライバシーポリシー</a>をご覧ください。',
+  h_pricing: '料金',
+  p_pricing: '無料版:MP4 直リンクは無制限、ストリーム結合は1日3回(最大720p)、字幕、7日間の Pro トライアル付き。<br><b>Pro 買い切りライセンス — ローンチ価格 $14(通常 $19)</b>、3台まで:元画質での無制限結合、一括ダウンロード、M4A 音声抽出、ライブ録画。',
+  h_support: 'サポート',
+  p_support: 'バグ報告やご要望は ' + ISSUES + ' に issue を立てるか、' + MAIL + ' までメールでどうぞ。',
+  footer_privacy: 'プライバシーポリシー',
+},
+es: {
+  _title: 'StreamOtter — Descargador de streams en el navegador para Chrome',
+  _desc: 'StreamOtter detecta streams HLS/DASH/MP4 sin DRM y los descarga, descifra y fusiona por completo dentro de tu navegador. Sin aplicación adicional, sin servidor, sin cuenta.',
+  tag: 'Descarga streams sin DRM directamente en tu navegador: sin aplicación adicional, sin servidor, sin cuenta.',
+  cta: 'Chrome Web Store — próximamente',
+  h_what: 'Qué hace',
+  f1: '<b>Detección con un clic</b> — detecta los medios HLS, DASH y MP4 que se reproducen en la pestaña actual y muestra calidad, duración y tamaño estimado.',
+  f2: '<b>Todo ocurre en local</b> — la descarga de segmentos, el descifrado AES-128 y la fusión (ffmpeg.wasm) se ejecutan dentro de tu navegador. No se sube nada a ningún sitio.',
+  f3: '<b>Audio garantizado</b> — las pistas de audio y vídeo separadas se combinan automáticamente, así nunca acabas con un archivo mudo.',
+  f4: '<b>Subtítulos</b> — descarga las pistas de subtítulos WebVTT junto con el vídeo.',
+  f5: '<b>Grabación en directo</b> (Pro) — graba un stream en vivo y guárdalo en cuanto pulses detener.',
+  f6: '<b>Descargas por lotes y extracción de audio</b> (Pro) — pon varias descargas en cola o extrae solo el audio en M4A.',
+  h_not: 'Lo que deliberadamente no hace',
+  note: '<b>YouTube está bloqueado a nivel de código</b> y los streams protegidos por DRM (Widevine, SAMPLE-AES) se rechazan. StreamOtter está pensado para medios sin DRM a los que accedes legítimamente: tus propios vídeos alojados, plataformas de cursos e inserciones que tienes derecho a guardar. Respeta siempre los términos de servicio de cada sitio y la ley de derechos de autor.',
+  h_privacy: 'Privacidad',
+  p_privacy: 'StreamOtter no recopila ningún dato. La detección, la descarga, el descifrado y la fusión nunca salen de tu dispositivo. Lee la ' + PP + 'política de privacidad</a> completa.',
+  h_pricing: 'Precios',
+  p_pricing: 'Gratis: descargas MP4 directas ilimitadas, 3 fusiones de stream al día (hasta 720p), subtítulos y una prueba Pro de 7 días.<br><b>Licencia Pro de por vida — precio de lanzamiento $14, pago único (precio normal $19)</b>, 3 dispositivos: fusiones ilimitadas en calidad original, descargas por lotes, extracción de audio M4A y grabación en directo.',
+  h_support: 'Soporte',
+  p_support: '¿Encontraste un error o tienes una petición? Abre un issue en ' + ISSUES + ' o escribe a ' + MAIL + '.',
+  footer_privacy: 'Política de privacidad',
+},
+pt: {
+  _title: 'StreamOtter — Baixador de streams no navegador para Chrome',
+  _desc: 'O StreamOtter detecta streams HLS/DASH/MP4 sem DRM e baixa, descriptografa e mescla tudo dentro do seu navegador. Sem app extra, sem servidor, sem conta.',
+  tag: 'Baixe streams sem DRM direto no seu navegador — sem app extra, sem servidor, sem conta.',
+  cta: 'Chrome Web Store — em breve',
+  h_what: 'O que ele faz',
+  f1: '<b>Detecção com um clique</b> — identifica mídias HLS, DASH e MP4 em reprodução na aba atual e mostra qualidade, duração e tamanho estimado.',
+  f2: '<b>Tudo acontece localmente</b> — download de segmentos, descriptografia AES-128 e mesclagem (ffmpeg.wasm) rodam dentro do navegador. Nada é enviado para lugar nenhum.',
+  f3: '<b>Áudio garantido</b> — trilhas separadas de áudio e vídeo são combinadas automaticamente, para você nunca ficar com um arquivo mudo.',
+  f4: '<b>Legendas</b> — baixa as trilhas de legenda WebVTT junto com o vídeo.',
+  f5: '<b>Gravação ao vivo</b> (Pro) — grave uma transmissão ao vivo e salve no momento em que parar.',
+  f6: '<b>Downloads em lote e extração de áudio</b> (Pro) — enfileire vários downloads ou extraia apenas o áudio em M4A.',
+  h_not: 'O que ele deliberadamente não faz',
+  note: '<b>O YouTube é bloqueado no nível do código</b> e streams protegidos por DRM (Widevine, SAMPLE-AES) são rejeitados. O StreamOtter foi feito para mídias sem DRM acessadas legitimamente: seus próprios vídeos hospedados, plataformas de cursos e incorporações que você tem direito de salvar. Respeite sempre os termos de serviço de cada site e a lei de direitos autorais.',
+  h_privacy: 'Privacidade',
+  p_privacy: 'O StreamOtter não coleta nenhum dado. Detecção, download, descriptografia e mesclagem nunca saem do seu dispositivo. Leia a ' + PP + 'Política de Privacidade</a> completa.',
+  h_pricing: 'Preços',
+  p_pricing: 'Grátis: downloads MP4 diretos ilimitados, 3 mesclagens de stream por dia (até 720p), legendas e um teste Pro de 7 dias.<br><b>Licença Pro vitalícia — preço de lançamento $14, pagamento único (preço normal $19)</b>, 3 dispositivos: mesclagens ilimitadas na qualidade original, downloads em lote, extração de áudio M4A e gravação ao vivo.',
+  h_support: 'Suporte',
+  p_support: 'Encontrou um bug ou tem uma sugestão? Abra um issue em ' + ISSUES + ' ou envie um e-mail para ' + MAIL + '.',
+  footer_privacy: 'Política de Privacidade',
+},
+de: {
+  _title: 'StreamOtter — Stream-Downloader direkt im Browser für Chrome',
+  _desc: 'StreamOtter erkennt DRM-freie HLS/DASH/MP4-Streams und lädt, entschlüsselt und fügt sie vollständig im Browser zusammen. Ohne Zusatz-App, ohne Server, ohne Konto.',
+  tag: 'Lade DRM-freie Streams direkt im Browser herunter – ohne Zusatz-App, ohne Server, ohne Konto.',
+  cta: 'Chrome Web Store — demnächst verfügbar',
+  h_what: 'Funktionen',
+  f1: '<b>Erkennung mit einem Klick</b> — erkennt HLS-, DASH- und MP4-Medien im aktuellen Tab und zeigt Qualität, Länge und geschätzte Größe an.',
+  f2: '<b>Alles läuft lokal</b> — Segment-Download, AES-128-Entschlüsselung und Zusammenfügen (ffmpeg.wasm) laufen komplett im Browser. Nichts wird irgendwohin hochgeladen.',
+  f3: '<b>Ton inklusive</b> — getrennte Audio-/Videospuren werden automatisch zusammengeführt, damit nie eine stumme Datei entsteht.',
+  f4: '<b>Untertitel</b> — lädt WebVTT-Untertitelspuren zusammen mit dem Video herunter.',
+  f5: '<b>Live-Aufnahme</b> (Pro) — nimm einen Livestream auf und speichere ihn, sobald du auf Stopp drückst.',
+  f6: '<b>Stapel-Downloads &amp; Audio-Extraktion</b> (Pro) — stelle mehrere Downloads in die Warteschlange oder speichere nur die Tonspur als M4A.',
+  h_not: 'Was es bewusst nicht tut',
+  note: '<b>YouTube ist auf Code-Ebene blockiert</b>, und DRM-geschützte Streams (Widevine, SAMPLE-AES) werden abgelehnt. StreamOtter ist für legitim zugängliche, DRM-freie Medien gedacht: eigene gehostete Videos, Kursplattformen und Einbettungen, die du speichern darfst. Beachte stets die Nutzungsbedingungen der jeweiligen Website und das Urheberrecht.',
+  h_privacy: 'Datenschutz',
+  p_privacy: 'StreamOtter sammelt keine Daten. Erkennung, Download, Entschlüsselung und Zusammenfügen verlassen dein Gerät nie. Lies die vollständige ' + PP + 'Datenschutzerklärung</a>.',
+  h_pricing: 'Preise',
+  p_pricing: 'Kostenlos: unbegrenzte direkte MP4-Downloads, 3 Stream-Zusammenführungen pro Tag (bis 720p), Untertitel und eine 7-tägige Pro-Testphase.<br><b>Pro-Lifetime-Lizenz — Einführungspreis $14, einmalig (regulär $19)</b>, 3 Geräte: unbegrenztes Zusammenführen in Originalqualität, Stapel-Downloads, M4A-Audio-Extraktion und Live-Aufnahme.',
+  h_support: 'Support',
+  p_support: 'Fehler gefunden oder einen Wunsch? Eröffne ein Issue unter ' + ISSUES + ' oder schreib an ' + MAIL + '.',
+  footer_privacy: 'Datenschutzerklärung',
+},
+fr: {
+  _title: 'StreamOtter — Téléchargeur de flux dans le navigateur pour Chrome',
+  _desc: 'StreamOtter détecte les flux HLS/DASH/MP4 sans DRM et les télécharge, déchiffre et fusionne entièrement dans votre navigateur. Sans application tierce, sans serveur, sans compte.',
+  tag: 'Téléchargez des flux sans DRM directement dans votre navigateur — sans application tierce, sans serveur, sans compte.',
+  cta: 'Chrome Web Store — bientôt disponible',
+  h_what: 'Fonctionnalités',
+  f1: '<b>Détection en un clic</b> — repère les médias HLS, DASH et MP4 lus dans l’onglet actuel et affiche la qualité, la durée et la taille estimée.',
+  f2: '<b>Tout se passe en local</b> — téléchargement des segments, déchiffrement AES-128 et fusion (ffmpeg.wasm) s’exécutent entièrement dans votre navigateur. Rien n’est envoyé nulle part.',
+  f3: '<b>Audio garanti</b> — les pistes audio et vidéo séparées sont fusionnées automatiquement : jamais de fichier muet.',
+  f4: '<b>Sous-titres</b> — télécharge les pistes de sous-titres WebVTT avec la vidéo.',
+  f5: '<b>Enregistrement en direct</b> (Pro) — enregistrez un flux en direct et sauvegardez-le dès que vous appuyez sur stop.',
+  f6: '<b>Téléchargements par lots et extraction audio</b> (Pro) — mettez plusieurs téléchargements en file d’attente ou extrayez uniquement l’audio en M4A.',
+  h_not: 'Ce qu’il ne fait pas, délibérément',
+  note: '<b>YouTube est bloqué au niveau du code</b> et les flux protégés par DRM (Widevine, SAMPLE-AES) sont refusés. StreamOtter est conçu pour les médias sans DRM auxquels vous accédez légitimement : vos propres vidéos hébergées, plateformes de cours et intégrations que vous avez le droit d’enregistrer. Respectez toujours les conditions d’utilisation de chaque site et le droit d’auteur.',
+  h_privacy: 'Confidentialité',
+  p_privacy: 'StreamOtter ne collecte aucune donnée. La détection, le téléchargement, le déchiffrement et la fusion ne quittent jamais votre appareil. Consultez la ' + PP + 'politique de confidentialité</a> complète.',
+  h_pricing: 'Tarifs',
+  p_pricing: 'Gratuit : téléchargements MP4 directs illimités, 3 fusions de flux par jour (jusqu’à 720p), sous-titres et un essai Pro de 7 jours.<br><b>Licence Pro à vie — prix de lancement $14, paiement unique (prix normal $19)</b>, 3 appareils : fusions illimitées en qualité d’origine, téléchargements par lots, extraction audio M4A et enregistrement en direct.',
+  h_support: 'Assistance',
+  p_support: 'Un bug ou une demande ? Ouvrez un ticket sur ' + ISSUES + ' ou écrivez à ' + MAIL + '.',
+  footer_privacy: 'Politique de confidentialité',
+},
+};
+
+function pickLang() {
+  try {
+    const saved = localStorage.getItem('q1-lang');
+    if (saved && I18N[saved]) return saved;
+  } catch (e) {}
+  for (const l of (navigator.languages || [navigator.language || 'en'])) {
+    const low = String(l).toLowerCase();
+    if (low.startsWith('pt')) return 'pt';
+    const two = low.slice(0, 2);
+    if (I18N[two]) return two;
+  }
+  return 'en';
+}
+
+function applyLang(lang) {
+  const t = I18N[lang] || I18N.en;
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+  document.title = t._title;
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', t._desc);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.innerHTML = t[key];
+  });
+  document.getElementById('lang').value = lang;
+}
+
+const initial = pickLang();
+applyLang(initial);
+document.getElementById('lang').addEventListener('change', e => {
+  const lang = e.target.value;
+  try { localStorage.setItem('q1-lang', lang); } catch (err) {}
+  applyLang(lang);
+});
+</script>
 </body>
 </html>
