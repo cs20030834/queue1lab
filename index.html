@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Queue1Lab — Small, focused software</title>
+<meta name="description" content="Queue1Lab is an independent software studio building small, privacy-respecting tools: Inkholt Markdown, LongSnap, and StreamOtter.">
+<style>
+  :root { --bg:#fafafa; --ink:#18181b; --muted:#6b7280; --accent:#4f46e5; --line:#e5e7eb; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple SD Gothic Neo",sans-serif;
+         -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:720px; margin:0 auto; padding:56px 24px 96px; }
+  h1 { font-size:32px; margin:0 0 6px; letter-spacing:-0.02em; }
+  .tag { color:var(--muted); margin:0 0 44px; font-size:17px; }
+  .card { display:block; background:#fff; border:1px solid var(--line); border-radius:16px;
+          padding:22px 24px; margin-bottom:16px; text-decoration:none; color:inherit;
+          transition:border-color .15s, transform .15s; }
+  a.card:hover { border-color:var(--accent); transform:translateY(-1px); }
+  .card h2 { font-size:19px; margin:0 0 4px; display:flex; align-items:center; gap:10px; }
+  .card p { margin:0; color:var(--muted); font-size:15px; }
+  .badge { font-size:11.5px; font-weight:600; color:var(--muted); border:1px solid var(--line);
+           border-radius:999px; padding:2px 9px; }
+  .badge.live { color:var(--accent); border-color:var(--accent); }
+  .dot { width:26px; height:26px; border-radius:7px; flex:0 0 auto; }
+  footer { margin-top:56px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); padding-top:20px; }
+  footer a { color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Queue1Lab</h1>
+  <p class="tag">Small, focused software. Privacy-respecting by default — your data stays on your device.</p>
+
+  <a class="card" href="longsnap/">
+    <h2><span class="dot" style="background:linear-gradient(160deg,#6366f1,#4338ca)"></span>
+        LongSnap <span class="badge live">Chrome · coming to Web Store</span></h2>
+    <p>Full-page screenshots with annotation, batch capture, and tamper-evident proof shots
+       (SHA-256 + trusted timestamp). Everything runs locally — images never leave your device.</p>
+  </a>
+
+  <a class="card" href="https://cs20030834.github.io/inkholt-support/">
+    <h2><span class="dot" style="background:#b7522e"></span>
+        Inkholt Markdown <span class="badge live">macOS</span></h2>
+    <p>A calm Markdown notepad for small, focused notes. iCloud sync, one-time Pro upgrade.</p>
+  </a>
+
+  <div class="card">
+    <h2><span class="dot" style="background:linear-gradient(160deg,#0ea5e9,#0f766e)"></span>
+        StreamOtter <span class="badge">Chrome · in development</span></h2>
+    <p>An in-browser downloader for non-DRM HLS/DASH streams. Everything happens inside your
+       browser — nothing is uploaded anywhere.</p>
+  </div>
+
+  <footer>
+    Contact: <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a> ·
+    <a href="https://github.com/cs20030834/queue1lab/issues">GitHub Issues</a><br>
+    © 2026 Queue1Lab. All rights reserved.
+  </footer>
+</div>
+</body>
+</html>

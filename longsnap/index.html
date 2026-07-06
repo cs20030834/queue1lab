@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LongSnap — Full Page Screenshot & Proof Shot for Chrome</title>
+<meta name="description" content="LongSnap captures full scrolling pages, lets you annotate them, and exports tamper-evident proof shots with SHA-256 hashes and trusted timestamps. Everything runs on your device.">
+<style>
+  :root { --bg:#fafafa; --ink:#18181b; --muted:#6b7280; --accent:#4f46e5; --line:#e5e7eb; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple SD Gothic Neo",sans-serif;
+         -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px 96px; }
+  .crumb { font-size:14px; margin-bottom:28px; }
+  .crumb a { color:var(--muted); text-decoration:none; }
+  header { display:flex; align-items:center; gap:14px; margin-bottom:8px; }
+  h1 { font-size:30px; margin:0; letter-spacing:-0.02em; }
+  .tag { color:var(--muted); margin:0 0 30px; font-size:17px; }
+  h2 { font-size:20px; margin:40px 0 12px; }
+  ul { padding-left:20px; } li { margin-bottom:8px; color:#374151; }
+  img.shot { width:100%; border-radius:14px; border:1px solid var(--line); margin:10px 0 6px; }
+  .cap { color:var(--muted); font-size:13.5px; margin:0 0 18px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 22px; }
+  a { color:var(--accent); }
+  .cta { display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+         font-weight:700; padding:10px 22px; border-radius:10px; margin:6px 0 0; }
+  .cta.soon { background:#c7d2fe; color:#3730a3; pointer-events:none; }
+  footer { margin-top:56px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); padding-top:20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="crumb"><a href="../">← Queue1Lab</a></nav>
+  <header>
+    <svg width="52" height="52" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="0" width="24" height="24" rx="5.3" fill="#5157e8"/>
+      <g fill="#fff">
+        <path d="M3.1 2.4h4.1v1.4H4.5v2.7H3.1zM16.8 2.4h4.1v4.1h-1.4V3.8h-2.7zM3.1 17.5h1.4v2.7h2.7v1.4H3.1zM19.5 17.5h1.4v4.1h-4.1v-1.4h2.7z"/>
+        <rect x="8.2" y="4.6" width="7.7" height="14.9" rx="1.2"/>
+      </g>
+      <g fill="#818cf8">
+        <rect x="9.6" y="6.5" width="4.8" height="0.8" rx=".4"/><rect x="9.6" y="8.7" width="4.8" height="0.8" rx=".4"/>
+        <rect x="9.6" y="10.9" width="4.8" height="0.8" rx=".4"/><rect x="9.6" y="13.1" width="4.8" height="0.8" rx=".4"/>
+        <rect x="9.6" y="15.3" width="2.9" height="0.8" rx=".4"/>
+      </g>
+    </svg>
+    <h1>LongSnap</h1>
+  </header>
+  <p class="tag">Full-page screenshots, annotation, batch capture — and proof shots you can verify.</p>
+
+  <a class="cta soon" href="#">Chrome Web Store — coming soon</a>
+
+  <h2>What it does</h2>
+  <ul>
+    <li><b>Full-page capture</b> — scroll-stitches the entire page, handling lazy-loaded content, sticky headers, and inner-scrolling documents.</li>
+    <li><b>Annotate &amp; export</b> — crop, pen, arrows, highlights, mosaic, numbered badges; export to PNG / JPG / PDF / clipboard, or skip the editor with quick save.</li>
+    <li><b>Proof shots</b> — embeds the URL, capture time, and a SHA-256 pixel hash into the image, with an optional RFC 3161 trusted timestamp and the page's original MHTML. Anyone can verify integrity on the bundled verification page.</li>
+    <li><b>Batch capture</b> — paste a list of URLs and get full-page captures as a zip or a single PDF.</li>
+    <li><b>💥 Destroy mode</b> — blow off steam with a playful on-page overlay (and capture the aftermath).</li>
+  </ul>
+
+  <img class="shot" src="img/screenshot-1-editor.png" alt="LongSnap editor with a full-page capture and evidence band">
+  <p class="cap">The editor with a full-page capture — the evidence band at the bottom seals URL, time, and hash.</p>
+  <img class="shot" src="img/screenshot-4-destroy.png" alt="LongSnap destroy mode on a live page">
+  <p class="cap">Destroy mode: doodles stick to the page and appear in captures.</p>
+
+  <h2>Privacy</h2>
+  <div class="card">
+    Everything runs on your device. Captured images, page contents, and URLs are never sent to
+    any server. Read the full <a href="privacy.html">Privacy Policy</a>.
+  </div>
+
+  <h2>Pricing</h2>
+  <div class="card">
+    Free: unlimited full-page capture and editing, 3 proof shots per month, batch up to 3 URLs.<br>
+    <b>Lifetime license ($11.99, one-time)</b>: unlimited proof shots and batch capture, plus all
+    destroy-mode weapons.
+  </div>
+
+  <h2>Support</h2>
+  <div class="card">
+    Found a bug or have a request? Open an issue at
+    <a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a>
+    or email <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>.
+  </div>
+
+  <footer>© 2026 Queue1Lab · <a href="privacy.html">Privacy Policy</a></footer>
+</div>
+</body>
+</html>
