@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="data:,">
-<title>LongSnap — Full Page Screenshot & Proof Shot for Chrome</title>
-<meta name="description" content="LongSnap captures full scrolling pages, lets you annotate them, and exports tamper-evident proof shots with SHA-256 hashes and trusted timestamps. Everything runs on your device.">
+<title>SnapHolt — Full Page Screenshot & Web Capture</title>
+<meta name="description" content="SnapHolt captures full pages, schedules local snapshots, detects changes in selected regions, and keeps verifiable records. Images stay on your device.">
 <style>
   :root { --bg:#fafafa; --ink:#18181b; --muted:#6b7280; --accent:#4f46e5; --line:#e5e7eb; }
   * { box-sizing:border-box; }
@@ -29,11 +29,9 @@
   .cta { display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
          font-weight:700; padding:10px 22px; border-radius:10px; margin:6px 0 0; }
   .cta.soon { background:#c7d2fe; color:#3730a3; pointer-events:none; }
-  .rename { margin:24px 0 8px; padding:18px 20px; border:1px solid #c7d2fe;
-            border-radius:14px; background:#eef2ff; color:#3730a3; }
-  .rename strong { display:block; margin-bottom:4px; color:#312e81; }
-  .rename p { margin:0; }
-  .rename a { font-weight:700; }
+  .origin { margin:24px 0 8px; padding:16px 20px; border:1px solid var(--line);
+            border-radius:14px; background:#fff; color:var(--muted); }
+  .origin p { margin:0; }
   footer { margin-top:56px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); padding-top:20px; }
 </style>
 </head>
@@ -67,31 +65,31 @@
         <rect x="9.6" y="15.3" width="2.9" height="0.8" rx=".4"/>
       </g>
     </svg>
-    <h1>LongSnap</h1>
+    <h1>SnapHolt</h1>
   </header>
-  <p class="tag" data-i18n="tag">Full-page screenshots, annotation, batch capture — and proof shots you can verify.</p>
+  <p class="tag" data-i18n="tag">Capture now. Watch what changes.</p>
 
-  <a class="cta soon" href="#" data-i18n="cta">Chrome Web Store — coming soon</a>
+  <a class="cta soon" href="#" data-i18n="cta">Chrome Web Store — preparing v1.1</a>
 
-  <aside class="rename" aria-label="Product rename notice">
-    <strong data-i18n="renameTitle">LongSnap is becoming SnapHolt.</strong>
-    <p data-i18n="renameBody">This LongSnap page remains available while the current Chrome Web Store review is in
-       progress. Development continues under the SnapHolt name for the next submission.
-       <a href="../snapholt/">Visit SnapHolt →</a></p>
+  <aside class="origin">
+    <p data-i18n="originBody">SnapHolt is the next name and release of LongSnap. The existing
+       <a href="../longsnap/">LongSnap review page</a> remains online while its Chrome Web Store
+       review is in progress.</p>
   </aside>
 
   <h2 data-i18n="featuresH">What it does</h2>
   <ul>
     <li data-i18n="f1"><b>Full-page capture</b> — scroll-stitches the entire page, handling lazy-loaded content, sticky headers, and inner-scrolling documents.</li>
     <li data-i18n="f2"><b>Annotate &amp; export</b> — crop, pen, arrows, highlights, mosaic, numbered badges; export to PNG / JPG / PDF / clipboard, or skip the editor with quick save.</li>
-    <li data-i18n="f3"><b>Proof shots</b> — embeds the URL, capture time, and a SHA-256 pixel hash into the image, with an optional RFC 3161 trusted timestamp and the page's original MHTML. Anyone can verify integrity on the bundled verification page.</li>
+    <li data-i18n="f3"><b>Verifiable records</b> — embeds the URL, capture time, and a SHA-256 pixel hash into the image, with an optional RFC 3161 trusted timestamp and the page's original MHTML. Anyone can verify integrity on the bundled verification page.</li>
     <li data-i18n="f4"><b>Batch capture</b> — paste a list of URLs and get full-page captures as a zip or a single PDF.</li>
     <li data-i18n="f5"><b>💥 Destroy mode</b> — blow off steam with a playful on-page overlay (and capture the aftermath).</li>
+    <li data-i18n="f6"><b>Scheduled capture &amp; change detection</b> — run hourly, daily, weekly, or once; monitor one or more regions, save only on change, and keep searchable history. Runs locally while Chrome is available.</li>
   </ul>
 
-  <img class="shot" src="img/screenshot-1-editor.png" alt="LongSnap editor with a full-page capture and evidence band">
+  <img class="shot" src="img/screenshot-1-editor.png" alt="SnapHolt editor with a full-page capture and evidence band">
   <p class="cap" data-i18n="cap1">The editor with a full-page capture — the evidence band at the bottom seals URL, time, and hash.</p>
-  <img class="shot" src="img/screenshot-4-destroy.png" alt="LongSnap destroy mode on a live page">
+  <img class="shot" src="img/screenshot-4-destroy.png" alt="SnapHolt destroy mode on a live page">
   <p class="cap" data-i18n="cap2">Destroy mode: doodles stick to the page and appear in captures.</p>
 
   <h2 data-i18n="privacyH">Privacy</h2>
@@ -102,9 +100,9 @@
 
   <h2 data-i18n="pricingH">Pricing</h2>
   <div class="card" data-i18n="pricingBody">
-    Free: unlimited full-page capture and editing, 3 proof shots per month, batch up to 3 URLs.<br>
-    <b>Lifetime license ($9.99, one-time)</b>: unlimited proof shots and batch capture, plus all
-    destroy-mode weapons.
+    Free: unlimited full-page capture and editing, 3 verifiable records per month, batch up to 3 URLs, and 30 history items.<br>
+    <b>Lifetime license ($9.99, one-time)</b>: scheduled capture, local change detection,
+    unlimited records, batch capture and history, plus all destroy-mode weapons.
   </div>
 
   <h2 data-i18n="supportH">Support</h2>
@@ -122,44 +120,44 @@
   var ISSUES = '<a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a>';
   var MAIL = '<a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>';
   var PP = function (label) { return '<a href="privacy.html">' + label + '</a>'; };
-  var SH = function (label) { return '<a href="../snapholt/">' + label + '</a>'; };
+  var LS = function (label) { return '<a href="../longsnap/">' + label + '</a>'; };
 
   var I18N = {
     "en": {
-      title: "LongSnap — Full Page Screenshot & Proof Shot for Chrome",
-      tag: "Full-page screenshots, annotation, batch capture — and proof shots you can verify.",
-      cta: "Chrome Web Store — coming soon",
-      renameTitle: "LongSnap is becoming SnapHolt.",
-      renameBody: "This LongSnap page remains available while the current Chrome Web Store review is in progress. Development continues under the SnapHolt name for the next submission. " + SH("Visit SnapHolt →"),
+      title: "SnapHolt — Full Page Screenshot & Web Capture",
+      tag: "Capture now. Watch what changes.",
+      cta: "Chrome Web Store — preparing v1.1",
+      originBody: "SnapHolt is the next name and release of LongSnap. The existing " + LS("LongSnap review page") + " remains online while its Chrome Web Store review is in progress.",
       featuresH: "What it does",
       f1: "<b>Full-page capture</b> — scroll-stitches the entire page, handling lazy-loaded content, sticky headers, and inner-scrolling documents.",
       f2: "<b>Annotate &amp; export</b> — crop, pen, arrows, highlights, mosaic, numbered badges; export to PNG / JPG / PDF / clipboard, or skip the editor with quick save.",
-      f3: "<b>Proof shots</b> — embeds the URL, capture time, and a SHA-256 pixel hash into the image, with an optional RFC 3161 trusted timestamp and the page's original MHTML. Anyone can verify integrity on the bundled verification page.",
+      f3: "<b>Verifiable records</b> — embeds the URL, capture time, and a SHA-256 pixel hash into the image, with an optional RFC 3161 trusted timestamp and the page's original MHTML. Anyone can verify integrity on the bundled verification page.",
       f4: "<b>Batch capture</b> — paste a list of URLs and get full-page captures as a zip or a single PDF.",
       f5: "<b>💥 Destroy mode</b> — blow off steam with a playful on-page overlay (and capture the aftermath).",
+      f6: "<b>Scheduled capture &amp; change detection</b> — run hourly, daily, weekly, or once; monitor one or more regions, save only on change, and keep searchable history. Runs locally while Chrome is available.",
       cap1: "The editor with a full-page capture — the evidence band at the bottom seals URL, time, and hash.",
       cap2: "Destroy mode: doodles stick to the page and appear in captures.",
       privacyH: "Privacy",
       privacyBody: "Everything runs on your device. Captured images, page contents, and URLs are never sent to any server. Read the full " + PP("Privacy Policy") + ".",
       pricingH: "Pricing",
-      pricingBody: "Free: unlimited full-page capture and editing, 3 proof shots per month, batch up to 3 URLs.<br><b>Lifetime license — launch price $9.99, one-time</b> (regular price will be $19.99): unlimited proof shots and batch capture, plus all destroy-mode weapons · <a href=\"terms.html\">license terms</a>",
+      pricingBody: "Free: unlimited full-page capture and editing, 3 verifiable records per month, batch up to 3 URLs, and 30 history items.<br><b>Lifetime license — launch price $9.99, one-time</b> (regular price will be $19.99): scheduled capture, local change detection, unlimited records, batch capture and history, plus all destroy-mode weapons · <a href=\"terms.html\">license terms</a>",
       supportH: "Support",
       supportBody: "Found a bug or have a request? Open an issue at " + ISSUES + " or email " + MAIL + ".",
       privacyLink: "Privacy Policy",
       termsLink: "License Terms",
     },
     "ko": {
-      title: "LongSnap — 전체 페이지 스크린샷 & 증거 샷 Chrome 확장",
+      title: "SnapHolt — 전체 페이지 스크린샷 & 증거 샷 Chrome 확장",
       tag: "전체 페이지 스크린샷, 주석, 일괄 캡처 — 그리고 검증 가능한 증거 샷.",
       cta: "Chrome 웹스토어 — 준비 중",
-      renameTitle: "LongSnap은 SnapHolt로 전환됩니다.",
-      renameBody: "현재 Chrome 웹스토어 심사가 진행되는 동안 이 LongSnap 페이지는 그대로 유지됩니다. 다음 제출을 위한 개발은 SnapHolt 이름으로 계속됩니다. " + SH("SnapHolt 보기 →"),
+      originBody: "SnapHolt는 LongSnap의 다음 이름이자 릴리스입니다. 현재 Chrome 웹스토어 심사가 진행되는 동안 기존 " + LS("LongSnap 심사 페이지") + "는 계속 공개됩니다.",
       featuresH: "주요 기능",
       f1: "<b>전체 페이지 캡처</b> — 페이지 전체를 스크롤하며 이어 붙입니다. 지연 로딩 콘텐츠, 고정 헤더, 내부 스크롤 문서까지 처리합니다.",
       f2: "<b>주석 &amp; 내보내기</b> — 크롭·펜·화살표·하이라이트·모자이크·순번 배지. PNG / JPG / PDF / 클립보드로 내보내거나, 빠른 저장으로 에디터를 건너뜁니다.",
       f3: "<b>증거 샷</b> — URL·캡처 시각·SHA-256 픽셀 해시를 이미지에 삽입하고, 옵션으로 RFC 3161 신뢰 타임스탬프와 페이지 원본 MHTML을 함께 보존합니다. 동봉된 검증 페이지에서 누구나 무결성을 확인할 수 있습니다.",
       f4: "<b>일괄 캡처</b> — URL 목록을 붙여넣으면 전체 페이지 캡처를 zip 또는 단일 PDF로 받습니다.",
       f5: "<b>💥 부수기 모드</b> — 장난스러운 페이지 위 오버레이로 스트레스를 날리세요 (그 흔적까지 캡처됩니다).",
+      f6: "<b>예약 캡처 &amp; 변경 감지</b> — 매시간·매일·매주 또는 한 번 실행하고, 여러 영역을 감시해 변경 시에만 저장하며 검색 가능한 히스토리에 남깁니다. Chrome이 실행 가능한 상태에서 로컬로 동작합니다.",
       cap1: "전체 페이지 캡처를 연 에디터 — 하단 증거 밴드가 URL·시각·해시를 봉인합니다.",
       cap2: "부수기 모드: 낙서가 페이지에 붙어 캡처에도 그대로 나타납니다.",
       privacyH: "프라이버시",
@@ -172,17 +170,17 @@
       termsLink: "이용약관",
     },
     "ja": {
-      title: "LongSnap — フルページスクリーンショット & 証拠ショット Chrome拡張",
+      title: "SnapHolt — フルページスクリーンショット & 証拠ショット Chrome拡張",
       tag: "フルページスクリーンショット、注釈、一括キャプチャ — そして検証できる証拠ショット。",
       cta: "Chrome ウェブストア — 近日公開",
-      renameTitle: "LongSnap は SnapHolt へ移行します。",
-      renameBody: "現在の Chrome ウェブストア審査中は、この LongSnap ページをそのまま公開します。次回申請に向けた開発は SnapHolt の名称で続けます。" + SH("SnapHolt を見る →"),
+      originBody: "SnapHolt は LongSnap の次の名称とリリースです。現在の Chrome ウェブストア審査中は、既存の " + LS("LongSnap 審査ページ") + " を引き続き公開します。",
       featuresH: "主な機能",
       f1: "<b>フルページキャプチャ</b> — ページ全体をスクロールしながらつなぎ合わせます。遅延読み込みコンテンツ、固定ヘッダー、内部スクロールの文書にも対応。",
       f2: "<b>注釈 &amp; エクスポート</b> — トリミング・ペン・矢印・ハイライト・モザイク・番号バッジ。PNG / JPG / PDF / クリップボードへ出力、クイック保存でエディタの省略も可能。",
       f3: "<b>証拠ショット</b> — URL・撮影時刻・SHA-256ピクセルハッシュを画像に埋め込み、オプションでRFC 3161信頼タイムスタンプと元ページのMHTMLも保存。付属の検証ページで誰でも完全性を確認できます。",
       f4: "<b>一括キャプチャ</b> — URLリストを貼り付けるだけで、フルページキャプチャをzipまたは1つのPDFで取得。",
       f5: "<b>💥 破壊モード</b> — 遊び心のあるページ上オーバーレイでストレス発散（その跡もキャプチャできます）。",
+      f6: "<b>予約キャプチャ＆変更検知</b> — 毎時・毎日・毎週または一度だけ実行し、複数の領域を監視して変更時のみ保存。検索できる履歴に残します。Chrome が利用可能な間、ローカルで動作します。",
       cap1: "フルページキャプチャを開いたエディタ — 下部の証拠バンドがURL・時刻・ハッシュを封印します。",
       cap2: "破壊モード：落書きはページに固定され、キャプチャにもそのまま写ります。",
       privacyH: "プライバシー",
@@ -195,17 +193,17 @@
       termsLink: "利用規約",
     },
     "zh-TW": {
-      title: "LongSnap — 整頁截圖與存證截圖 Chrome 擴充功能",
+      title: "SnapHolt — 整頁截圖與存證截圖 Chrome 擴充功能",
       tag: "整頁截圖、標註、批次擷取 — 以及可驗證的存證截圖。",
       cta: "Chrome 線上應用程式商店 — 即將推出",
-      renameTitle: "LongSnap 將更名為 SnapHolt。",
-      renameBody: "目前 Chrome 線上應用程式商店審查期間，LongSnap 頁面會繼續保留。下一次送審版本將以 SnapHolt 名稱持續開發。" + SH("前往 SnapHolt →"),
+      originBody: "SnapHolt 是 LongSnap 的下一個名稱與版本。目前 Chrome 線上應用程式商店審查期間，現有的 " + LS("LongSnap 審查頁面") + " 會繼續公開。",
       featuresH: "功能特色",
       f1: "<b>整頁擷取</b> — 捲動拼接整個頁面，支援延遲載入內容、固定標題列與內部捲動文件。",
       f2: "<b>標註與匯出</b> — 裁切、畫筆、箭頭、螢光標記、馬賽克、編號徽章；匯出為 PNG / JPG / PDF / 剪貼簿，或用快速儲存略過編輯器。",
       f3: "<b>存證截圖</b> — 將網址、擷取時間與 SHA-256 像素雜湊嵌入圖片，可選加上 RFC 3161 可信時間戳與頁面原始 MHTML。任何人都能在附帶的驗證頁面確認完整性。",
       f4: "<b>批次擷取</b> — 貼上網址清單，即可取得整頁截圖的 zip 或單一 PDF。",
       f5: "<b>💥 破壞模式</b> — 用趣味的頁面覆蓋層發洩壓力（還能把痕跡拍下來）。",
+      f6: "<b>排程擷取與變更偵測</b> — 可每小時、每日、每週或單次執行，監看多個區域、僅在變更時儲存，並保留可搜尋的記錄。Chrome 可用時在本機執行。",
       cap1: "編輯器中的整頁擷取 — 底部的存證帶封存網址、時間與雜湊值。",
       cap2: "破壞模式：塗鴉固定在頁面上，擷取時也會一併入鏡。",
       privacyH: "隱私",
@@ -218,17 +216,17 @@
       termsLink: "授權條款",
     },
     "zh-CN": {
-      title: "LongSnap — 整页截图与取证截图 Chrome 扩展",
+      title: "SnapHolt — 整页截图与取证截图 Chrome 扩展",
       tag: "整页截图、标注、批量截取 — 以及可验证的取证截图。",
       cta: "Chrome 应用商店 — 即将上线",
-      renameTitle: "LongSnap 将更名为 SnapHolt。",
-      renameBody: "当前 Chrome 应用商店审核期间，LongSnap 页面会继续保留。下一次提交版本将以 SnapHolt 名称继续开发。" + SH("前往 SnapHolt →"),
+      originBody: "SnapHolt 是 LongSnap 的下一个名称与版本。当前 Chrome 应用商店审核期间，现有的 " + LS("LongSnap 审核页面") + " 会继续公开。",
       featuresH: "功能特色",
       f1: "<b>整页截取</b> — 滚动拼接整个页面，支持懒加载内容、固定页头与内部滚动文档。",
       f2: "<b>标注与导出</b> — 裁剪、画笔、箭头、高亮、马赛克、编号徽章；导出为 PNG / JPG / PDF / 剪贴板，或用快速保存跳过编辑器。",
       f3: "<b>取证截图</b> — 将网址、截取时间与 SHA-256 像素哈希嵌入图片，可选附加 RFC 3161 可信时间戳与页面原始 MHTML。任何人都可以在附带的验证页面确认完整性。",
       f4: "<b>批量截取</b> — 粘贴网址列表，即可获得整页截图的 zip 或单个 PDF。",
       f5: "<b>💥 破坏模式</b> — 用趣味的页面覆盖层释放压力（还能把痕迹拍下来）。",
+      f6: "<b>定时捕获与变化检测</b> — 可每小时、每天、每周或单次运行，监控多个区域、仅在变化时保存，并保留可搜索的记录。Chrome 可用时在本地运行。",
       cap1: "编辑器中的整页截图 — 底部的取证条封存网址、时间与哈希值。",
       cap2: "破坏模式：涂鸦固定在页面上，截图时也会一并保留。",
       privacyH: "隐私",
@@ -241,17 +239,17 @@
       termsLink: "许可条款",
     },
     "es": {
-      title: "LongSnap — Captura de página completa y capturas probatorias para Chrome",
+      title: "SnapHolt — Captura de página completa y capturas probatorias para Chrome",
       tag: "Capturas de página completa, anotaciones, captura por lotes — y capturas probatorias que puedes verificar.",
       cta: "Chrome Web Store — próximamente",
-      renameTitle: "LongSnap se convertirá en SnapHolt.",
-      renameBody: "Esta página de LongSnap seguirá disponible durante la revisión actual de Chrome Web Store. El desarrollo para el próximo envío continúa con el nombre SnapHolt. " + SH("Visitar SnapHolt →"),
+      originBody: "SnapHolt es el próximo nombre y lanzamiento de LongSnap. La " + LS("página de revisión de LongSnap") + " seguirá disponible durante la revisión actual de Chrome Web Store.",
       featuresH: "Qué hace",
       f1: "<b>Captura de página completa</b> — une la página entera mediante desplazamiento, gestionando contenido de carga diferida, encabezados fijos y documentos con desplazamiento interno.",
       f2: "<b>Anota y exporta</b> — recorte, lápiz, flechas, resaltados, mosaico, insignias numeradas; exporta a PNG / JPG / PDF / portapapeles, o salta el editor con el guardado rápido.",
       f3: "<b>Capturas probatorias</b> — incrusta la URL, la hora de captura y un hash SHA-256 de los píxeles en la imagen, con un sello de tiempo confiable RFC 3161 opcional y el MHTML original de la página. Cualquiera puede verificar la integridad en la página de verificación incluida.",
       f4: "<b>Captura por lotes</b> — pega una lista de URLs y obtén capturas de página completa en un zip o un solo PDF.",
       f5: "<b>💥 Modo destrucción</b> — desahógate con una capa lúdica sobre la página (y captura el resultado).",
+      f6: "<b>Captura programada y detección de cambios</b> — ejecuta cada hora, día, semana o una vez; vigila varias regiones, guarda solo al cambiar y conserva un historial buscable. Funciona localmente mientras Chrome está disponible.",
       cap1: "El editor con una captura de página completa — la banda probatoria inferior sella URL, hora y hash.",
       cap2: "Modo destrucción: los garabatos se fijan a la página y aparecen en las capturas.",
       privacyH: "Privacidad",
@@ -264,17 +262,17 @@
       termsLink: "Términos de licencia",
     },
     "pt-BR": {
-      title: "LongSnap — Captura de página inteira e capturas probatórias para Chrome",
+      title: "SnapHolt — Captura de página inteira e capturas probatórias para Chrome",
       tag: "Capturas de página inteira, anotações, captura em lote — e capturas probatórias que você pode verificar.",
       cta: "Chrome Web Store — em breve",
-      renameTitle: "LongSnap passará a se chamar SnapHolt.",
-      renameBody: "Esta página do LongSnap continuará disponível durante a análise atual da Chrome Web Store. O desenvolvimento para o próximo envio segue com o nome SnapHolt. " + SH("Visitar SnapHolt →"),
+      originBody: "SnapHolt é o próximo nome e lançamento do LongSnap. A " + LS("página de análise do LongSnap") + " continuará disponível durante a análise atual da Chrome Web Store.",
       featuresH: "O que ele faz",
       f1: "<b>Captura de página inteira</b> — costura a página toda por rolagem, lidando com conteúdo de carregamento tardio, cabeçalhos fixos e documentos com rolagem interna.",
       f2: "<b>Anote e exporte</b> — corte, caneta, setas, destaques, mosaico, selos numerados; exporte para PNG / JPG / PDF / área de transferência, ou pule o editor com o salvamento rápido.",
       f3: "<b>Capturas probatórias</b> — incorpora a URL, o horário da captura e um hash SHA-256 dos pixels na imagem, com carimbo de tempo confiável RFC 3161 opcional e o MHTML original da página. Qualquer pessoa pode verificar a integridade na página de verificação incluída.",
       f4: "<b>Captura em lote</b> — cole uma lista de URLs e receba capturas de página inteira em um zip ou um único PDF.",
       f5: "<b>💥 Modo destruição</b> — desestresse com uma camada divertida sobre a página (e capture o estrago).",
+      f6: "<b>Captura agendada e detecção de mudanças</b> — execute por hora, dia, semana ou uma vez; monitore várias áreas, salve só quando mudar e mantenha um histórico pesquisável. Funciona localmente enquanto o Chrome está disponível.",
       cap1: "O editor com uma captura de página inteira — a faixa probatória na parte inferior sela URL, horário e hash.",
       cap2: "Modo destruição: os rabiscos ficam presos à página e aparecem nas capturas.",
       privacyH: "Privacidade",
@@ -287,17 +285,17 @@
       termsLink: "Termos da licença",
     },
     "de": {
-      title: "LongSnap — Ganzseitige Screenshots & Beweis-Screenshots für Chrome",
+      title: "SnapHolt — Ganzseitige Screenshots & Beweis-Screenshots für Chrome",
       tag: "Ganzseitige Screenshots, Anmerkungen, Stapelerfassung — und beweissichere Aufnahmen, die sich verifizieren lassen.",
       cta: "Chrome Web Store — demnächst",
-      renameTitle: "LongSnap wird zu SnapHolt.",
-      renameBody: "Diese LongSnap-Seite bleibt während der laufenden Chrome-Web-Store-Prüfung verfügbar. Die Entwicklung für die nächste Einreichung wird unter dem Namen SnapHolt fortgesetzt. " + SH("SnapHolt ansehen →"),
+      originBody: "SnapHolt ist der nächste Name und die nächste Version von LongSnap. Die " + LS("LongSnap-Prüfseite") + " bleibt während der laufenden Chrome-Web-Store-Prüfung online.",
       featuresH: "Funktionen",
       f1: "<b>Ganzseitige Aufnahme</b> — fügt die gesamte Seite per Scrollen zusammen und meistert dabei nachladende Inhalte, fixierte Kopfzeilen und intern scrollende Dokumente.",
       f2: "<b>Kommentieren &amp; exportieren</b> — Zuschneiden, Stift, Pfeile, Markierungen, Mosaik, nummerierte Badges; Export als PNG / JPG / PDF / Zwischenablage oder per Schnellspeichern direkt am Editor vorbei.",
       f3: "<b>Beweis-Screenshots</b> — bettet URL, Aufnahmezeit und einen SHA-256-Pixel-Hash ins Bild ein, optional mit vertrauenswürdigem RFC-3161-Zeitstempel und dem Original-MHTML der Seite. Jeder kann die Integrität auf der mitgelieferten Verifizierungsseite prüfen.",
       f4: "<b>Stapelerfassung</b> — URL-Liste einfügen und ganzseitige Aufnahmen als Zip oder einzelnes PDF erhalten.",
       f5: "<b>💥 Zerstörungsmodus</b> — Dampf ablassen mit einem verspielten Overlay auf der Seite (und das Ergebnis festhalten).",
+      f6: "<b>Geplante Aufnahmen &amp; Änderungserkennung</b> — stündlich, täglich, wöchentlich oder einmal ausführen, mehrere Bereiche beobachten, nur bei Änderungen speichern und im durchsuchbaren Verlauf behalten. Läuft lokal, solange Chrome verfügbar ist.",
       cap1: "Der Editor mit einer ganzseitigen Aufnahme — das Beweisband unten versiegelt URL, Zeit und Hash.",
       cap2: "Zerstörungsmodus: Kritzeleien haften an der Seite und erscheinen in den Aufnahmen.",
       privacyH: "Datenschutz",
@@ -310,17 +308,17 @@
       termsLink: "Lizenzbedingungen",
     },
     "fr": {
-      title: "LongSnap — Capture de page entière et captures probantes pour Chrome",
+      title: "SnapHolt — Capture de page entière et captures probantes pour Chrome",
       tag: "Captures de page entière, annotations, capture par lots — et des captures probantes que vous pouvez vérifier.",
       cta: "Chrome Web Store — bientôt disponible",
-      renameTitle: "LongSnap devient SnapHolt.",
-      renameBody: "Cette page LongSnap reste disponible pendant l'examen actuel du Chrome Web Store. Le développement de la prochaine soumission continue sous le nom SnapHolt. " + SH("Voir SnapHolt →"),
+      originBody: "SnapHolt est le prochain nom et la prochaine version de LongSnap. La " + LS("page LongSnap en cours d'examen") + " reste en ligne pendant l'examen actuel du Chrome Web Store.",
       featuresH: "Fonctionnalités",
       f1: "<b>Capture de page entière</b> — assemble toute la page par défilement, en gérant le contenu à chargement différé, les en-têtes fixes et les documents à défilement interne.",
       f2: "<b>Annoter &amp; exporter</b> — recadrage, stylo, flèches, surlignage, mosaïque, badges numérotés ; export en PNG / JPG / PDF / presse-papiers, ou enregistrement rapide sans passer par l'éditeur.",
       f3: "<b>Captures probantes</b> — intègre l'URL, l'heure de capture et un hachage SHA-256 des pixels dans l'image, avec en option un horodatage de confiance RFC 3161 et le MHTML d'origine de la page. Chacun peut vérifier l'intégrité sur la page de vérification fournie.",
       f4: "<b>Capture par lots</b> — collez une liste d'URL et obtenez des captures de page entière en zip ou en un seul PDF.",
       f5: "<b>💥 Mode destruction</b> — défoulez-vous avec un calque ludique sur la page (et capturez le résultat).",
+      f6: "<b>Captures planifiées et détection des changements</b> — exécution horaire, quotidienne, hebdomadaire ou unique, surveillance de plusieurs zones, enregistrement uniquement en cas de changement et historique consultable. Fonctionne localement lorsque Chrome est disponible.",
       cap1: "L'éditeur avec une capture de page entière — le bandeau probant en bas scelle l'URL, l'heure et le hachage.",
       cap2: "Mode destruction : les gribouillis restent fixés à la page et apparaissent dans les captures.",
       privacyH: "Confidentialité",
@@ -333,17 +331,17 @@
       termsLink: "Conditions de licence",
     },
     "ru": {
-      title: "LongSnap — Скриншот всей страницы и доказательные снимки для Chrome",
+      title: "SnapHolt — Скриншот всей страницы и доказательные снимки для Chrome",
       tag: "Скриншоты всей страницы, аннотации, пакетный захват — и доказательные снимки, которые можно проверить.",
       cta: "Chrome Web Store — скоро",
-      renameTitle: "LongSnap станет SnapHolt.",
-      renameBody: "Страница LongSnap останется доступной, пока идёт текущая проверка в Chrome Web Store. Разработка следующей версии продолжается под названием SnapHolt. " + SH("Открыть SnapHolt →"),
+      originBody: "SnapHolt — следующее название и версия LongSnap. " + LS("Страница проверки LongSnap") + " останется доступной, пока идёт текущая проверка в Chrome Web Store.",
       featuresH: "Возможности",
       f1: "<b>Захват всей страницы</b> — сшивает страницу целиком при прокрутке, справляясь с ленивой загрузкой, закреплёнными шапками и документами с внутренней прокруткой.",
       f2: "<b>Аннотации и экспорт</b> — обрезка, перо, стрелки, выделение, мозаика, нумерованные метки; экспорт в PNG / JPG / PDF / буфер обмена или быстрое сохранение без редактора.",
       f3: "<b>Доказательные снимки</b> — встраивает в изображение URL, время съёмки и SHA-256-хеш пикселей, опционально — доверенную метку времени RFC 3161 и исходный MHTML страницы. Любой может проверить целостность на прилагаемой странице проверки.",
       f4: "<b>Пакетный захват</b> — вставьте список URL и получите снимки всех страниц в zip или одном PDF.",
       f5: "<b>💥 Режим разрушения</b> — выпустите пар с игривым оверлеем поверх страницы (и заснимите результат).",
+      f6: "<b>Снимки по расписанию и отслеживание изменений</b> — запускайте каждый час, день, неделю или один раз; следите за несколькими областями, сохраняйте только изменения и используйте поиск по истории. Работает локально, пока доступен Chrome.",
       cap1: "Редактор со снимком всей страницы — доказательная полоса внизу фиксирует URL, время и хеш.",
       cap2: "Режим разрушения: рисунки крепятся к странице и попадают в снимки.",
       privacyH: "Конфиденциальность",
