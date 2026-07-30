@@ -30,11 +30,11 @@
   <h1>SnapHolt Privacy Policy</h1>
   <p class="eff">Effective date: 2026-07-30 · Controller/contact: Queue1Lab</p>
 
-  <p class="summary"><b>Short version:</b> SnapHolt does not upload your captures, page content,
-     MHTML, saved target URLs, or history to Queue1Lab. Core product data stays in your browser.
-     Limited data leaves the extension only for license verification with Polar and, when you
-     explicitly enable it, trusted timestamping with FreeTSA. Purchase and support records are
-     handled separately as described below.</p>
+  <p class="summary"><b>Short version:</b> SnapHolt does not upload your captures, saved page
+     content, MHTML, history, or saved target list to Queue1Lab. Core product data stays in your
+     browser. Chrome still makes ordinary requests to pages you choose to capture. Limited data is
+     also sent for license verification with Polar and, when you explicitly enable it, trusted
+     timestamping with FreeTSA. Purchase and support records are handled separately below.</p>
 
   <h2>English</h2>
 
@@ -54,8 +54,15 @@
      eviction or corruption, or device loss may delete it permanently.</p>
 
   <h3>2. Network requests made by the extension</h3>
+  <p><b>Pages selected by the user.</b> When you capture the current page or add a URL as a
+     scheduled or batch target, Chrome loads that site normally. SnapHolt may make a
+     <code>HEAD</code> or <code>GET</code> request to the same target URL to read capture metadata
+     or diagnose a loading failure. The target site and its providers may process ordinary
+     connection information such as IP address, browser information, requested URL, and request
+     time under their own policies. SnapHolt does not upload the capture, saved page content,
+     MHTML, history, or saved target list to Queue1Lab as part of this process.</p>
   <p><b>License activation and validation — purchasers only.</b> Over HTTPS, SnapHolt sends the
-     license key you enter, Queue1Lab/Polar organization or product identifiers, a product label,
+     license key you enter, a fixed Queue1Lab/Polar organization identifier, a product label,
      and the Polar-issued activation identifier as needed to
      <a href="https://polar.sh/" rel="noopener">Polar</a>. Validation normally occurs no more
      than once per day while a key is active. The request does not include captures, MHTML, page
@@ -66,7 +73,7 @@
      Polar Software, Inc. is located in the United States and may process data in the United
      States and other locations described in its policy.</p>
   <p><b>Trusted Timestamp — optional and off by default.</b> Only after you enable this option,
-     SnapHolt sends an RFC 3161 request containing the SHA-256 digest of the capture to the public
+     SnapHolt sends an RFC 3161 DER request containing the SHA-256 digest of the capture to the public
      <a href="https://freetsa.org/index_en.php" rel="noopener">FreeTSA</a> service. The original
      image, MHTML, URL, and page content are not included in that request. The service may see
      ordinary connection metadata. Queue1Lab does not control FreeTSA’s infrastructure,
@@ -137,10 +144,11 @@
 
   <h2>한국어</h2>
 
-  <p class="summary"><b>요약:</b> SnapHolt는 캡처 이미지, 페이지 내용, MHTML, 저장한 대상
-     URL 또는 히스토리를 Queue1Lab로 업로드하지 않습니다. 핵심 제품 데이터는 브라우저 안에
-     저장됩니다. 확장에서 외부로 나가는 제한적 데이터는 Polar 라이선스 검증과, 사용자가 직접 켠
-     경우의 FreeTSA 신뢰 타임스탬프 요청뿐입니다. 구매·지원 기록은 아래와 같이 별도로 처리합니다.</p>
+  <p class="summary"><b>요약:</b> SnapHolt는 캡처 이미지, 저장한 페이지 내용, MHTML,
+     히스토리 또는 대상 URL 목록을 Queue1Lab로 업로드하지 않습니다. 핵심 제품 데이터는
+     브라우저 안에 저장됩니다. Chrome은 사용자가 캡처하도록 지정한 페이지에 정상 요청을
+     보냅니다. 그 밖의 제한적 데이터는 Polar 라이선스 검증과, 사용자가 직접 켠 경우의 FreeTSA
+     신뢰 타임스탬프에 사용됩니다. 구매·지원 기록은 아래와 같이 별도로 처리합니다.</p>
 
   <h3>1. 확장이 로컬에서 처리하는 데이터</h3>
   <ul>
@@ -158,8 +166,14 @@
      삭제될 수 있습니다.</p>
 
   <h3>2. 확장이 수행하는 네트워크 요청</h3>
+  <p><b>사용자가 지정한 페이지.</b> 사용자가 현재 페이지를 캡처하거나 예약·일괄 캡처 대상으로
+     URL을 지정하면 Chrome이 해당 사이트를 정상적으로 로드합니다. 캡처 메타데이터 확인이나
+     로드 실패 진단을 위해 같은 대상 URL에 <code>HEAD</code> 또는 <code>GET</code> 요청이
+     발생할 수 있습니다. 대상 사이트와 그 서비스 제공자는 IP 주소, 브라우저 정보, 요청 URL·시각
+     같은 통상적인 접속 정보를 자체 정책에 따라 처리할 수 있습니다. SnapHolt는 이 과정에서 캡처,
+     저장한 페이지 내용, MHTML, 히스토리 또는 대상 URL 목록을 Queue1Lab로 업로드하지 않습니다.</p>
   <p><b>라이선스 활성화·검증 — 구매자에 한함.</b> SnapHolt는 HTTPS를 통해 사용자가 입력한
-     라이선스 키, Queue1Lab/Polar 조직 또는 제품 식별자, 제품 라벨과 Polar가 발급한 활성화
+     라이선스 키, 고정 Queue1Lab/Polar 조직 식별자, 제품 라벨과 Polar가 발급한 활성화
      식별자를 필요한 범위에서 <a href="https://polar.sh/" rel="noopener">Polar</a>로 전송합니다.
      키가 활성화된 동안 통상 하루 1회를 넘지 않게 검증합니다. 이 요청에는 캡처, MHTML, 페이지
      내용, 웹 기록, 저장한 대상 URL 또는 주석이 포함되지 않습니다.</p>
@@ -169,7 +183,7 @@
      있습니다. Polar Software, Inc.는 미국 사업자이며 미국과 자체 정책에 기재된 다른 지역에서
      데이터를 처리할 수 있습니다.</p>
   <p><b>신뢰 타임스탬프 — 선택 기능이며 기본값은 꺼짐.</b> 사용자가 이 옵션을 켠 뒤에만
-     SnapHolt가 캡처의 SHA-256 해시를 담은 RFC 3161 요청을 공개
+     SnapHolt가 캡처의 SHA-256 digest를 담은 RFC 3161 DER 요청을 공개
      <a href="https://freetsa.org/index_en.php" rel="noopener">FreeTSA</a> 서비스로 전송합니다.
      원본 이미지, MHTML, URL과 페이지 내용은 요청에 포함되지 않습니다. 서비스는 통상적인 접속
      정보를 확인할 수 있습니다. Queue1Lab은 FreeTSA의 인프라, 가용성, 보관 또는 향후 정책을
