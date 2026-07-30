@@ -134,7 +134,8 @@
   <div class="card" data-i18n="supportBody">
     Technical bugs and feature requests:
     <a href="https://github.com/cs20030834/queue1lab/issues">public GitHub Issues</a>.
-    Billing, refunds, privacy, and license matters:
+    Refunds: <a href="refund.html">structured request page</a>.
+    Other billing, privacy, and license matters:
     <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>.
     Never post a license key, order ID, private capture, or personal information in a public issue.
   </div>
@@ -147,6 +148,7 @@
   var ISSUES = '<a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a>';
   var MAIL = '<a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>';
   var PP = function (label) { return '<a href="privacy.html">' + label + '</a>'; };
+  var REFUND = function (label) { return '<a href="refund.html">' + label + '</a>'; };
 
   var I18N = {
     "en": {
@@ -172,7 +174,7 @@
       visionH: "Where SnapHolt is headed",
       visionBody: "SnapHolt is exploring ways to make recurring documentation and verification easier.<br><b>Capture Recipe</b> — save capture areas, delays, exclusions, and output settings.<br><b>Short Clip</b> — record a brief active-tab flow and download it as a shareable local clip.<br><b>Change Timeline</b> — review more precise change history while filtering noise such as ads, timestamps, and animation.<br>If demand is validated, <b>SnapHolt Watch</b> may monitor pages even when your browser is closed and notify you by email or webhook, potentially as a separate service or plan.<br><small>Direction, not a promise: features, dates, scope, pricing, and availability may change based on feedback and validation.</small>",
       supportH: "Support",
-      supportBody: "Technical bugs and feature requests: " + ISSUES + " (public). Billing, refunds, privacy, and license matters: " + MAIL + ". Never post a license key, order ID, private capture, or personal information in a public issue.",
+      supportBody: "Technical bugs and feature requests: " + ISSUES + " (public). Refunds: " + REFUND("structured request page") + ". Other billing, privacy, and license matters: " + MAIL + ". Never post a license key, order ID, private capture, or personal information in a public issue.",
       privacyLink: "Privacy Policy",
       termsLink: "License Terms",
     },
@@ -199,7 +201,7 @@
       visionH: "앞으로의 SnapHolt",
       visionBody: "SnapHolt는 반복적인 기록과 검증을 더 쉽게 만드는 방향을 탐색하고 있습니다.<br><b>Capture Recipe</b> — 캡처 영역·지연·제외 요소·출력 설정을 저장합니다.<br><b>Short Clip</b> — 현재 탭의 짧은 흐름을 녹화해 공유하기 쉬운 로컬 클립으로 내려받습니다.<br><b>Change Timeline</b> — 광고·시각·애니메이션 같은 잡음을 걸러 더 정교한 변경 이력을 확인합니다.<br>수요가 확인되면 <b>SnapHolt Watch</b>로 브라우저가 꺼져 있어도 페이지를 확인하고 이메일·Webhook으로 알리는 별도 서비스나 플랜을 검토할 수 있습니다.<br><small>방향이지 약속은 아닙니다. 기능·일정·범위·가격·제공 여부는 피드백과 검증 결과에 따라 달라질 수 있습니다.</small>",
       supportH: "지원",
-      supportBody: "기술 버그·기능 요청은 공개 " + ISSUES + " 에 남겨주세요. 결제·환불·개인정보·라이선스 문의는 " + MAIL + " 로 보내주세요. 공개 이슈에 라이선스 키, 주문 ID, 비공개 캡처 또는 개인정보를 게시하지 마세요.",
+      supportBody: "기술 버그·기능 요청은 공개 " + ISSUES + " 에 남겨주세요. 환불은 " + REFUND("구조화된 환불 요청 페이지") + "를 이용하세요. 그 밖의 결제·개인정보·라이선스 문의는 " + MAIL + " 로 보내주세요. 공개 이슈에 라이선스 키, 주문 ID, 비공개 캡처 또는 개인정보를 게시하지 마세요.",
       privacyLink: "개인정보처리방침",
       termsLink: "이용약관",
     },
@@ -226,7 +228,7 @@
       visionH: "SnapHolt が目指す方向",
       visionBody: "SnapHolt は、定期的な記録作成と検証をより簡単にする方法を検討しています。<br><b>Capture Recipe</b> — キャプチャ範囲、待機時間、除外対象、出力設定を保存します。<br><b>Short Clip</b> — アクティブタブでの短い操作フローを録画し、共有しやすいローカル動画としてダウンロードします。<br><b>Change Timeline</b> — 広告、タイムスタンプ、アニメーションなどのノイズを除外しながら、より正確な変更履歴を確認します。<br>需要が確認された場合、<b>SnapHolt Watch</b> はブラウザを閉じている間もページを監視し、メールまたは Webhook で通知する機能を、別のサービスまたはプランとして提供する可能性があります。<br><small>これは方向性であり、約束ではありません。機能、日程、範囲、価格、提供可否は、フィードバックと検証結果に応じて変更される場合があります。</small>",
       supportH: "サポート",
-      supportBody: "技術的な不具合や機能要望は公開の " + ISSUES + " へ。支払い、返金、プライバシー、ライセンスに関するお問い合わせは " + MAIL + " へお送りください。公開 issue にライセンスキー、注文ID、非公開のキャプチャ、個人情報を投稿しないでください。",
+      supportBody: "技術的な不具合や機能要望は公開の " + ISSUES + " へ。返金は " + REFUND("構造化された返金リクエストページ") + " をご利用ください。その他の支払い、プライバシー、ライセンスに関するお問い合わせは " + MAIL + " へお送りください。公開 issue にライセンスキー、注文ID、非公開のキャプチャ、個人情報を投稿しないでください。",
       privacyLink: "プライバシーポリシー",
       termsLink: "利用規約",
     },
@@ -253,7 +255,7 @@
       visionH: "SnapHolt 的發展方向",
       visionBody: "SnapHolt 正在探索讓定期記錄與驗證更容易的方法。<br><b>Capture Recipe</b> — 儲存擷取區域、延遲時間、排除項目與輸出設定。<br><b>Short Clip</b> — 錄製目前分頁中的簡短操作流程，並下載成方便分享的本機短片。<br><b>Change Timeline</b> — 過濾廣告、時間戳記與動畫等干擾項目，查看更精確的變更歷史。<br>如果需求獲得驗證，<b>SnapHolt Watch</b> 未來可能在瀏覽器關閉時持續監控頁面，並透過電子郵件或 Webhook 通知您；此功能可能以獨立服務或方案提供。<br><small>這是發展方向，不是承諾：功能、日期、範圍、價格與供應情況可能依據意見回饋及驗證結果調整。</small>",
       supportH: "支援",
-      supportBody: "技術錯誤與功能建議請提交到公開的 " + ISSUES + "。付款、退款、隱私與授權問題請寄信至 " + MAIL + "。請勿在公開 issue 中張貼授權金鑰、訂單 ID、私人擷取內容或個人資料。",
+      supportBody: "技術錯誤與功能建議請提交到公開的 " + ISSUES + "。退款請使用 " + REFUND("結構化退款申請頁面") + "。其他付款、隱私與授權問題請寄信至 " + MAIL + "。請勿在公開 issue 中張貼授權金鑰、訂單 ID、私人擷取內容或個人資料。",
       privacyLink: "隱私權政策",
       termsLink: "授權條款",
     },
@@ -280,7 +282,7 @@
       visionH: "SnapHolt 的发展方向",
       visionBody: "SnapHolt 正在探索让定期记录和验证更加便捷的方式。<br><b>Capture Recipe</b> — 保存截取区域、延迟时间、排除项和输出设置。<br><b>Short Clip</b> — 录制当前标签页中的简短操作流程，并下载为便于分享的本地短片。<br><b>Change Timeline</b> — 过滤广告、时间戳和动画等干扰内容，查看更精确的变化历史。<br>如果需求得到验证，<b>SnapHolt Watch</b> 未来可能在浏览器关闭时继续监控页面，并通过电子邮件或 Webhook 通知您；该功能可能作为独立服务或方案提供。<br><small>这是发展方向，并非承诺：功能、日期、范围、价格和可用性可能根据反馈和验证结果进行调整。</small>",
       supportH: "支持",
-      supportBody: "技术问题和功能建议请提交至公开的 " + ISSUES + "。付款、退款、隐私和许可证问题请发送邮件至 " + MAIL + "。请勿在公开 issue 中发布许可证密钥、订单 ID、私密截图或个人信息。",
+      supportBody: "技术问题和功能建议请提交至公开的 " + ISSUES + "。退款请使用 " + REFUND("结构化退款申请页面") + "。其他付款、隐私和许可证问题请发送邮件至 " + MAIL + "。请勿在公开 issue 中发布许可证密钥、订单 ID、私密截图或个人信息。",
       privacyLink: "隐私政策",
       termsLink: "许可条款",
     },
@@ -307,7 +309,7 @@
       visionH: "Hacia dónde se dirige SnapHolt",
       visionBody: "SnapHolt está explorando formas de facilitar la documentación y verificación periódicas.<br><b>Capture Recipe</b> — guarda áreas de captura, retrasos, exclusiones y ajustes de salida.<br><b>Short Clip</b> — graba un flujo breve en la pestaña activa y descárgalo como un clip local fácil de compartir.<br><b>Change Timeline</b> — consulta un historial de cambios más preciso mientras filtras elementos variables como anuncios, marcas de tiempo y animaciones.<br>Si se confirma la demanda, <b>SnapHolt Watch</b> podría supervisar páginas incluso cuando el navegador esté cerrado y enviarte avisos por correo electrónico o Webhook, posiblemente como un servicio o plan independiente.<br><small>Es una dirección, no una promesa: las funciones, fechas, alcance, precios y disponibilidad pueden cambiar según los comentarios y la validación.</small>",
       supportH: "Soporte",
-      supportBody: "Errores técnicos y solicitudes de funciones: " + ISSUES + " (público). Pagos, reembolsos, privacidad y licencias: " + MAIL + ". No publiques claves, ID de pedido, capturas privadas ni datos personales en un issue público.",
+      supportBody: "Errores técnicos y solicitudes de funciones: " + ISSUES + " (público). Reembolsos: " + REFUND("página de solicitud estructurada") + ". Otros asuntos de pago, privacidad y licencias: " + MAIL + ". No publiques claves, ID de pedido, capturas privadas ni datos personales en un issue público.",
       privacyLink: "Política de privacidad",
       termsLink: "Términos de licencia",
     },
@@ -334,7 +336,7 @@
       visionH: "Para onde o SnapHolt está caminhando",
       visionBody: "O SnapHolt está explorando formas de facilitar a documentação e a verificação recorrentes.<br><b>Capture Recipe</b> — salve áreas de captura, atrasos, exclusões e configurações de saída.<br><b>Short Clip</b> — grave um fluxo curto na aba ativa e baixe-o como um clipe local fácil de compartilhar.<br><b>Change Timeline</b> — consulte um histórico de alterações mais preciso enquanto filtra ruídos como anúncios, carimbos de data e hora e animações.<br>Se a demanda for validada, o <b>SnapHolt Watch</b> poderá monitorar páginas mesmo quando o navegador estiver fechado e enviar notificações por e-mail ou Webhook, possivelmente como um serviço ou plano separado.<br><small>É uma direção, não uma promessa: recursos, datas, escopo, preços e disponibilidade podem mudar conforme o retorno dos usuários e a validação.</small>",
       supportH: "Suporte",
-      supportBody: "Bugs técnicos e pedidos de recursos: " + ISSUES + " (público). Pagamentos, reembolsos, privacidade e licenças: " + MAIL + ". Não publique chaves, IDs de pedido, capturas privadas ou dados pessoais em uma issue pública.",
+      supportBody: "Bugs técnicos e pedidos de recursos: " + ISSUES + " (público). Reembolsos: " + REFUND("página de solicitação estruturada") + ". Outros assuntos de pagamento, privacidade e licenças: " + MAIL + ". Não publique chaves, IDs de pedido, capturas privadas ou dados pessoais em uma issue pública.",
       privacyLink: "Política de Privacidade",
       termsLink: "Termos da licença",
     },
@@ -361,7 +363,7 @@
       visionH: "Wohin sich SnapHolt entwickelt",
       visionBody: "SnapHolt prüft Möglichkeiten, wiederkehrende Dokumentation und Überprüfung einfacher zu machen.<br><b>Capture Recipe</b> — speichere Aufnahmebereiche, Verzögerungen, Ausschlüsse und Ausgabeeinstellungen.<br><b>Short Clip</b> — zeichne einen kurzen Ablauf im aktiven Tab auf und lade ihn als teilbaren lokalen Clip herunter.<br><b>Change Timeline</b> — prüfe einen präziseren Änderungsverlauf und filtere dabei Störeinflüsse wie Werbung, Zeitstempel und Animationen heraus.<br>Wenn sich ausreichende Nachfrage bestätigt, könnte <b>SnapHolt Watch</b> Seiten auch bei geschlossenem Browser überwachen und dich per E-Mail oder Webhook benachrichtigen, möglicherweise als separater Dienst oder Tarif.<br><small>Eine mögliche Richtung, kein Versprechen: Funktionen, Termine, Umfang, Preise und Verfügbarkeit können sich aufgrund von Feedback und Validierung ändern.</small>",
       supportH: "Support",
-      supportBody: "Technische Fehler und Funktionswünsche: " + ISSUES + " (öffentlich). Zahlung, Erstattung, Datenschutz und Lizenz: " + MAIL + ". Veröffentliche niemals Schlüssel, Bestell-ID, private Aufnahmen oder personenbezogene Daten in einem öffentlichen Issue.",
+      supportBody: "Technische Fehler und Funktionswünsche: " + ISSUES + " (öffentlich). Erstattungen: " + REFUND("strukturiertes Antragsformular") + ". Andere Fragen zu Zahlung, Datenschutz und Lizenz: " + MAIL + ". Veröffentliche niemals Schlüssel, Bestell-ID, private Aufnahmen oder personenbezogene Daten in einem öffentlichen Issue.",
       privacyLink: "Datenschutzerklärung",
       termsLink: "Lizenzbedingungen",
     },
@@ -388,7 +390,7 @@
       visionH: "La direction envisagée pour SnapHolt",
       visionBody: "SnapHolt explore des moyens de simplifier la documentation et la vérification récurrentes.<br><b>Capture Recipe</b> — enregistrez les zones de capture, les délais, les exclusions et les paramètres de sortie.<br><b>Short Clip</b> — enregistrez une courte séquence dans l’onglet actif et téléchargez-la sous forme de clip local facile à partager.<br><b>Change Timeline</b> — consultez un historique des changements plus précis tout en filtrant les éléments variables tels que les publicités, les horodatages et les animations.<br>Si la demande est confirmée, <b>SnapHolt Watch</b> pourrait surveiller des pages même lorsque votre navigateur est fermé et vous avertir par e-mail ou Webhook, éventuellement sous la forme d’un service ou d’une offre distincte.<br><small>Il s’agit d’une direction envisagée, sans engagement : les fonctionnalités, les dates, le périmètre, les prix et la disponibilité peuvent évoluer selon les retours et les résultats de validation.</small>",
       supportH: "Assistance",
-      supportBody: "Bugs techniques et demandes de fonctions : " + ISSUES + " (public). Paiement, remboursement, confidentialité et licence : " + MAIL + ". Ne publiez jamais de clé, d’ID de commande, de capture privée ni de données personnelles dans un ticket public.",
+      supportBody: "Bugs techniques et demandes de fonctions : " + ISSUES + " (public). Remboursements : " + REFUND("page de demande structurée") + ". Autres questions de paiement, de confidentialité et de licence : " + MAIL + ". Ne publiez jamais de clé, d’ID de commande, de capture privée ni de données personnelles dans un ticket public.",
       privacyLink: "Politique de confidentialité",
       termsLink: "Conditions de licence",
     },
@@ -415,7 +417,7 @@
       visionH: "Куда развивается SnapHolt",
       visionBody: "SnapHolt изучает способы упростить регулярное документирование и проверку.<br><b>Capture Recipe</b> — сохраняйте области съёмки, задержки, исключения и параметры вывода.<br><b>Short Clip</b> — записывайте короткую последовательность действий в активной вкладке и загружайте её как локальный клип, которым удобно делиться.<br><b>Change Timeline</b> — просматривайте более точную историю изменений, отфильтровывая помехи вроде рекламы, меток времени и анимации.<br>Если спрос подтвердится, <b>SnapHolt Watch</b> сможет отслеживать страницы даже при закрытом браузере и отправлять уведомления по электронной почте или через Webhook, возможно, как отдельный сервис или тариф.<br><small>Это направление развития, а не обещание: функции, сроки, объём, цены и доступность могут измениться по итогам обратной связи и проверки спроса.</small>",
       supportH: "Поддержка",
-      supportBody: "Технические ошибки и запросы функций: " + ISSUES + " (публично). Оплата, возвраты, конфиденциальность и лицензии: " + MAIL + ". Не публикуйте ключи, ID заказа, частные снимки или персональные данные в публичном issue.",
+      supportBody: "Технические ошибки и запросы функций: " + ISSUES + " (публично). Возвраты: " + REFUND("страница структурированного запроса") + ". Другие вопросы об оплате, конфиденциальности и лицензиях: " + MAIL + ". Не публикуйте ключи, ID заказа, частные снимки или персональные данные в публичном issue.",
       privacyLink: "Политика конфиденциальности",
       termsLink: "Условия лицензии",
     }

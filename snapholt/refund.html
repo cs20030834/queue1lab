@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>SnapHolt — Refund Request</title>
+<meta name="description" content="Prepare a structured SnapHolt refund request for Queue1Lab.">
+<style>
+  :root { --bg:#fafafa; --ink:#18181b; --muted:#6b7280; --accent:#4f46e5;
+          --line:#e5e7eb; --soft:#eef2ff; --danger:#b91c1c; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+         "Apple SD Gothic Neo",sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px 96px; }
+  .crumb { font-size:14px; margin-bottom:28px; }
+  .crumb a { color:var(--muted); text-decoration:none; }
+  h1 { font-size:28px; margin:0 0 5px; }
+  h2 { font-size:19px; margin:34px 0 12px; }
+  .lead, .help { color:var(--muted); }
+  .notice { margin:24px 0; padding:16px 18px; border:1px solid #c7d2fe;
+            border-radius:12px; background:var(--soft); color:#3730a3; }
+  .notice p { margin:0 0 8px; }
+  .notice p:last-child { margin-bottom:0; }
+  form { margin-top:28px; }
+  .field { margin:0 0 20px; }
+  label, legend { display:block; font-weight:700; margin-bottom:7px; }
+  .sub { display:block; color:var(--muted); font-size:13.5px; font-weight:400; }
+  input, select, textarea { width:100%; border:1px solid #d1d5db; border-radius:9px;
+                            background:#fff; color:var(--ink); padding:10px 12px;
+                            font:inherit; }
+  textarea { min-height:100px; resize:vertical; }
+  input:focus, select:focus, textarea:focus { outline:3px solid #c7d2fe; border-color:var(--accent); }
+  fieldset { margin:24px 0; padding:18px; border:1px solid var(--line);
+             border-radius:12px; background:#fff; }
+  fieldset[hidden] { display:none; }
+  .check { display:flex; align-items:flex-start; gap:10px; font-weight:400; }
+  .check input { width:auto; margin-top:5px; }
+  .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  button { border:0; border-radius:9px; padding:11px 18px; cursor:pointer;
+           font:inherit; font-size:15px; font-weight:700; line-height:1.2; }
+  button.primary { color:#fff; background:var(--accent); }
+  button.secondary { color:#3730a3; background:#e0e7ff; }
+  button[hidden] { display:none; }
+  .status { min-height:26px; margin:14px 0 0; color:#166534; font-size:14px; }
+  .error { color:var(--danger); }
+  .foot { margin-top:44px; padding-top:20px; border-top:1px solid var(--line);
+          color:var(--muted); font-size:14px; }
+  a { color:var(--accent); }
+  code { padding:2px 5px; border-radius:5px; background:#f3f4f6; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav class="crumb"><a href="./">← SnapHolt</a></nav>
+  <h1>Refund Request / 환불 요청</h1>
+  <p class="lead">Prepare one structured email so Queue1Lab can find the order and process the
+     request without asking for the same information again.<br>
+     주문 확인과 처리를 한 번에 할 수 있도록 필요한 정보를 구조화해 이메일을 준비합니다.</p>
+
+  <section class="notice">
+    <p><b>14-day voluntary guarantee:</b> a verified purchase may be refunded in full within
+       14 days, normally once per customer or organization. The associated license and paid
+       benefits are revoked when refunded.</p>
+    <p><b>14일 자발적 환불 보증:</b> 확인된 구매는 고객 또는 조직당 통상 1회, 구매 후 14일
+       이내 전액 환불할 수 있습니다. 환불 시 관련 라이선스와 유료 혜택은 해제됩니다.</p>
+    <p>This guarantee does not limit mandatory consumer rights. After 14 days, duplicate charges,
+       non-delivery, unresolved material defects, and remedies required by law are reviewed under
+       the <a href="terms.html">License Terms</a>.</p>
+    <p>본 보증은 법으로 배제할 수 없는 소비자 권리를 제한하지 않습니다. 14일 이후에는 중복 결제,
+       미제공, 해결되지 않은 중대한 결함 및 법에서 요구하는 구제를
+       <a href="terms.html">이용약관</a>에 따라 검토합니다.</p>
+  </section>
+
+  <p class="help">This page does not upload or store the form. It prepares an email in your
+     device's email app. Review it, attach any useful screenshot, and press Send.<br>
+     이 페이지는 입력 내용을 업로드하거나 저장하지 않습니다. 기기의 이메일 앱에서 메일을
+     준비하므로 내용을 확인하고 필요한 화면을 첨부한 뒤 직접 전송하세요.</p>
+
+  <form id="refund-form">
+    <div class="field">
+      <label for="purchase-email">Purchase email / 구매 이메일
+        <span class="sub">Use the exact address shown on the Polar receipt. / Polar 영수증의 주소를 입력하세요.</span>
+      </label>
+      <input id="purchase-email" name="purchase-email" type="email" autocomplete="email" required>
+    </div>
+
+    <div class="field">
+      <label for="order-id">Polar order ID / Polar 주문번호
+        <span class="sub">If you cannot find it, enter NOT FOUND. / 찾을 수 없으면 NOT FOUND를 입력하세요.</span>
+      </label>
+      <input id="order-id" name="order-id" type="text" maxlength="120" required>
+    </div>
+
+    <div class="field">
+      <label for="purchase-date">Purchase date / 구매일
+        <span class="sub">Optional, but helpful when the order ID is unavailable. / 주문번호가 없을 때 조회에 도움이 됩니다.</span>
+      </label>
+      <input id="purchase-date" name="purchase-date" type="date">
+    </div>
+
+    <div class="field">
+      <label for="request-type">Request type / 요청 유형</label>
+      <select id="request-type" name="request-type" required>
+        <option value="">Select / 선택</option>
+        <option value="14D|14-day voluntary guarantee / 14일 자발적 보증">14-day voluntary guarantee / 14일 자발적 보증</option>
+        <option value="DUPLICATE|Duplicate or incorrect charge / 중복·오결제">Duplicate or incorrect charge / 중복·오결제</option>
+        <option value="ACTIVATION|Non-delivery or activation failure / 미제공·활성화 불가">Non-delivery or activation failure / 미제공·활성화 불가</option>
+        <option value="DEFECT|Unresolved material defect / 해결되지 않은 중대한 결함">Unresolved material defect / 해결되지 않은 중대한 결함</option>
+        <option value="STATUTORY|Mandatory consumer remedy / 법정 청약철회·구제">Mandatory consumer remedy / 법정 청약철회·구제</option>
+        <option value="OTHER|Other / 기타">Other / 기타</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="reason">Reason category / 사유 분류</label>
+      <select id="reason" name="reason" required>
+        <option value="">Select / 선택</option>
+        <option value="Accidental purchase / 실수로 구매">Accidental purchase / 실수로 구매</option>
+        <option value="Expected feature mismatch / 기대한 기능과 다름">Expected feature mismatch / 기대한 기능과 다름</option>
+        <option value="Technical issue / 기술적 오류">Technical issue / 기술적 오류</option>
+        <option value="Missing feature / 필요한 기능이 없음">Missing feature / 필요한 기능이 없음</option>
+        <option value="Duplicate charge / 중복 결제">Duplicate charge / 중복 결제</option>
+        <option value="Other / 기타">Other / 기타</option>
+        <option value="Prefer not to say / 답변하지 않음">Prefer not to say / 답변하지 않음</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="summary">Brief details / 간단한 설명
+        <span class="sub">A short note helps product and refund operations. Optional if you selected
+        “Prefer not to say.” / 제품·환불 운영에 참고할 한 줄 설명입니다. ‘답변하지 않음’은 생략할 수 있습니다.</span>
+      </label>
+      <textarea id="summary" name="summary" maxlength="800"></textarea>
+    </div>
+
+    <fieldset id="technical-fields" hidden>
+      <legend>Technical details / 기술 정보
+        <span class="sub">Required for activation or defect review; optional for a 14-day request.
+        / 활성화·결함 검토에는 필수이며 14일 보증 요청에는 선택 사항입니다.</span>
+      </legend>
+      <div class="field">
+        <label for="feature">Affected feature / 문제가 발생한 기능</label>
+        <input id="feature" name="feature" type="text" maxlength="200">
+      </div>
+      <div class="field">
+        <label for="expected">Expected result / 기대한 결과</label>
+        <textarea id="expected" name="expected" maxlength="600"></textarea>
+      </div>
+      <div class="field">
+        <label for="actual">Actual result / 실제 결과</label>
+        <textarea id="actual" name="actual" maxlength="600"></textarea>
+      </div>
+      <div class="field">
+        <label for="steps">Reproduction steps / 재현 순서</label>
+        <textarea id="steps" name="steps" maxlength="1000"></textarea>
+      </div>
+      <div class="field">
+        <label for="versions">OS, Chrome, and SnapHolt versions / 운영체제·Chrome·SnapHolt 버전</label>
+        <input id="versions" name="versions" type="text" maxlength="200"
+               placeholder="macOS 00 · Chrome 000 · SnapHolt 1.0.0">
+      </div>
+      <p class="help">Attach a screenshot after the email opens if it helps explain the issue.<br>
+         이메일이 열린 뒤 문제 설명에 도움이 되는 화면이 있으면 첨부하세요.</p>
+    </fieldset>
+
+    <div class="field">
+      <label class="check">
+        <input id="revoke" name="revoke" type="checkbox" required>
+        <span>I understand that a completed refund revokes the related license and paid benefits.<br>
+          환불 완료 시 관련 라이선스와 유료 혜택이 해제되는 것을 확인합니다.</span>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button class="primary" type="submit">Prepare refund email / 환불 메일 준비</button>
+      <button class="secondary" id="copy-request" type="button" hidden>Copy request / 요청 내용 복사</button>
+    </div>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="foot">
+    Do not send your license key, full card number, passwords, or a capture containing sensitive
+    information. / 라이선스 키, 전체 카드번호, 비밀번호 또는 민감정보가 포함된 캡처를 보내지 마세요.<br><br>
+    If an email app does not open, copy the request and send it to
+    <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a> with the subject
+    <code>[SnapHolt Refund]</code>.<br>
+    이메일 앱이 열리지 않으면 요청 내용을 복사해 같은 제목으로 보내주세요.<br><br>
+    <a href="terms.html">License Terms / 이용약관</a> ·
+    <a href="privacy.html">Privacy Policy / 개인정보처리방침</a>
+  </div>
+</main>
+
+<script>
+(function () {
+  var form = document.getElementById('refund-form');
+  var requestType = document.getElementById('request-type');
+  var reason = document.getElementById('reason');
+  var technical = document.getElementById('technical-fields');
+  var status = document.getElementById('status');
+  var copyButton = document.getElementById('copy-request');
+  var lastBody = '';
+
+  function needsTechnicalSection() {
+    return reason.value.indexOf('Technical issue') === 0 ||
+      requestType.value.indexOf('ACTIVATION|') === 0 ||
+      requestType.value.indexOf('DEFECT|') === 0;
+  }
+
+  function technicalEvidenceRequired() {
+    return requestType.value.indexOf('ACTIVATION|') === 0 ||
+      requestType.value.indexOf('DEFECT|') === 0;
+  }
+
+  function updateTechnicalFields() {
+    var show = needsTechnicalSection();
+    var required = technicalEvidenceRequired();
+    technical.hidden = !show;
+    ['feature', 'expected', 'actual', 'steps', 'versions'].forEach(function (id) {
+      document.getElementById(id).required = required;
+    });
+  }
+
+  function value(id) {
+    return document.getElementById(id).value.trim();
+  }
+
+  function makeBody() {
+    var lines = [
+      'SnapHolt refund request / 환불 요청',
+      '',
+      'Purchase email / 구매 이메일: ' + value('purchase-email'),
+      'Polar order ID / Polar 주문번호: ' + value('order-id'),
+      'Purchase date / 구매일: ' + (value('purchase-date') || 'Not provided / 미작성'),
+      'Request type / 요청 유형: ' + requestType.value.split('|').slice(1).join('|'),
+      'Reason / 사유: ' + reason.value,
+      'Brief details / 간단한 설명: ' + (value('summary') || 'Not provided / 미작성')
+    ];
+    if (needsTechnicalSection()) {
+      lines.push(
+        '',
+        '[Technical details / 기술 정보]',
+        'Affected feature / 문제가 발생한 기능: ' + value('feature'),
+        'Expected result / 기대한 결과: ' + value('expected'),
+        'Actual result / 실제 결과: ' + value('actual'),
+        'Reproduction steps / 재현 순서: ' + value('steps'),
+        'OS and versions / 운영체제·버전: ' + value('versions'),
+        'Screenshot / 화면: Attach if useful / 필요한 경우 첨부'
+      );
+    }
+    lines.push(
+      '',
+      'Acknowledgement / 확인: I understand that a completed refund revokes the related license and paid benefits.',
+      '환불 완료 시 관련 라이선스와 유료 혜택이 해제되는 것을 확인합니다.'
+    );
+    return lines.join('\n');
+  }
+
+  reason.addEventListener('change', function () {
+    updateTechnicalFields();
+  });
+
+  requestType.addEventListener('change', function () {
+    updateTechnicalFields();
+  });
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    lastBody = makeBody();
+    copyButton.hidden = false;
+    status.className = 'status';
+    status.textContent = 'Your email app should open. Review the message and press Send. / 이메일 앱에서 내용을 확인하고 전송하세요.';
+    var typeCode = requestType.value.split('|')[0] || 'OTHER';
+    var subject = '[SnapHolt Refund][' + typeCode + '] ' + value('order-id');
+    window.location.href = 'mailto:queue1.dev@gmail.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(lastBody);
+  });
+
+  copyButton.addEventListener('click', function () {
+    if (!lastBody) return;
+    if (!navigator.clipboard) {
+      status.className = 'status error';
+      status.textContent = 'Clipboard access is unavailable. Select and copy the email manually. / 클립보드를 사용할 수 없습니다.';
+      return;
+    }
+    navigator.clipboard.writeText(lastBody).then(function () {
+      status.className = 'status';
+      status.textContent = 'Request copied. / 요청 내용을 복사했습니다.';
+    }, function () {
+      status.className = 'status error';
+      status.textContent = 'Copy failed. Please try again. / 복사하지 못했습니다. 다시 시도하세요.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
