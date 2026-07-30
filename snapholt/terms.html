@@ -9,14 +9,17 @@
   :root { --bg:#fafafa; --ink:#18181b; --muted:#6b7280; --accent:#4f46e5; --line:#e5e7eb; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--ink);
-         font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple SD Gothic Neo",sans-serif; }
-  .wrap { max-width:720px; margin:0 auto; padding:48px 24px 96px; }
+         font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+         "Apple SD Gothic Neo",sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px 96px; }
   .crumb { font-size:14px; margin-bottom:28px; }
   .crumb a { color:var(--muted); text-decoration:none; }
   h1 { font-size:26px; margin:0 0 4px; }
   .eff { color:var(--muted); font-size:14px; margin:0 0 34px; }
-  h2 { font-size:20px; margin:40px 0 10px; padding-top:22px; border-top:1px solid var(--line); }
-  h3 { font-size:16.5px; margin:22px 0 6px; }
+  .notice { padding:15px 18px; border:1px solid #c7d2fe; border-radius:12px;
+            background:#eef2ff; color:#3730a3; }
+  h2 { font-size:20px; margin:42px 0 10px; padding-top:22px; border-top:1px solid var(--line); }
+  h3 { font-size:16.5px; margin:24px 0 6px; }
   p, li { color:#374151; }
   a { color:var(--accent); }
 </style>
@@ -25,131 +28,236 @@
 <div class="wrap">
   <nav class="crumb"><a href="./">← SnapHolt</a></nav>
   <h1>SnapHolt License Terms</h1>
-  <p class="eff">Effective date: 2026-07-19 · Queue1Lab</p>
+  <p class="eff">Effective date: 2026-07-30 · Publisher/licensor: Queue1Lab</p>
+
+  <p class="notice"><b>Important:</b> “Lifetime” means a non-expiring license for the paid
+     features of SnapHolt 1.x on supported environments. It does not promise perpetual browser
+     compatibility, uninterrupted service, ongoing updates, or any roadmap feature.</p>
 
   <h2>English</h2>
 
-  <h3>1. License grant</h3>
-  <p>Purchasing a SnapHolt Lifetime license grants you a personal, non-exclusive,
-     non-transferable license to use SnapHolt's paid features on up to <b>3 devices</b> you own
-     or control. The license is delivered as a license key and activated inside the extension.</p>
+  <h3>1. Scope and license grant</h3>
+  <p>These terms govern your use of SnapHolt. After a valid one-time purchase, Queue1Lab grants
+     you a personal, non-exclusive, non-transferable license to use the paid features of
+     SnapHolt 1.x on up to <b>three devices</b> you own or control. The license is delivered as
+     a key and activated in the extension. SnapHolt is the continuation of the earlier LongSnap
+     name; any valid LongSnap 1.x key issued for the same product remains valid for SnapHolt 1.x.</p>
 
-  <h3>2. What "Lifetime" means</h3>
-  <p>"Lifetime" refers to the <b>lifetime of the SnapHolt 1.x product line</b>, not a guarantee
-     that the software will operate forever under all circumstances. Your license includes
-     <b>all SnapHolt 1.x updates at no extra charge</b>. Substantially new products or future
-     major versions may be offered separately.</p>
+  <h3>2. What “Lifetime” means</h3>
+  <p>“Lifetime” is a non-expiring right to use the paid features made available in the SnapHolt
+     1.x product line, subject to these terms, supported environments, and license validation.
+     It includes 1.x updates and fixes <b>if and when Queue1Lab releases them</b>, without an
+     additional license fee. It does not promise a particular update schedule, every requested
+     feature, perpetual operation, or compatibility with future browsers and websites.
+     Substantially new products, future major versions, cloud monitoring, or other separately
+     operated services may require a separate plan or purchase.</p>
 
-  <h3>3. Pricing</h3>
-  <p>Prices may change over time. Time-limited launch pricing is exactly that — the regular
-     price may be higher later. Price changes never affect licenses already purchased.</p>
+  <h3>3. Current features and roadmap</h3>
+  <p>Purchase decisions should be based on features available at the time of purchase. Website,
+     store-listing, issue-tracker, or other roadmap statements describe direction only and are
+     not commitments to a feature, date, price, scope, or continued availability unless the
+     checkout expressly states otherwise.</p>
 
-  <h3>4. Platform dependency — no guarantee of perpetual compatibility</h3>
-  <p>SnapHolt is a Chrome extension and depends on the Chrome/Chromium browser, its extension
-     APIs, and the Chrome Web Store, all of which are controlled by third parties and change
-     over time. We make <b>reasonable efforts</b> to keep SnapHolt working with current stable
-     Chrome releases. However, we cannot guarantee continued operation if browser or store
-     changes make features technically infeasible, restrict required APIs, or discontinue
-     extension distribution. Such platform changes do not constitute a defect of the software.</p>
+  <h3>4. Browser dependency and local automation</h3>
+  <p>SnapHolt depends on Chrome/Chromium, extension APIs, websites, network access, and the
+     Chrome Web Store, which are controlled by third parties and may change. Queue1Lab makes
+     reasonable efforts to support current stable Chrome releases but does not guarantee
+     uninterrupted, error-free, or perpetual compatibility.</p>
+  <p>Scheduled capture and change detection are best-effort local automation features, not a
+     guaranteed 24/7 monitoring service or service-level agreement. The device must be available,
+     online where required, and able to run Chrome. Sleep, shutdown, browser scheduling,
+     overlapping jobs, expired sign-in sessions, network failures, site changes, permissions,
+     or access restrictions may delay or prevent a run. You are responsible for reviewing
+     whether a capture is complete and fit for your purpose.</p>
 
-  <h3>5. Third-party services</h3>
+  <h3>5. Local data and backups</h3>
+  <p>SnapHolt does not provide cloud backup or server-side recovery for captures, history,
+     schedules, or settings. Local data may be permanently lost if the extension is removed,
+     Chrome or extension data is cleared, a browser profile is reset, storage is evicted or
+     corrupted, or a device is lost or fails. Export important records and keep your own backups.
+     “Unlimited history” means SnapHolt imposes no item-count limit; browser, device, and storage
+     capacity still apply.</p>
+
+  <h3>6. Third-party services</h3>
   <ul>
-    <li><b>Payments &amp; license keys</b> are operated by our merchant of record (currently
-        Polar, polar.sh). If the payment provider discontinues service or becomes unavailable,
-        we will make reasonable efforts to honor existing licenses through alternative
-        activation or verification means, but temporary interruption of activation and
-        re-validation may occur. Already-activated devices keep working during provider outages
-        under the extension's built-in offline grace mechanism.</li>
-    <li><b>Trusted timestamps (TSA)</b> are an optional feature relying on a third-party public
-        timestamp authority; its availability is not guaranteed by us.</li>
+    <li><b>Payment and licensing:</b> purchases are sold and processed by our merchant of record,
+        currently <a href="https://polar.sh/" rel="noopener">Polar</a>. SnapHolt normally
+        validates an activated key no more than once per day. If validation cannot reach Polar,
+        paid features use a seven-day offline grace period measured from the last successful
+        validation. If the outage lasts longer, paid features may temporarily fall back to Free
+        until validation succeeds. Queue1Lab will make reasonable efforts to preserve valid
+        licenses if the provider changes, but uninterrupted activation or validation is not
+        guaranteed.</li>
+    <li><b>Trusted Timestamp:</b> this opt-in feature depends on a public third-party timestamp
+        authority. Its availability, response time, and continued operation are not guaranteed.
+        A timestamp records that the authority processed a submitted hash; it does not certify
+        the accuracy or legal status of the captured page.</li>
   </ul>
 
-  <h3>6. Refunds</h3>
-  <p>Purchases are processed by the merchant of record; refunds follow the payment provider's
-     refund policy at the time of purchase.</p>
+  <h3>7. Price, payment, and refunds</h3>
+  <p>The price and applicable tax shown by Polar at checkout control the transaction. Future
+     price changes do not alter a completed purchase. Billing and checkout are also subject to
+     <a href="https://polar.sh/legal/checkout-buyer-terms" rel="noopener">Polar’s Buyer Terms</a>.</p>
+  <p>You may request a full refund within <b>14 days of purchase</b> by emailing
+     <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a> with your Polar order ID.
+     After 14 days, refunds remain available where required by law and may be considered for
+     duplicate charges, non-delivery, or an unresolved material failure to perform as described.
+     Refunds are processed by Polar and may revoke the associated license. This policy does not
+     limit non-waivable consumer rights or remedies.</p>
 
-  <h3>7. Fair use</h3>
-  <p>License keys may not be shared, published, resold, or used beyond the device activation
-     limit. We may revoke keys that are abused (e.g., publicly leaked or mass-activated).</p>
+  <h3>8. License-key use and suspension</h3>
+  <p>Keys may not be shared, published, sold, or used beyond the activation limit. Queue1Lab may
+     suspend or revoke a key for a refund, chargeback, clear fraud, public leakage, mass
+     activation, or other material abuse. When practical, we will give notice and a reasonable
+     opportunity to correct a suspected violation; immediate action may be taken for fraud,
+     security, payment reversal, or urgent abuse.</p>
 
-  <h3>8. Disclaimer of warranty</h3>
-  <p>SnapHolt is provided <b>"as is"</b>, without warranties of any kind, express or implied,
-     including merchantability, fitness for a particular purpose, or non-infringement.
-     Evidence-mode outputs are technical integrity records; we make no representation about
-     their legal effect or admissibility in any jurisdiction.</p>
+  <h3>9. Warranty and evidence disclaimer</h3>
+  <p>To the maximum extent permitted by law, SnapHolt is provided “as is” and “as available,”
+     without implied warranties of merchantability, fitness for a particular purpose, or
+     non-infringement. Verification can confirm that image pixels match an embedded SnapHolt
+     export record. It does not prove that a page was complete or truthful, establish authorship,
+     or guarantee legal effect or admissibility in any jurisdiction. SnapHolt is not legal,
+     compliance, archival, or emergency-monitoring advice or service.</p>
 
-  <h3>9. Limitation of liability</h3>
-  <p>To the maximum extent permitted by law, Queue1Lab's total liability arising out of or
-     related to SnapHolt shall not exceed the amount you paid for your license, and we shall not
-     be liable for indirect, incidental, or consequential damages.</p>
+  <h3>10. Limitation of liability</h3>
+  <p>To the maximum extent permitted by law, Queue1Lab is not liable for indirect, incidental,
+     special, or consequential loss, lost profits, business interruption, missed website changes,
+     or lost data. Queue1Lab’s aggregate liability arising from SnapHolt will not exceed the
+     amount paid for the license giving rise to the claim.</p>
+  <p><b>Nothing in these terms excludes or limits</b> non-waivable consumer rights, statutory
+     remedies, or liability that cannot lawfully be excluded or limited, including liability for
+     fraud, wilful misconduct, gross negligence, or death or personal injury where applicable.</p>
 
-  <h3>10. Changes to these terms</h3>
-  <p>We may update these terms; the current version is always published at this page with its
-     effective date. Material changes will not retroactively reduce rights of existing license
-     holders.</p>
+  <h3>11. Changes and discontinuation</h3>
+  <p>The current terms are published here with an effective date. Material changes will not
+     retroactively reduce a completed purchase’s license rights. Queue1Lab may stop distributing
+     or actively supporting SnapHolt 1.x where reasonably necessary, including because of
+     platform or legal changes. Where practical, we will provide reasonable notice and make
+     reasonable efforts to keep valid existing licenses usable, but Section 4 still applies.</p>
 
-  <h3>11. Contact</h3>
-  <p><a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a> ·
-     <a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a></p>
+  <h3>12. Governing law and general terms</h3>
+  <p>These terms are governed by the laws of the Republic of Korea, without depriving a consumer
+     of mandatory protections available under the law of their residence. Courts with
+     jurisdiction under applicable law may hear disputes. If a provision is unenforceable, the
+     remaining provisions continue in effect. The English and Korean versions are intended to
+     have the same meaning; mandatory law controls if a translation conflict cannot be resolved.</p>
+
+  <h3>13. Support and contact</h3>
+  <p>Technical bugs and feature requests:
+     <a href="https://github.com/cs20030834/queue1lab/issues">public GitHub Issues</a>.
+     Billing, refund, privacy, and license matters:
+     <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>.
+     Do not post license keys, order IDs, or personal information in a public issue.</p>
 
   <h2>한국어</h2>
 
-  <h3>1. 라이선스 부여</h3>
-  <p>SnapHolt 라이프타임 라이선스를 구매하면 본인이 소유·관리하는 기기 <b>최대 3대</b>에서
-     SnapHolt의 유료 기능을 사용할 수 있는 개인용·비독점·양도 불가 라이선스가 부여됩니다.
-     라이선스는 키 형태로 제공되며 확장 안에서 활성화합니다.</p>
+  <p class="notice"><b>중요:</b> “Lifetime”은 지원 환경에서 SnapHolt 1.x 유료 기능을
+     사용할 수 있는 만료일 없는 라이선스를 뜻합니다. 브라우저의 영구 호환성, 중단 없는 서비스,
+     지속적인 업데이트 또는 향후 방향에 적힌 기능을 보장한다는 뜻은 아닙니다.</p>
 
-  <h3>2. "라이프타임"의 의미</h3>
-  <p>"라이프타임"은 <b>SnapHolt 1.x 제품 라인의 수명</b>을 의미하며, 어떤 상황에서도
-     소프트웨어가 영원히 동작함을 보증하는 것이 아닙니다. 라이선스에는 <b>SnapHolt 1.x의 모든
-     업데이트</b>가 추가 비용 없이 포함됩니다. 실질적으로 새로운 제품이나 향후 메이저 버전은
-     별도로 판매될 수 있습니다.</p>
+  <h3>1. 적용 범위와 라이선스 부여</h3>
+  <p>본 약관은 SnapHolt 이용에 적용됩니다. 유효한 1회 구매가 완료되면 Queue1Lab은 본인이
+     소유하거나 관리하는 기기 <b>최대 3대</b>에서 SnapHolt 1.x 유료 기능을 사용할 수 있는
+     개인용·비독점·양도 불가 라이선스를 부여합니다. 라이선스는 키 형태로 제공되어 확장 안에서
+     활성화됩니다. SnapHolt는 이전 LongSnap 이름으로 개발하던 동일 제품의 후속 이름이며, 같은
+     제품에 대해 발급된 유효한 LongSnap 1.x 키가 있다면 SnapHolt 1.x에서도 유효합니다.</p>
 
-  <h3>3. 가격</h3>
-  <p>가격은 변동될 수 있습니다. 기간 한정 런치 특가는 말 그대로 한시적이며, 이후 정가는 더
-     높을 수 있습니다. 가격 변경은 이미 구매한 라이선스에 영향을 주지 않습니다.</p>
+  <h3>2. “Lifetime”의 의미</h3>
+  <p>“Lifetime”은 본 약관, 지원 환경과 라이선스 검증을 조건으로 SnapHolt 1.x 제품 라인에서
+     제공되는 유료 기능을 사용할 수 있는 만료일 없는 권리를 뜻합니다. Queue1Lab이 1.x 업데이트나
+     수정판을 <b>실제로 제공하는 경우</b> 별도 라이선스 비용 없이 포함됩니다. 특정 업데이트 주기,
+     요청한 모든 기능, 영구 동작 또는 미래 브라우저·웹사이트와의 호환을 약속하지 않습니다.
+     실질적으로 새로운 제품, 향후 메이저 버전, 클라우드 감시 또는 별도 운영 서비스에는 다른
+     플랜이나 구매가 필요할 수 있습니다.</p>
 
-  <h3>4. 플랫폼 의존성 — 영구 호환성의 비보증</h3>
-  <p>SnapHolt는 Chrome 확장으로서 Chrome/Chromium 브라우저, 확장 API, Chrome 웹스토어에
-     의존하며, 이들은 모두 제3자가 통제하고 수시로 변경됩니다. 당사는 현재 안정 버전 Chrome과의
-     호환을 유지하기 위해 <b>합리적인 노력</b>을 기울입니다. 다만 브라우저·스토어의 변경으로
-     기능 구현이 기술적으로 불가능해지거나, 필요한 API가 제한되거나, 확장 배포 자체가 중단되는
-     경우까지 동작을 보증할 수는 없습니다. 이러한 플랫폼 변경은 소프트웨어의 하자가 아닙니다.</p>
+  <h3>3. 현재 기능과 향후 방향</h3>
+  <p>구매 결정은 구매 시점에 실제 제공되는 기능을 기준으로 해야 합니다. 홈페이지, 스토어 설명,
+     이슈 트래커 등에 적힌 향후 방향은 결제 화면에서 명시적으로 달리 밝히지 않는 한 기능·일정·가격·
+     범위·지속 제공에 대한 약속이 아닙니다.</p>
 
-  <h3>5. 제3자 서비스</h3>
+  <h3>4. 브라우저 의존성과 로컬 자동화</h3>
+  <p>SnapHolt는 Chrome/Chromium, 확장 API, 웹사이트, 네트워크와 Chrome 웹 스토어에 의존하며
+     이들은 제3자가 변경할 수 있습니다. Queue1Lab은 현재 안정 버전 Chrome을 지원하기 위해
+     합리적으로 노력하지만 중단·오류 없는 동작이나 영구 호환을 보장하지 않습니다.</p>
+  <p>예약 캡처와 변경 감지는 최선형 로컬 자동화 기능이며 24시간 무중단 감시 서비스나 SLA가
+     아닙니다. 기기가 사용 가능하고 필요한 경우 온라인이며 Chrome을 실행할 수 있어야 합니다.
+     절전·종료·브라우저 스케줄링·작업 중첩·로그인 만료·네트워크 장애·사이트 변경·권한·접근
+     제한으로 실행이 늦어지거나 실패할 수 있습니다. 캡처가 완전하고 목적에 적합한지는 사용자가
+     확인해야 합니다.</p>
+
+  <h3>5. 로컬 데이터와 백업</h3>
+  <p>SnapHolt는 캡처, 히스토리, 예약, 설정의 클라우드 백업이나 서버 복구를 제공하지 않습니다.
+     확장 삭제, Chrome 또는 확장 데이터 삭제, 브라우저 프로필 초기화, 저장소 정리·손상, 기기
+     분실·고장 시 로컬 데이터를 영구적으로 잃을 수 있습니다. 중요한 기록은 내보내고 별도로
+     백업하세요. “히스토리 무제한”은 SnapHolt가 항목 수 제한을 두지 않는다는 뜻이며 브라우저·
+     기기·저장 공간의 한계는 적용됩니다.</p>
+
+  <h3>6. 제3자 서비스</h3>
   <ul>
-    <li><b>결제·라이선스 키</b>는 판매자(Merchant of Record, 현재 Polar, polar.sh)가
-        운영합니다. 결제 사업자가 서비스를 중단하거나 이용 불가 상태가 되는 경우, 당사는 대체
-        활성화·검증 수단을 통해 기존 라이선스를 계속 인정하기 위한 합리적인 노력을 다하되,
-        활성화·재검증의 일시적 중단이 발생할 수 있습니다. 이미 활성화된 기기는 확장에 내장된
-        오프라인 유예 메커니즘에 따라 사업자 장애 중에도 계속 동작합니다.</li>
-    <li><b>신뢰 타임스탬프(TSA)</b>는 제3자 공개 타임스탬프 기관에 의존하는 선택 기능으로,
-        그 가용성을 당사가 보증하지 않습니다.</li>
+    <li><b>결제와 라이선스:</b> 구매는 판매자(Merchant of Record, 현재
+        <a href="https://polar.sh/" rel="noopener">Polar</a>)가 판매·처리합니다.
+        SnapHolt는 활성화한 키를 통상 하루 1회를 넘지 않게 검증합니다. Polar에 연결할 수 없으면
+        마지막 검증 성공 시점부터 7일 동안 유료 기능의 오프라인 유예를 적용합니다. 장애가 더
+        길어지면 검증이 다시 성공할 때까지 유료 기능이 일시적으로 Free 상태로 전환될 수 있습니다.
+        사업자 변경 시 유효한 라이선스를 유지하도록 합리적으로 노력하지만 활성화·검증의 중단 없는
+        이용을 보장하지 않습니다.</li>
+    <li><b>신뢰 타임스탬프:</b> 사용자가 직접 켜는 이 기능은 제3자 공개 타임스탬프 기관에
+        의존합니다. 가용성·응답 시간·지속 운영을 보장하지 않습니다. 타임스탬프는 기관이 제출된
+        해시를 처리했다는 사실을 기록할 뿐, 캡처 페이지의 정확성이나 법적 지위를 인증하지 않습니다.</li>
   </ul>
 
-  <h3>6. 환불</h3>
-  <p>구매는 판매자(MoR)가 처리하며, 환불은 구매 시점의 결제 사업자 환불 정책을 따릅니다.</p>
+  <h3>7. 가격·결제·환불</h3>
+  <p>거래에는 Polar 결제 화면에 표시되는 가격과 적용 세금이 우선합니다. 이후 가격 변경은 완료된
+     구매에 영향을 주지 않습니다. 결제에는
+     <a href="https://polar.sh/legal/checkout-buyer-terms" rel="noopener">Polar 구매자 약관</a>도
+     적용됩니다.</p>
+  <p>구매 후 <b>14일 이내</b>에 Polar 주문 ID와 함께
+     <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>으로 요청하면 전액 환불을
+     신청할 수 있습니다. 14일 이후에도 법에서 요구하는 경우 환불할 수 있으며, 중복 결제·미제공·
+     설명과 다른 중대한 기능 장애가 해결되지 않은 경우 개별 검토할 수 있습니다. 환불은 Polar가
+     처리하며 관련 라이선스가 취소될 수 있습니다. 본 정책은 법으로 배제할 수 없는 소비자 권리와
+     구제 수단을 제한하지 않습니다.</p>
 
-  <h3>7. 공정 이용</h3>
-  <p>라이선스 키의 공유·게시·재판매, 활성화 한도를 넘는 사용은 금지됩니다. 공개 유출·대량
-     활성화 등 남용이 확인된 키는 취소될 수 있습니다.</p>
+  <h3>8. 라이선스 키 사용과 정지</h3>
+  <p>키를 공유·게시·판매하거나 활성화 한도를 넘어 사용할 수 없습니다. 환불·지급 취소, 명백한
+     사기, 공개 유출, 대량 활성화 또는 그 밖의 중대한 남용이 있으면 키를 정지하거나 취소할 수
+     있습니다. 가능한 경우 사전 통지와 합리적인 시정 기회를 제공하되 사기·보안·지급 취소·긴급한
+     남용에는 즉시 조치할 수 있습니다.</p>
 
-  <h3>8. 보증의 부인</h3>
-  <p>SnapHolt는 <b>"있는 그대로(as is)"</b> 제공되며, 상품성·특정 목적 적합성·비침해를 포함한
-     어떠한 명시적·묵시적 보증도 하지 않습니다. 증거 모드 산출물은 기술적 무결성 기록이며,
-     특정 법역에서의 법적 효력이나 증거 능력을 보장하지 않습니다.</p>
+  <h3>9. 보증과 증거 기능에 관한 고지</h3>
+  <p>법이 허용하는 최대 범위에서 SnapHolt는 “있는 그대로” 및 “사용 가능한 상태로” 제공되며
+     상품성·특정 목적 적합성·비침해에 관한 묵시적 보증을 하지 않습니다. 검증 기능은 이미지 픽셀이
+     SnapHolt가 삽입한 내보내기 기록과 일치하는지 확인할 수 있을 뿐, 페이지가 완전하거나 진실함을
+     증명하거나 작성자를 확정하거나 특정 법역에서의 법적 효력·증거 능력을 보장하지 않습니다.
+     SnapHolt는 법률·규제 준수·공식 보관·긴급 감시 자문 또는 서비스가 아닙니다.</p>
 
-  <h3>9. 책임의 제한</h3>
-  <p>법이 허용하는 최대 범위에서, SnapHolt와 관련한 Queue1Lab의 총 책임은 귀하가 라이선스에
-     지불한 금액을 초과하지 않으며, 간접·부수·결과적 손해에 대해 책임지지 않습니다.</p>
+  <h3>10. 책임의 제한</h3>
+  <p>법이 허용하는 최대 범위에서 Queue1Lab은 간접·부수·특별·결과적 손해, 이익 손실, 영업 중단,
+     놓친 웹사이트 변경 또는 데이터 손실에 책임지지 않습니다. SnapHolt와 관련한 Queue1Lab의
+     총 책임은 해당 청구의 원인이 된 라이선스에 지급한 금액을 초과하지 않습니다.</p>
+  <p><b>본 약관의 어떠한 내용도</b> 법으로 배제할 수 없는 소비자 권리·법정 구제 수단 또는 책임을
+     배제하거나 제한하지 않습니다. 여기에는 해당되는 경우 사기, 고의, 중대한 과실, 사망 또는
+     신체 손해에 관한 책임이 포함됩니다.</p>
 
-  <h3>10. 약관의 변경</h3>
-  <p>본 약관은 변경될 수 있으며, 최신 버전은 항상 이 페이지에 발효일과 함께 게시됩니다. 중대한
-     변경이 기존 라이선스 보유자의 권리를 소급하여 축소하지 않습니다.</p>
+  <h3>11. 약관 변경과 지원 종료</h3>
+  <p>최신 약관은 발효일과 함께 이 페이지에 게시합니다. 중대한 변경으로 완료된 구매의 라이선스
+     권리를 소급해 축소하지 않습니다. 플랫폼·법률 변경 등 합리적인 필요가 있으면 SnapHolt 1.x의
+     배포나 적극적인 지원을 종료할 수 있습니다. 가능한 경우 합리적으로 사전 안내하고 기존의
+     유효한 라이선스를 계속 사용할 수 있도록 노력하지만 제4조의 제한은 그대로 적용됩니다.</p>
 
-  <h3>11. 문의</h3>
-  <p><a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a> ·
-     <a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a></p>
+  <h3>12. 준거법과 일반 조항</h3>
+  <p>본 약관에는 대한민국 법률이 적용되며, 소비자의 거주지 법률이 강제하는 보호를 박탈하지
+     않습니다. 관련 법률에 따라 관할권이 있는 법원이 분쟁을 심리할 수 있습니다. 일부 조항이
+     집행 불가능하더라도 나머지 조항은 유효합니다. 영문과 한국어는 같은 의미로 작성되었으며
+     번역 충돌을 해소할 수 없는 경우 강행 법규가 우선합니다.</p>
+
+  <h3>13. 지원과 문의</h3>
+  <p>기술 버그·기능 요청:
+     <a href="https://github.com/cs20030834/queue1lab/issues">공개 GitHub Issues</a>.
+     결제·환불·개인정보·라이선스:
+     <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>.
+     공개 이슈에 라이선스 키, 주문 ID 또는 개인정보를 게시하지 마세요.</p>
 </div>
 </body>
 </html>

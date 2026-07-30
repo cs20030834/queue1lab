@@ -9,98 +9,219 @@
   :root { --bg:#fafafa; --ink:#18181b; --muted:#6b7280; --accent:#4f46e5; --line:#e5e7eb; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--ink);
-         font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple SD Gothic Neo",sans-serif; }
-  .wrap { max-width:720px; margin:0 auto; padding:48px 24px 96px; }
+         font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+         "Apple SD Gothic Neo",sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px 96px; }
   .crumb { font-size:14px; margin-bottom:28px; }
   .crumb a { color:var(--muted); text-decoration:none; }
   h1 { font-size:26px; margin:0 0 4px; }
   .eff { color:var(--muted); font-size:14px; margin:0 0 34px; }
-  h2 { font-size:20px; margin:40px 0 10px; padding-top:22px; border-top:1px solid var(--line); }
-  h3 { font-size:16.5px; margin:22px 0 6px; }
+  .summary { padding:15px 18px; border:1px solid #c7d2fe; border-radius:12px;
+             background:#eef2ff; color:#3730a3; }
+  h2 { font-size:20px; margin:42px 0 10px; padding-top:22px; border-top:1px solid var(--line); }
+  h3 { font-size:16.5px; margin:24px 0 6px; }
   p, li { color:#374151; }
   a { color:var(--accent); }
-  b.no { color:#111; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <nav class="crumb"><a href="./">← SnapHolt</a></nav>
   <h1>SnapHolt Privacy Policy</h1>
-  <p class="eff">Effective date: 2026-07-29 · Queue1Lab</p>
+  <p class="eff">Effective date: 2026-07-30 · Controller/contact: Queue1Lab</p>
+
+  <p class="summary"><b>Short version:</b> SnapHolt does not upload your captures, page content,
+     MHTML, saved target URLs, or history to Queue1Lab. Core product data stays in your browser.
+     Limited data leaves the extension only for license verification with Polar and, when you
+     explicitly enable it, trusted timestamping with FreeTSA. Purchase and support records are
+     handled separately as described below.</p>
 
   <h2>English</h2>
-  <p>SnapHolt is a browser extension designed with privacy first.</p>
-  <p><b class="no">Data handled to provide SnapHolt's user-requested features:</b></p>
+
+  <h3>1. Data processed locally by the extension</h3>
   <ul>
-    <li><b>Website content:</b> captures, selected regions, annotations, optional original
-        MHTML, and derived SHA-256 hashes are processed on your device. Images and MHTML are
-        saved locally or to your Downloads folder and are never sent by SnapHolt.</li>
-    <li><b>Web history:</b> page titles, URLs, capture times, tags, and user-created scheduled
-        target URLs are stored only in the browser's local storage (IndexedDB) to provide
-        capture history, schedules, and local change detection.</li>
-    <li><b>Authentication information:</b> if you activate a Lifetime license, the license key
-        is stored locally and sent over HTTPS to Polar to validate your entitlement.</li>
-    <li>No analytics, no advertising SDKs, no remote code.</li>
+    <li><b>Capture content:</b> screenshots, selected regions, annotations, optional original
+        MHTML, thumbnails, and derived SHA-256 hashes are created on your device. Exported files
+        are written to your chosen location or Downloads folder.</li>
+    <li><b>History:</b> captured files or references, thumbnails, optional MHTML, page titles,
+        URLs, capture times, and tags are stored in the extension’s local IndexedDB database.</li>
+    <li><b>Schedules and settings:</b> scheduled target URLs, schedule options, preferences, and
+        local license state are stored in Chrome’s local extension storage.</li>
+    <li>SnapHolt contains no advertising SDK, analytics SDK, or remotely hosted executable code.</li>
   </ul>
-  <h3>Limited third-party transfers</h3>
-  <p>Captured images, original page content, and URLs are not sent to Queue1Lab or any
-     third-party server. SnapHolt makes only these narrow transfers:</p>
-  <h3>1 — License activation (purchasers only)</h3>
-  <p>If you purchase a Lifetime license and activate your key, the license key you enter is sent
-     to our payment processor Polar (polar.sh) to verify its validity
-     (re-checked at most once a day). Nothing other than the key is transmitted.</p>
-  <h3>2 — Trusted Timestamp (opt-in)</h3>
-  <p>Only when you explicitly enable the "Trusted Timestamp (TSA)" option in evidence mode, the
-     SHA-256 hash of your capture (a 64-character hex string) is sent to a public timestamp
-     authority (freetsa.org). The original image or page content cannot be reconstructed from
-     the hash. This option is off by default.</p>
-  <h3>Retention and deletion</h3>
-  <p>You can delete capture history at any time and deactivate a stored license key from
-     SnapHolt. Files exported to your Downloads folder remain under your control until you
-     delete them.</p>
-  <h3>Chrome Web Store Limited Use</h3>
-  <p>SnapHolt uses data only to provide its disclosed screenshot, export, scheduling,
-     local-change-detection, evidence, and license features. It does not sell user data or use
-     it for advertising, credit decisions, or unrelated purposes. SnapHolt's use of information
-     received from Chrome APIs adheres to the Chrome Web Store User Data Policy, including the
-     Limited Use requirements.</p>
-  <p>Contact: <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a></p>
+  <p>This local data is not automatically synced or backed up by Queue1Lab. Removing the
+     extension, clearing Chrome or extension data, resetting the browser profile, storage
+     eviction or corruption, or device loss may delete it permanently.</p>
+
+  <h3>2. Network requests made by the extension</h3>
+  <p><b>License activation and validation — purchasers only.</b> Over HTTPS, SnapHolt sends the
+     license key you enter, Queue1Lab/Polar organization or product identifiers, a product label,
+     and the Polar-issued activation identifier as needed to
+     <a href="https://polar.sh/" rel="noopener">Polar</a>. Validation normally occurs no more
+     than once per day while a key is active. The request does not include captures, MHTML, page
+     content, browsing history, saved target URLs, or annotations.</p>
+  <p>Like other internet services, Polar may receive ordinary connection information such as
+     IP address, browser, operating system, device type, and request timing under
+     <a href="https://polar.sh/legal/privacy-policy" rel="noopener">Polar’s Privacy Policy</a>.
+     Polar Software, Inc. is located in the United States and may process data in the United
+     States and other locations described in its policy.</p>
+  <p><b>Trusted Timestamp — optional and off by default.</b> Only after you enable this option,
+     SnapHolt sends an RFC 3161 request containing the SHA-256 digest of the capture to the public
+     <a href="https://freetsa.org/index_en.php" rel="noopener">FreeTSA</a> service. The original
+     image, MHTML, URL, and page content are not included in that request. The service may see
+     ordinary connection metadata. Queue1Lab does not control FreeTSA’s infrastructure,
+     availability, retention, or future policies.</p>
+
+  <h3>3. Purchase, order, and support information</h3>
+  <p>Polar is the merchant of record for purchases. At checkout, Polar and its payment processors
+     may collect your name, email address, country or billing information, payment information,
+     tax information, order details, and license status. Queue1Lab can view limited customer,
+     order, refund, and license information in the Polar supplier dashboard to deliver licenses,
+     provide support, prevent abuse, keep business records, and comply with law. Queue1Lab does
+     not receive your full payment-card number. Polar controls its checkout records under its
+     own privacy policy and legal retention duties.</p>
+  <p>If you email Queue1Lab, we process your address, message, attachments, and related support
+     history to answer and resolve the request. GitHub Issues are public; do not post a license
+     key, order ID, private capture, or other personal information there.</p>
+
+  <h3>4. How Queue1Lab uses and shares information</h3>
+  <p>Queue1Lab uses information only to provide and secure SnapHolt, validate entitlements,
+     fulfill purchases, provide support and refunds, prevent fraud or license abuse, maintain
+     required business records, and comply with law. Queue1Lab does not sell personal data or
+     use capture content, browsing activity, or purchase data for advertising or credit
+     decisions. Information is shared only with Polar, with FreeTSA at your direction, with
+     service providers needed to answer a request, or where legally required.</p>
+
+  <h3>5. Retention, deletion, and your choices</h3>
+  <ul>
+    <li>Delete local capture history from SnapHolt or remove the extension. Exported files remain
+        until you delete them from the device or destination you selected.</li>
+    <li>Deactivating a license asks Polar to release the activation and removes the local key and
+        activation state. If the request cannot reach Polar, the local copy is still removed.
+        Deactivation does not erase purchase, invoice, tax, or fraud-prevention records held by
+        Polar or Queue1Lab.</li>
+    <li>Queue1Lab keeps support and accessible order records only as long as reasonably needed for
+        support, licensing, refunds, dispute prevention, accounting, or legal obligations. Polar
+        applies its own retention policy.</li>
+  </ul>
+  <p>You may ask Queue1Lab to access, correct, or delete personal information under its control
+     by emailing <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>. We may need to
+     verify the request and may retain information where law or a legitimate dispute requires it.
+     For information controlled by Polar, use Polar’s customer portal or contact
+     <a href="mailto:privacy@polar.sh">privacy@polar.sh</a>.</p>
+
+  <h3>6. Security and international processing</h3>
+  <p>SnapHolt uses HTTPS for the external requests described above. No internet transmission or
+     storage method is completely secure, and you are responsible for securing your browser
+     profile, device, exported files, and license key. Polar and FreeTSA may process requests
+     outside your country. Do not enable the optional timestamp feature if you do not want the
+     capture digest and connection metadata sent to that public service.</p>
+
+  <h3>7. Chrome Web Store Limited Use</h3>
+  <p>SnapHolt uses information received from Chrome APIs only to provide or improve its disclosed
+     capture, editing, export, scheduling, local-change-detection, history, evidence, and license
+     features. SnapHolt’s use of information received from Google APIs adheres to the
+     <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use"
+        rel="noopener">Chrome Web Store User Data Policy</a>, including the Limited Use
+     requirements.</p>
+
+  <h3>8. Policy changes and contact</h3>
+  <p>This page shows the current policy and effective date. If a future version introduces a
+     materially different data practice, Queue1Lab will update this policy and provide any
+     in-product notice or consent required before the new practice begins.</p>
+  <p>Privacy contact: <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a></p>
 
   <h2>한국어</h2>
-  <p>SnapHolt는 프라이버시를 최우선으로 설계된 브라우저 확장입니다.</p>
-  <p><b class="no">사용자가 요청한 기능 제공을 위해 처리하는 데이터:</b></p>
+
+  <p class="summary"><b>요약:</b> SnapHolt는 캡처 이미지, 페이지 내용, MHTML, 저장한 대상
+     URL 또는 히스토리를 Queue1Lab로 업로드하지 않습니다. 핵심 제품 데이터는 브라우저 안에
+     저장됩니다. 확장에서 외부로 나가는 제한적 데이터는 Polar 라이선스 검증과, 사용자가 직접 켠
+     경우의 FreeTSA 신뢰 타임스탬프 요청뿐입니다. 구매·지원 기록은 아래와 같이 별도로 처리합니다.</p>
+
+  <h3>1. 확장이 로컬에서 처리하는 데이터</h3>
   <ul>
-    <li><b>웹사이트 콘텐츠:</b> 캡처 이미지, 선택 영역, 주석, 선택적으로 저장하는 원본
-        MHTML과 파생 SHA-256 해시는 사용자 기기에서 처리됩니다. 이미지와 MHTML은 로컬
-        또는 다운로드 폴더에 저장되며 SnapHolt가 서버로 전송하지 않습니다.</li>
-    <li><b>웹 기록:</b> 페이지 제목, URL, 캡처 시각, 태그와 사용자가 만든 예약 대상 URL은
-        캡처 기록·예약·로컬 변경 감지를 제공하기 위해 브라우저 내부 저장소(IndexedDB)에만
-        저장됩니다.</li>
-    <li><b>인증 정보:</b> Lifetime 라이선스를 활성화하면 라이선스 키를 로컬에 저장하고
-        사용 권한 확인을 위해 HTTPS로 Polar에 전송합니다.</li>
-    <li>분석 도구, 광고 SDK, 원격 코드가 일절 포함되어 있지 않습니다.</li>
+    <li><b>캡처 콘텐츠:</b> 스크린샷, 선택 영역, 주석, 선택적으로 저장하는 원본 MHTML, 썸네일과
+        파생 SHA-256 해시는 기기에서 생성됩니다. 내보낸 파일은 사용자가 선택한 위치 또는 다운로드
+        폴더에 기록됩니다.</li>
+    <li><b>히스토리:</b> 캡처 파일 또는 참조, 썸네일, 선택적 MHTML, 페이지 제목·URL, 캡처 시각과
+        태그는 확장의 로컬 IndexedDB 데이터베이스에 저장됩니다.</li>
+    <li><b>예약과 설정:</b> 예약 대상 URL, 예약 옵션, 환경설정과 로컬 라이선스 상태는 Chrome의
+        확장 로컬 저장소에 저장됩니다.</li>
+    <li>SnapHolt에는 광고 SDK, 분석 SDK 또는 원격에서 불러오는 실행 코드가 없습니다.</li>
   </ul>
-  <h3>제한적인 제3자 전송</h3>
-  <p>캡처 이미지, 원본 페이지 내용과 URL은 Queue1Lab 또는 제3자 서버로 전송되지
-     않습니다. SnapHolt가 수행하는 외부 전송은 다음 두 가지뿐입니다.</p>
-  <h3>① 라이선스 활성화 (구매자에 한함)</h3>
-  <p>Lifetime 라이선스를 구매해 키를 활성화하면, 입력한 라이선스 키가 결제 처리사인
-     Polar(polar.sh)의 라이선스 검증 API로 전송되어 유효성을 확인합니다
-     (이후 하루 1회 재검증). 키 외의 어떤 데이터도 전송되지 않습니다.</p>
-  <h3>② 신뢰 타임스탬프 (선택 기능)</h3>
-  <p>증거 모드에서 "신뢰 타임스탬프(TSA)" 옵션을 <b>사용자가 직접 켠 경우에만</b>, 캡처 이미지의
-     SHA-256 해시값(64자리 16진수 문자열)이 공개 타임스탬프 기관(freetsa.org)에 전송됩니다.
-     해시값으로는 원본 이미지나 페이지 내용을 복원할 수 없습니다. 이 옵션은 기본적으로 꺼져
-     있습니다.</p>
-  <h3>보관 및 삭제</h3>
-  <p>SnapHolt에서 캡처 기록을 언제든 삭제하고 저장된 라이선스 키를 비활성화할 수 있습니다.
-     다운로드 폴더로 내보낸 파일은 사용자가 직접 삭제할 때까지 사용자 관리 아래 남습니다.</p>
-  <h3>Chrome 웹 스토어 제한적 사용</h3>
-  <p>SnapHolt는 공개된 스크린샷·내보내기·예약·로컬 변경 감지·증거·라이선스 기능을
-     제공하는 데만 데이터를 사용합니다. 사용자 데이터를 판매하거나 광고, 신용도 판단 또는
-     관련 없는 목적으로 사용하지 않습니다. Chrome API에서 받은 정보의 사용은 제한적 사용
-     요건을 포함한 Chrome 웹 스토어 사용자 데이터 정책을 준수합니다.</p>
-  <p>문의: <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a></p>
+  <p>Queue1Lab은 이 로컬 데이터를 자동 동기화하거나 백업하지 않습니다. 확장 삭제, Chrome 또는
+     확장 데이터 삭제, 브라우저 프로필 초기화, 저장소 정리·손상 또는 기기 분실 시 영구적으로
+     삭제될 수 있습니다.</p>
+
+  <h3>2. 확장이 수행하는 네트워크 요청</h3>
+  <p><b>라이선스 활성화·검증 — 구매자에 한함.</b> SnapHolt는 HTTPS를 통해 사용자가 입력한
+     라이선스 키, Queue1Lab/Polar 조직 또는 제품 식별자, 제품 라벨과 Polar가 발급한 활성화
+     식별자를 필요한 범위에서 <a href="https://polar.sh/" rel="noopener">Polar</a>로 전송합니다.
+     키가 활성화된 동안 통상 하루 1회를 넘지 않게 검증합니다. 이 요청에는 캡처, MHTML, 페이지
+     내용, 웹 기록, 저장한 대상 URL 또는 주석이 포함되지 않습니다.</p>
+  <p>일반적인 인터넷 서비스와 마찬가지로 Polar는
+     <a href="https://polar.sh/legal/privacy-policy" rel="noopener">자체 개인정보처리방침</a>에
+     따라 IP 주소, 브라우저, 운영체제, 기기 유형과 요청 시각 같은 통상적인 접속 정보를 처리할 수
+     있습니다. Polar Software, Inc.는 미국 사업자이며 미국과 자체 정책에 기재된 다른 지역에서
+     데이터를 처리할 수 있습니다.</p>
+  <p><b>신뢰 타임스탬프 — 선택 기능이며 기본값은 꺼짐.</b> 사용자가 이 옵션을 켠 뒤에만
+     SnapHolt가 캡처의 SHA-256 해시를 담은 RFC 3161 요청을 공개
+     <a href="https://freetsa.org/index_en.php" rel="noopener">FreeTSA</a> 서비스로 전송합니다.
+     원본 이미지, MHTML, URL과 페이지 내용은 요청에 포함되지 않습니다. 서비스는 통상적인 접속
+     정보를 확인할 수 있습니다. Queue1Lab은 FreeTSA의 인프라, 가용성, 보관 또는 향후 정책을
+     통제하지 않습니다.</p>
+
+  <h3>3. 구매·주문·지원 정보</h3>
+  <p>Polar는 구매의 판매자(Merchant of Record)입니다. 결제 시 Polar와 결제 처리사는 이름,
+     이메일 주소, 국가 또는 청구 정보, 결제 정보, 세금 정보, 주문 내역과 라이선스 상태를 처리할
+     수 있습니다. Queue1Lab은 라이선스 제공, 지원, 부정 사용 방지, 사업 기록과 법적 의무 이행을
+     위해 Polar 공급자 대시보드에서 제한적인 고객·주문·환불·라이선스 정보를 확인할 수 있습니다.
+     Queue1Lab은 결제카드 전체 번호를 받지 않습니다. Polar는 자체 개인정보처리방침과 법적 보관
+     의무에 따라 결제 기록을 관리합니다.</p>
+  <p>Queue1Lab로 이메일을 보내면 답변과 해결을 위해 이메일 주소, 메시지, 첨부파일과 관련 지원
+     기록을 처리합니다. GitHub Issues는 공개됩니다. 라이선스 키, 주문 ID, 비공개 캡처 또는 다른
+     개인정보를 게시하지 마세요.</p>
+
+  <h3>4. Queue1Lab의 이용·공유 목적</h3>
+  <p>Queue1Lab은 SnapHolt 제공·보호, 이용 권한 검증, 구매 이행, 지원·환불, 사기·라이선스 남용
+     방지, 필요한 사업 기록 유지와 법적 의무 이행에만 정보를 사용합니다. 개인정보를 판매하지
+     않으며 캡처 내용, 웹 활동 또는 구매 정보를 광고나 신용도 판단에 사용하지 않습니다. 정보는
+     Polar, 사용자가 요청한 FreeTSA, 문의 해결에 필요한 서비스 제공자 또는 법에서 요구하는
+     경우에만 공유합니다.</p>
+
+  <h3>5. 보관·삭제와 사용자의 선택</h3>
+  <ul>
+    <li>SnapHolt에서 로컬 캡처 히스토리를 삭제하거나 확장을 제거할 수 있습니다. 내보낸 파일은
+        사용자가 기기 또는 선택한 저장 위치에서 직접 삭제할 때까지 남습니다.</li>
+    <li>라이선스 비활성화 시 Polar에 활성화 해제를 요청하고 로컬 키와 활성화 상태를 삭제합니다.
+        Polar에 연결하지 못해도 로컬 사본은 삭제합니다. 비활성화는 Polar 또는 Queue1Lab이 보유한
+        구매·영수증·세금·부정 사용 방지 기록을 삭제하지 않습니다.</li>
+    <li>Queue1Lab은 지원, 라이선스, 환불, 분쟁 방지, 회계 또는 법적 의무에 합리적으로 필요한
+        동안만 접근 가능한 지원·주문 기록을 보관합니다. Polar에는 자체 보관 정책이 적용됩니다.</li>
+  </ul>
+  <p>Queue1Lab이 관리하는 개인정보의 열람·정정·삭제는
+     <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>으로 요청할 수 있습니다.
+     본인 확인이 필요할 수 있으며 법률이나 정당한 분쟁 대응에 필요한 정보는 보관할 수 있습니다.
+     Polar가 관리하는 정보는 Polar 고객 포털 또는
+     <a href="mailto:privacy@polar.sh">privacy@polar.sh</a>을 이용하세요.</p>
+
+  <h3>6. 보안과 국외 처리</h3>
+  <p>SnapHolt는 위 외부 요청에 HTTPS를 사용합니다. 인터넷 전송이나 저장 방법은 완전히 안전할 수
+     없으며 브라우저 프로필, 기기, 내보낸 파일과 라이선스 키를 안전하게 관리할 책임은 사용자에게
+     있습니다. Polar와 FreeTSA는 사용자의 국가 밖에서 요청을 처리할 수 있습니다. 캡처 해시와
+     접속 정보가 공개 타임스탬프 서비스로 전송되는 것을 원하지 않으면 선택 기능을 켜지 마세요.</p>
+
+  <h3>7. Chrome 웹 스토어 제한적 사용</h3>
+  <p>SnapHolt는 Chrome API에서 받은 정보를 공개된 캡처·편집·내보내기·예약·로컬 변경 감지·
+     히스토리·증거·라이선스 기능을 제공하거나 개선하는 데만 사용합니다. Google API에서 받은
+     정보의 이용은 제한적 사용 요건을 포함한
+     <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use"
+        rel="noopener">Chrome 웹 스토어 사용자 데이터 정책</a>을 준수합니다.</p>
+
+  <h3>8. 방침 변경과 문의</h3>
+  <p>이 페이지에는 최신 방침과 발효일을 표시합니다. 향후 버전이 실질적으로 다른 데이터 처리
+     방식을 도입하면 처리 시작 전에 이 방침을 갱신하고 필요한 제품 내 안내나 동의를 받습니다.</p>
+  <p>개인정보 문의: <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a></p>
 </div>
 </body>
 </html>

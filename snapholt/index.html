@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="data:,">
-<title>SnapHolt — Full Page Screenshot & Web Capture</title>
-<meta name="description" content="SnapHolt captures full pages, schedules local snapshots, detects changes in selected regions, and keeps verifiable records. Images stay on your device.">
+<title>SnapHolt — Full Page Screenshot &amp; Web Capture</title>
+<meta name="description" content="SnapHolt captures full pages, schedules local snapshots, detects selected-region changes, and keeps verifiable records with local-first processing.">
 <style>
   :root { --bg:#fafafa; --ink:#18181b; --muted:#6b7280; --accent:#4f46e5; --line:#e5e7eb; }
   * { box-sizing:border-box; }
@@ -25,6 +25,7 @@
   img.shot { width:100%; border-radius:14px; border:1px solid var(--line); margin:10px 0 6px; }
   .cap { color:var(--muted); font-size:13.5px; margin:0 0 18px; }
   .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 22px; }
+  .card small { display:block; margin-top:12px; color:var(--muted); line-height:1.55; }
   a { color:var(--accent); }
   .cta { display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
          font-weight:700; padding:10px 22px; border-radius:10px; margin:6px 0 0; }
@@ -69,12 +70,11 @@
   </header>
   <p class="tag" data-i18n="tag">Capture now. Watch what changes.</p>
 
-  <a class="cta soon" href="#" data-i18n="cta">Chrome Web Store — preparing v1.1</a>
+  <a class="cta soon" href="#" data-i18n="cta">Chrome Web Store — preparing for release</a>
 
   <aside class="origin">
-    <p data-i18n="originBody">SnapHolt is the next name and release of LongSnap. The existing
-       <a href="../longsnap/">LongSnap review page</a> remains online while its Chrome Web Store
-       review is in progress.</p>
+    <p data-i18n="originBody">SnapHolt is the current product name. LongSnap was an earlier,
+       unpublished name and is now retired.</p>
   </aside>
 
   <h2 data-i18n="featuresH">What it does</h2>
@@ -87,29 +87,56 @@
     <li data-i18n="f6"><b>Scheduled capture &amp; change detection</b> — run hourly, daily, weekly, or once; monitor one or more regions, save only on change, and keep searchable history. Runs locally while Chrome is available.</li>
   </ul>
 
-  <img class="shot" src="img/screenshot-1-editor.png" alt="SnapHolt editor with a full-page capture and evidence band">
-  <p class="cap" data-i18n="cap1">The editor with a full-page capture — the evidence band at the bottom seals URL, time, and hash.</p>
+  <img class="shot" src="img/screenshot-1-editor.png" alt="SnapHolt editor with a full-page capture and integrity record band">
+  <p class="cap" data-i18n="cap1">The editor with a full-page capture — the record band stores URL, time, and hash for later integrity checks.</p>
   <img class="shot" src="img/screenshot-4-destroy.png" alt="SnapHolt destroy mode on a live page">
   <p class="cap" data-i18n="cap2">Destroy mode: doodles stick to the page and appear in captures.</p>
 
   <h2 data-i18n="privacyH">Privacy</h2>
   <div class="card" data-i18n="privacyBody">
-    Everything runs on your device. Captured images, page contents, and URLs are never sent to
-    any server. Read the full <a href="privacy.html">Privacy Policy</a>.
+    Core capture, editing, schedules, and history run on your device. License activation sends
+    limited license details to Polar; the optional Trusted Timestamp sends only a capture hash to
+    freetsa.org. Captured images, MHTML, page contents, and URLs are not sent to Queue1Lab.
+    Read the full <a href="privacy.html">Privacy Policy</a>.
   </div>
 
   <h2 data-i18n="pricingH">Pricing</h2>
   <div class="card" data-i18n="pricingBody">
     Free: unlimited full-page capture and editing, 3 verifiable records per month, batch up to 3 URLs, and 30 history items.<br>
-    <b>Lifetime license ($9.99, one-time)</b>: scheduled capture, local change detection,
-    unlimited records, batch capture and history, plus all destroy-mode weapons.
+    <b>Lifetime (SnapHolt 1.x) — planned launch price $9.99, one-time, up to 3 devices you own or control</b>: scheduled capture,
+    local change detection, unlimited records, batch capture and history, plus all destroy-mode
+    tools. Not yet on sale; final price and applicable tax will appear at checkout. Future roadmap
+    features are not included unless explicitly stated · <a href="terms.html">license terms</a>
+  </div>
+
+  <h2 data-i18n="limitsH">Good to know</h2>
+  <div class="card" data-i18n="limitsBody">
+    Scheduled jobs require Chrome and your device to be available and are not a guaranteed 24/7
+    monitoring service. Local history and settings can be lost if the extension is removed or
+    browser/device data is reset, so export important records. Verifiable records help check
+    integrity but do not guarantee legal admissibility · <a href="terms.html">details</a>
+  </div>
+
+  <h2 data-i18n="visionH">Where SnapHolt is headed</h2>
+  <div class="card" data-i18n="visionBody">
+    SnapHolt is exploring ways to make recurring documentation and verification easier.<br>
+    <b>Capture Recipe</b> — save capture areas, delays, exclusions, and output settings.<br>
+    <b>Short Clip</b> — record a brief active-tab flow and download it as a shareable local clip.<br>
+    <b>Change Timeline</b> — review more precise change history while filtering noise such as ads,
+    timestamps, and animation.<br>
+    If demand is validated, <b>SnapHolt Watch</b> may monitor pages even when your browser is
+    closed and notify you by email or webhook, potentially as a separate service or plan.
+    <small>Direction, not a promise: features, dates, scope, pricing, and availability may change
+    based on feedback and validation.</small>
   </div>
 
   <h2 data-i18n="supportH">Support</h2>
   <div class="card" data-i18n="supportBody">
-    Found a bug or have a request? Open an issue at
-    <a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a>
-    or email <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>.
+    Technical bugs and feature requests:
+    <a href="https://github.com/cs20030834/queue1lab/issues">public GitHub Issues</a>.
+    Billing, refunds, privacy, and license matters:
+    <a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>.
+    Never post a license key, order ID, private capture, or personal information in a public issue.
   </div>
 
   <footer>© 2026 Queue1Lab · <a href="privacy.html" data-i18n="privacyLink">Privacy Policy</a> · <a href="terms.html" data-i18n="termsLink">License Terms</a></footer>
@@ -120,14 +147,13 @@
   var ISSUES = '<a href="https://github.com/cs20030834/queue1lab/issues">github.com/cs20030834/queue1lab/issues</a>';
   var MAIL = '<a href="mailto:queue1.dev@gmail.com">queue1.dev@gmail.com</a>';
   var PP = function (label) { return '<a href="privacy.html">' + label + '</a>'; };
-  var LS = function (label) { return '<a href="../longsnap/">' + label + '</a>'; };
 
   var I18N = {
     "en": {
       title: "SnapHolt — Full Page Screenshot & Web Capture",
       tag: "Capture now. Watch what changes.",
-      cta: "Chrome Web Store — preparing v1.1",
-      originBody: "SnapHolt is the next name and release of LongSnap. The existing " + LS("LongSnap review page") + " remains online while its Chrome Web Store review is in progress.",
+      cta: "Chrome Web Store — preparing for release",
+      originBody: "SnapHolt is the current product name. LongSnap was an earlier, unpublished name and is now retired.",
       featuresH: "What it does",
       f1: "<b>Full-page capture</b> — scroll-stitches the entire page, handling lazy-loaded content, sticky headers, and inner-scrolling documents.",
       f2: "<b>Annotate &amp; export</b> — crop, pen, arrows, highlights, mosaic, numbered badges; export to PNG / JPG / PDF / clipboard, or skip the editor with quick save.",
@@ -135,221 +161,261 @@
       f4: "<b>Batch capture</b> — paste a list of URLs and get full-page captures as a zip or a single PDF.",
       f5: "<b>💥 Destroy mode</b> — blow off steam with a playful on-page overlay (and capture the aftermath).",
       f6: "<b>Scheduled capture &amp; change detection</b> — run hourly, daily, weekly, or once; monitor one or more regions, save only on change, and keep searchable history. Runs locally while Chrome is available.",
-      cap1: "The editor with a full-page capture — the evidence band at the bottom seals URL, time, and hash.",
+      cap1: "The editor with a full-page capture — the record band stores URL, time, and hash for later integrity checks.",
       cap2: "Destroy mode: doodles stick to the page and appear in captures.",
       privacyH: "Privacy",
-      privacyBody: "Everything runs on your device. Captured images, page contents, and URLs are never sent to any server. Read the full " + PP("Privacy Policy") + ".",
+      privacyBody: "Core capture, editing, schedules, and history run on your device. License activation sends limited license details to Polar; the optional Trusted Timestamp sends only a capture hash to freetsa.org. Captured images, MHTML, page contents, and URLs are not sent to Queue1Lab. Read the full " + PP("Privacy Policy") + ".",
       pricingH: "Pricing",
-      pricingBody: "Free: unlimited full-page capture and editing, 3 verifiable records per month, batch up to 3 URLs, and 30 history items.<br><b>Lifetime license — launch price $9.99, one-time</b> (regular price will be $19.99): scheduled capture, local change detection, unlimited records, batch capture and history, plus all destroy-mode weapons · <a href=\"terms.html\">license terms</a>",
+      pricingBody: "Free: unlimited full-page capture and editing, 3 verifiable records per month, batch capture up to 3 URLs, and the latest 30 history items.<br><b>Lifetime (SnapHolt 1.x) — planned launch price $9.99, one-time, up to 3 devices you own or control</b>: scheduled capture, local change detection, unlimited records, batch capture and history, plus all destroy-mode tools. Not yet on sale; final price and applicable tax will appear at checkout. Future roadmap features are not included unless explicitly stated · <a href=\"terms.html\">license terms</a>",
+      limitsH: "Good to know",
+      limitsBody: "Scheduled jobs require Chrome and your device to be available and are not a guaranteed 24/7 monitoring service. Local history and settings can be lost if the extension is removed or browser/device data is reset, so export important records. Verifiable records help check integrity but do not guarantee legal admissibility · <a href=\"terms.html\">details</a>",
+      visionH: "Where SnapHolt is headed",
+      visionBody: "SnapHolt is exploring ways to make recurring documentation and verification easier.<br><b>Capture Recipe</b> — save capture areas, delays, exclusions, and output settings.<br><b>Short Clip</b> — record a brief active-tab flow and download it as a shareable local clip.<br><b>Change Timeline</b> — review more precise change history while filtering noise such as ads, timestamps, and animation.<br>If demand is validated, <b>SnapHolt Watch</b> may monitor pages even when your browser is closed and notify you by email or webhook, potentially as a separate service or plan.<br><small>Direction, not a promise: features, dates, scope, pricing, and availability may change based on feedback and validation.</small>",
       supportH: "Support",
-      supportBody: "Found a bug or have a request? Open an issue at " + ISSUES + " or email " + MAIL + ".",
+      supportBody: "Technical bugs and feature requests: " + ISSUES + " (public). Billing, refunds, privacy, and license matters: " + MAIL + ". Never post a license key, order ID, private capture, or personal information in a public issue.",
       privacyLink: "Privacy Policy",
       termsLink: "License Terms",
     },
     "ko": {
-      title: "SnapHolt — 전체 페이지 스크린샷 & 증거 샷 Chrome 확장",
-      tag: "전체 페이지 스크린샷, 주석, 일괄 캡처 — 그리고 검증 가능한 증거 샷.",
-      cta: "Chrome 웹스토어 — 준비 중",
-      originBody: "SnapHolt는 LongSnap의 다음 이름이자 릴리스입니다. 현재 Chrome 웹스토어 심사가 진행되는 동안 기존 " + LS("LongSnap 심사 페이지") + "는 계속 공개됩니다.",
+      title: "SnapHolt — 전체 페이지 스크린샷 및 웹 캡처",
+      tag: "지금 캡처하고, 바뀐 것을 확인하세요.",
+      cta: "Chrome 웹 스토어 — 출시 준비 중",
+      originBody: "SnapHolt가 현재 제품명입니다. LongSnap은 공개 출시되지 않은 이전 이름이며 현재는 사용을 종료했습니다.",
       featuresH: "주요 기능",
       f1: "<b>전체 페이지 캡처</b> — 페이지 전체를 스크롤하며 이어 붙입니다. 지연 로딩 콘텐츠, 고정 헤더, 내부 스크롤 문서까지 처리합니다.",
       f2: "<b>주석 &amp; 내보내기</b> — 크롭·펜·화살표·하이라이트·모자이크·순번 배지. PNG / JPG / PDF / 클립보드로 내보내거나, 빠른 저장으로 에디터를 건너뜁니다.",
-      f3: "<b>증거 샷</b> — URL·캡처 시각·SHA-256 픽셀 해시를 이미지에 삽입하고, 옵션으로 RFC 3161 신뢰 타임스탬프와 페이지 원본 MHTML을 함께 보존합니다. 동봉된 검증 페이지에서 누구나 무결성을 확인할 수 있습니다.",
+      f3: "<b>검증 가능한 기록</b> — URL·캡처 시각·SHA-256 픽셀 해시를 이미지에 삽입하고, 옵션으로 RFC 3161 신뢰 타임스탬프와 페이지 원본 MHTML을 함께 보존합니다. 동봉된 검증 페이지에서 누구나 무결성을 확인할 수 있습니다.",
       f4: "<b>일괄 캡처</b> — URL 목록을 붙여넣으면 전체 페이지 캡처를 zip 또는 단일 PDF로 받습니다.",
       f5: "<b>💥 부수기 모드</b> — 장난스러운 페이지 위 오버레이로 스트레스를 날리세요 (그 흔적까지 캡처됩니다).",
       f6: "<b>예약 캡처 &amp; 변경 감지</b> — 매시간·매일·매주 또는 한 번 실행하고, 여러 영역을 감시해 변경 시에만 저장하며 검색 가능한 히스토리에 남깁니다. Chrome이 실행 가능한 상태에서 로컬로 동작합니다.",
-      cap1: "전체 페이지 캡처를 연 에디터 — 하단 증거 밴드가 URL·시각·해시를 봉인합니다.",
+      cap1: "전체 페이지 캡처를 연 에디터 — 하단 기록 밴드에 URL·시각·해시를 남겨 이후 무결성을 확인할 수 있습니다.",
       cap2: "부수기 모드: 낙서가 페이지에 붙어 캡처에도 그대로 나타납니다.",
       privacyH: "프라이버시",
-      privacyBody: "모든 처리는 기기 안에서 이뤄집니다. 캡처한 이미지, 페이지 내용, URL은 어떤 서버로도 전송되지 않습니다. 전체 " + PP("개인정보처리방침") + "을 확인하세요.",
+      privacyBody: "핵심 캡처·편집·예약·히스토리는 기기에서 처리됩니다. 라이선스 활성화 시 제한된 라이선스 정보가 Polar로 전송되고, 신뢰 타임스탬프를 직접 켠 경우에만 캡처 해시가 freetsa.org로 전송됩니다. 캡처 이미지, MHTML, 페이지 내용과 URL은 Queue1Lab로 전송되지 않습니다. 전체 " + PP("개인정보처리방침") + "을 확인하세요.",
       pricingH: "요금",
-      pricingBody: "무료: 전체 페이지 캡처·편집 무제한, 증거 샷 월 3회, 일괄 캡처 3개 URL까지.<br><b>라이프타임 라이선스 — 런치 특가 $9.99, 1회 결제</b> (추후 정가 $19.99로 인상 예정): 증거 샷·일괄 캡처 무제한 + 부수기 모드 전체 무기 · <a href=\"terms.html\">라이선스 약관</a>",
+      pricingBody: "무료: 전체 페이지 캡처·편집 무제한, 검증 가능한 기록 월 3회, 일괄 캡처 3개 URL까지, 최근 히스토리 30개.<br><b>Lifetime(SnapHolt 1.x) — 출시 예정가 $9.99, 1회 결제, 본인 소유·관리 기기 최대 3대</b>: 예약 캡처, 로컬 변경 감지, 기록·일괄 캡처·히스토리 무제한, 부수기 모드 전체 도구. 아직 판매 전이며 최종 가격과 적용 세금은 결제 화면에 표시됩니다. 향후 방향에 적힌 기능은 출시 시 명시하지 않는 한 포함을 보장하지 않습니다 · <a href=\"terms.html\">라이선스 약관</a>",
+      limitsH: "알아두세요",
+      limitsBody: "예약 작업은 Chrome과 기기가 실행 가능한 상태여야 하며 24시간 무중단 감시를 보장하지 않습니다. 확장 삭제나 브라우저·기기 데이터 초기화 시 로컬 히스토리와 설정을 잃을 수 있으므로 중요한 기록은 내보내 보관하세요. 검증 가능한 기록은 무결성 확인을 돕지만 법적 증거 능력을 보장하지 않습니다 · <a href=\"terms.html\">자세히 보기</a>",
+      visionH: "앞으로의 SnapHolt",
+      visionBody: "SnapHolt는 반복적인 기록과 검증을 더 쉽게 만드는 방향을 탐색하고 있습니다.<br><b>Capture Recipe</b> — 캡처 영역·지연·제외 요소·출력 설정을 저장합니다.<br><b>Short Clip</b> — 현재 탭의 짧은 흐름을 녹화해 공유하기 쉬운 로컬 클립으로 내려받습니다.<br><b>Change Timeline</b> — 광고·시각·애니메이션 같은 잡음을 걸러 더 정교한 변경 이력을 확인합니다.<br>수요가 확인되면 <b>SnapHolt Watch</b>로 브라우저가 꺼져 있어도 페이지를 확인하고 이메일·Webhook으로 알리는 별도 서비스나 플랜을 검토할 수 있습니다.<br><small>방향이지 약속은 아닙니다. 기능·일정·범위·가격·제공 여부는 피드백과 검증 결과에 따라 달라질 수 있습니다.</small>",
       supportH: "지원",
-      supportBody: "버그 제보나 기능 요청은 " + ISSUES + " 에 이슈를 열거나 " + MAIL + " 로 메일 주세요.",
+      supportBody: "기술 버그·기능 요청은 공개 " + ISSUES + " 에 남겨주세요. 결제·환불·개인정보·라이선스 문의는 " + MAIL + " 로 보내주세요. 공개 이슈에 라이선스 키, 주문 ID, 비공개 캡처 또는 개인정보를 게시하지 마세요.",
       privacyLink: "개인정보처리방침",
       termsLink: "이용약관",
     },
     "ja": {
-      title: "SnapHolt — フルページスクリーンショット & 証拠ショット Chrome拡張",
-      tag: "フルページスクリーンショット、注釈、一括キャプチャ — そして検証できる証拠ショット。",
-      cta: "Chrome ウェブストア — 近日公開",
-      originBody: "SnapHolt は LongSnap の次の名称とリリースです。現在の Chrome ウェブストア審査中は、既存の " + LS("LongSnap 審査ページ") + " を引き続き公開します。",
+      title: "SnapHolt — フルページスクリーンショット & ウェブキャプチャ",
+      tag: "今すぐキャプチャ。変化を見守る。",
+      cta: "Chrome ウェブストア — 公開準備中",
+      originBody: "SnapHolt は現在の製品名です。LongSnap は未公開だった以前の名称で、現在は廃止されています。",
       featuresH: "主な機能",
       f1: "<b>フルページキャプチャ</b> — ページ全体をスクロールしながらつなぎ合わせます。遅延読み込みコンテンツ、固定ヘッダー、内部スクロールの文書にも対応。",
       f2: "<b>注釈 &amp; エクスポート</b> — トリミング・ペン・矢印・ハイライト・モザイク・番号バッジ。PNG / JPG / PDF / クリップボードへ出力、クイック保存でエディタの省略も可能。",
-      f3: "<b>証拠ショット</b> — URL・撮影時刻・SHA-256ピクセルハッシュを画像に埋め込み、オプションでRFC 3161信頼タイムスタンプと元ページのMHTMLも保存。付属の検証ページで誰でも完全性を確認できます。",
+      f3: "<b>検証可能な記録</b> — URL・撮影時刻・SHA-256ピクセルハッシュを画像に埋め込み、オプションでRFC 3161信頼タイムスタンプと元ページのMHTMLも保存。付属の検証ページで誰でも完全性を確認できます。",
       f4: "<b>一括キャプチャ</b> — URLリストを貼り付けるだけで、フルページキャプチャをzipまたは1つのPDFで取得。",
       f5: "<b>💥 破壊モード</b> — 遊び心のあるページ上オーバーレイでストレス発散（その跡もキャプチャできます）。",
       f6: "<b>予約キャプチャ＆変更検知</b> — 毎時・毎日・毎週または一度だけ実行し、複数の領域を監視して変更時のみ保存。検索できる履歴に残します。Chrome が利用可能な間、ローカルで動作します。",
-      cap1: "フルページキャプチャを開いたエディタ — 下部の証拠バンドがURL・時刻・ハッシュを封印します。",
+      cap1: "フルページキャプチャを開いたエディタ — 下部の記録バンドにURL・時刻・ハッシュを保存し、後で整合性を確認できます。",
       cap2: "破壊モード：落書きはページに固定され、キャプチャにもそのまま写ります。",
       privacyH: "プライバシー",
-      privacyBody: "すべての処理は端末内で行われます。キャプチャした画像、ページ内容、URLがサーバーへ送信されることはありません。詳しくは" + PP("プライバシーポリシー") + "をご覧ください。",
+      privacyBody: "主要なキャプチャ、編集、スケジュール、履歴機能はお使いのデバイス上で動作します。ライセンス認証では、限定的なライセンス情報が Polar に送信されます。オプションの信頼できるタイムスタンプでは、キャプチャのハッシュのみが freetsa.org に送信されます。キャプチャ画像、MHTML、ページ内容、URL が Queue1Lab に送信されることはありません。全文は " + PP("プライバシーポリシー") + " をご覧ください。",
       pricingH: "料金",
-      pricingBody: "無料：フルページキャプチャと編集は無制限、証拠ショットは月3回、一括キャプチャは3 URLまで。<br><b>ライフタイムライセンス — ローンチ特価 $9.99（買い切り）</b>（今後、通常価格 $19.99 に値上げ予定）：証拠ショットと一括キャプチャが無制限、破壊モードの全武器も解放 · <a href=\"terms.html\">ライセンス規約</a>",
+      pricingBody: "無料：フルページキャプチャと編集は無制限、検証可能な記録は月3件、バッチキャプチャは最大3 URL、履歴は最新30件まで利用できます。<br><b>Lifetime (SnapHolt 1.x) — 公開時の予定価格 $9.99、1回払い、所有または管理する最大3台のデバイス</b>：予約キャプチャ、ローカル変更検出、記録・バッチキャプチャ・履歴の無制限利用、およびすべての破壊モードツール。まだ販売を開始していません。最終価格と適用される税額は購入手続き時に表示されます。将来のロードマップ機能は、明示されない限り含まれません · <a href=\"terms.html\">ライセンス条件</a>",
+      limitsH: "知っておきたいこと",
+      limitsBody: "スケジュール済みジョブの実行には Chrome とデバイスが利用可能な状態である必要があり、24時間365日の監視を保証するサービスではありません。拡張機能を削除した場合やブラウザまたはデバイスのデータをリセットした場合、ローカルの履歴や設定が失われる可能性があるため、重要な記録はエクスポートしてください。検証可能な記録は整合性の確認に役立ちますが、法的な証拠能力を保証するものではありません · <a href=\"terms.html\">詳細</a>",
+      visionH: "SnapHolt が目指す方向",
+      visionBody: "SnapHolt は、定期的な記録作成と検証をより簡単にする方法を検討しています。<br><b>Capture Recipe</b> — キャプチャ範囲、待機時間、除外対象、出力設定を保存します。<br><b>Short Clip</b> — アクティブタブでの短い操作フローを録画し、共有しやすいローカル動画としてダウンロードします。<br><b>Change Timeline</b> — 広告、タイムスタンプ、アニメーションなどのノイズを除外しながら、より正確な変更履歴を確認します。<br>需要が確認された場合、<b>SnapHolt Watch</b> はブラウザを閉じている間もページを監視し、メールまたは Webhook で通知する機能を、別のサービスまたはプランとして提供する可能性があります。<br><small>これは方向性であり、約束ではありません。機能、日程、範囲、価格、提供可否は、フィードバックと検証結果に応じて変更される場合があります。</small>",
       supportH: "サポート",
-      supportBody: "バグ報告やご要望は " + ISSUES + " にissueを作成するか、" + MAIL + " までメールをお送りください。",
+      supportBody: "技術的な不具合や機能要望は公開の " + ISSUES + " へ。支払い、返金、プライバシー、ライセンスに関するお問い合わせは " + MAIL + " へお送りください。公開 issue にライセンスキー、注文ID、非公開のキャプチャ、個人情報を投稿しないでください。",
       privacyLink: "プライバシーポリシー",
       termsLink: "利用規約",
     },
     "zh-TW": {
-      title: "SnapHolt — 整頁截圖與存證截圖 Chrome 擴充功能",
-      tag: "整頁截圖、標註、批次擷取 — 以及可驗證的存證截圖。",
-      cta: "Chrome 線上應用程式商店 — 即將推出",
-      originBody: "SnapHolt 是 LongSnap 的下一個名稱與版本。目前 Chrome 線上應用程式商店審查期間，現有的 " + LS("LongSnap 審查頁面") + " 會繼續公開。",
+      title: "SnapHolt — 整頁截圖與網頁擷取",
+      tag: "立即擷取，持續關注變更。",
+      cta: "Chrome 線上應用程式商店 — 準備上架中",
+      originBody: "SnapHolt 是目前的產品名稱。LongSnap 是先前未曾公開的名稱，現已停止使用。",
       featuresH: "功能特色",
       f1: "<b>整頁擷取</b> — 捲動拼接整個頁面，支援延遲載入內容、固定標題列與內部捲動文件。",
       f2: "<b>標註與匯出</b> — 裁切、畫筆、箭頭、螢光標記、馬賽克、編號徽章；匯出為 PNG / JPG / PDF / 剪貼簿，或用快速儲存略過編輯器。",
-      f3: "<b>存證截圖</b> — 將網址、擷取時間與 SHA-256 像素雜湊嵌入圖片，可選加上 RFC 3161 可信時間戳與頁面原始 MHTML。任何人都能在附帶的驗證頁面確認完整性。",
+      f3: "<b>可驗證記錄</b> — 將網址、擷取時間與 SHA-256 像素雜湊嵌入圖片，可選加上 RFC 3161 可信時間戳與頁面原始 MHTML。任何人都能在附帶的驗證頁面確認完整性。",
       f4: "<b>批次擷取</b> — 貼上網址清單，即可取得整頁截圖的 zip 或單一 PDF。",
       f5: "<b>💥 破壞模式</b> — 用趣味的頁面覆蓋層發洩壓力（還能把痕跡拍下來）。",
       f6: "<b>排程擷取與變更偵測</b> — 可每小時、每日、每週或單次執行，監看多個區域、僅在變更時儲存，並保留可搜尋的記錄。Chrome 可用時在本機執行。",
-      cap1: "編輯器中的整頁擷取 — 底部的存證帶封存網址、時間與雜湊值。",
+      cap1: "編輯器中的整頁擷取 — 底部記錄帶會保存網址、時間與雜湊值，以供日後檢查完整性。",
       cap2: "破壞模式：塗鴉固定在頁面上，擷取時也會一併入鏡。",
       privacyH: "隱私",
-      privacyBody: "所有處理都在你的裝置上完成。擷取的圖片、頁面內容與網址永遠不會傳送到任何伺服器。詳見完整的" + PP("隱私權政策") + "。",
+      privacyBody: "核心擷取、編輯、排程與歷史記錄功能都在您的裝置上執行。啟用授權時，會將有限的授權資訊傳送給 Polar；選用的可信時間戳記只會將擷取雜湊傳送給 freetsa.org。擷取的圖片、MHTML、頁面內容與 URL 不會傳送給 Queue1Lab。請閱讀完整的" + PP("隱私權政策") + "。",
       pricingH: "價格",
-      pricingBody: "免費：整頁擷取與編輯無限制、每月 3 次存證截圖、批次擷取最多 3 個網址。<br><b>終身授權 — 上市特價 $9.99（一次性付款）</b>（日後將調漲至定價 $19.99）：存證截圖與批次擷取無限制，並解鎖破壞模式全部武器 · <a href=\"terms.html\">授權條款</a>",
+      pricingBody: "免費：不限次數的完整頁面擷取與編輯、每月3筆可驗證記錄、最多3個 URL 的批次擷取，以及最近30筆歷史記錄。<br><b>Lifetime (SnapHolt 1.x) — 預計首發價格 $9.99，一次性付費，可用於您擁有或管理的最多3台裝置</b>：排程擷取、本機變更偵測、無限記錄、批次擷取與歷史記錄，以及所有銷毀模式工具。目前尚未開始銷售；最終價格與適用稅額將在結帳時顯示。未來的路線圖功能除非另有明確說明，否則不包含在內 · <a href=\"terms.html\">授權條款</a>",
+      limitsH: "重要須知",
+      limitsBody: "排程工作需要 Chrome 與您的裝置處於可用狀態，且不屬於保證全天候運作的監控服務。移除擴充功能或重設瀏覽器或裝置資料時，本機歷史記錄與設定可能遺失，因此請匯出重要記錄。可驗證記錄有助於檢查完整性，但不保證具備法律上的證據能力 · <a href=\"terms.html\">詳細資訊</a>",
+      visionH: "SnapHolt 的發展方向",
+      visionBody: "SnapHolt 正在探索讓定期記錄與驗證更容易的方法。<br><b>Capture Recipe</b> — 儲存擷取區域、延遲時間、排除項目與輸出設定。<br><b>Short Clip</b> — 錄製目前分頁中的簡短操作流程，並下載成方便分享的本機短片。<br><b>Change Timeline</b> — 過濾廣告、時間戳記與動畫等干擾項目，查看更精確的變更歷史。<br>如果需求獲得驗證，<b>SnapHolt Watch</b> 未來可能在瀏覽器關閉時持續監控頁面，並透過電子郵件或 Webhook 通知您；此功能可能以獨立服務或方案提供。<br><small>這是發展方向，不是承諾：功能、日期、範圍、價格與供應情況可能依據意見回饋及驗證結果調整。</small>",
       supportH: "支援",
-      supportBody: "發現錯誤或有建議？請到 " + ISSUES + " 開 issue，或寄信至 " + MAIL + "。",
+      supportBody: "技術錯誤與功能建議請提交到公開的 " + ISSUES + "。付款、退款、隱私與授權問題請寄信至 " + MAIL + "。請勿在公開 issue 中張貼授權金鑰、訂單 ID、私人擷取內容或個人資料。",
       privacyLink: "隱私權政策",
       termsLink: "授權條款",
     },
     "zh-CN": {
-      title: "SnapHolt — 整页截图与取证截图 Chrome 扩展",
-      tag: "整页截图、标注、批量截取 — 以及可验证的取证截图。",
-      cta: "Chrome 应用商店 — 即将上线",
-      originBody: "SnapHolt 是 LongSnap 的下一个名称与版本。当前 Chrome 应用商店审核期间，现有的 " + LS("LongSnap 审核页面") + " 会继续公开。",
+      title: "SnapHolt — 整页截图与网页截取",
+      tag: "立即截取，持续关注变化。",
+      cta: "Chrome 网上应用店 — 正在准备发布",
+      originBody: "SnapHolt 是当前的产品名称。LongSnap 是此前未曾公开的名称，现已停止使用。",
       featuresH: "功能特色",
       f1: "<b>整页截取</b> — 滚动拼接整个页面，支持懒加载内容、固定页头与内部滚动文档。",
       f2: "<b>标注与导出</b> — 裁剪、画笔、箭头、高亮、马赛克、编号徽章；导出为 PNG / JPG / PDF / 剪贴板，或用快速保存跳过编辑器。",
-      f3: "<b>取证截图</b> — 将网址、截取时间与 SHA-256 像素哈希嵌入图片，可选附加 RFC 3161 可信时间戳与页面原始 MHTML。任何人都可以在附带的验证页面确认完整性。",
+      f3: "<b>可验证记录</b> — 将网址、截取时间与 SHA-256 像素哈希嵌入图片，可选附加 RFC 3161 可信时间戳与页面原始 MHTML。任何人都可以在附带的验证页面确认完整性。",
       f4: "<b>批量截取</b> — 粘贴网址列表，即可获得整页截图的 zip 或单个 PDF。",
       f5: "<b>💥 破坏模式</b> — 用趣味的页面覆盖层释放压力（还能把痕迹拍下来）。",
       f6: "<b>定时捕获与变化检测</b> — 可每小时、每天、每周或单次运行，监控多个区域、仅在变化时保存，并保留可搜索的记录。Chrome 可用时在本地运行。",
-      cap1: "编辑器中的整页截图 — 底部的取证条封存网址、时间与哈希值。",
+      cap1: "编辑器中的整页截图 — 底部记录条会保存网址、时间和哈希值，以便日后检查完整性。",
       cap2: "破坏模式：涂鸦固定在页面上，截图时也会一并保留。",
       privacyH: "隐私",
-      privacyBody: "所有处理都在你的设备上完成。截取的图片、页面内容与网址永远不会发送到任何服务器。详见完整的" + PP("隐私政策") + "。",
+      privacyBody: "核心截取、编辑、定时任务和历史记录功能均在您的设备上运行。激活许可证时，会将有限的许可证信息发送给 Polar；可选的可信时间戳仅会将截取内容的哈希发送给 freetsa.org。截取的图片、MHTML、页面内容和 URL 不会发送给 Queue1Lab。请阅读完整的" + PP("隐私政策") + "。",
       pricingH: "价格",
-      pricingBody: "免费：整页截取与编辑不限量、每月 3 次取证截图、批量截取最多 3 个网址。<br><b>终身许可 — 首发特价 $9.99（一次性付款）</b>（后续将上调至定价 $19.99）：取证截图与批量截取不限量，并解锁破坏模式全部武器 · <a href=\"terms.html\">许可条款</a>",
+      pricingBody: "免费版：不限次数的完整页面截取与编辑、每月3条可验证记录、最多3个 URL 的批量截取，以及最近30条历史记录。<br><b>Lifetime (SnapHolt 1.x) — 计划首发价 $9.99，一次性付费，可用于您拥有或管理的最多3台设备</b>：定时截取、本地变化检测、无限记录、批量截取与历史记录，以及全部销毁模式工具。目前尚未开始销售；最终价格和适用税费将在结账时显示。未来路线图中的功能除非另有明确说明，否则不包含在内 · <a href=\"terms.html\">许可条款</a>",
+      limitsH: "重要须知",
+      limitsBody: "定时任务需要 Chrome 和您的设备处于可用状态，并非保证全天候运行的监控服务。移除扩展程序或重置浏览器或设备数据时，本地历史记录和设置可能丢失，因此请导出重要记录。可验证记录有助于检查完整性，但不保证具有法律可采性 · <a href=\"terms.html\">详细信息</a>",
+      visionH: "SnapHolt 的发展方向",
+      visionBody: "SnapHolt 正在探索让定期记录和验证更加便捷的方式。<br><b>Capture Recipe</b> — 保存截取区域、延迟时间、排除项和输出设置。<br><b>Short Clip</b> — 录制当前标签页中的简短操作流程，并下载为便于分享的本地短片。<br><b>Change Timeline</b> — 过滤广告、时间戳和动画等干扰内容，查看更精确的变化历史。<br>如果需求得到验证，<b>SnapHolt Watch</b> 未来可能在浏览器关闭时继续监控页面，并通过电子邮件或 Webhook 通知您；该功能可能作为独立服务或方案提供。<br><small>这是发展方向，并非承诺：功能、日期、范围、价格和可用性可能根据反馈和验证结果进行调整。</small>",
       supportH: "支持",
-      supportBody: "发现问题或有建议？请到 " + ISSUES + " 提 issue，或发邮件至 " + MAIL + "。",
+      supportBody: "技术问题和功能建议请提交至公开的 " + ISSUES + "。付款、退款、隐私和许可证问题请发送邮件至 " + MAIL + "。请勿在公开 issue 中发布许可证密钥、订单 ID、私密截图或个人信息。",
       privacyLink: "隐私政策",
       termsLink: "许可条款",
     },
     "es": {
-      title: "SnapHolt — Captura de página completa y capturas probatorias para Chrome",
-      tag: "Capturas de página completa, anotaciones, captura por lotes — y capturas probatorias que puedes verificar.",
-      cta: "Chrome Web Store — próximamente",
-      originBody: "SnapHolt es el próximo nombre y lanzamiento de LongSnap. La " + LS("página de revisión de LongSnap") + " seguirá disponible durante la revisión actual de Chrome Web Store.",
+      title: "SnapHolt — Captura de página completa y captura web para Chrome",
+      tag: "Captura ahora. Vigila qué cambia.",
+      cta: "Chrome Web Store — preparando el lanzamiento",
+      originBody: "SnapHolt es el nombre actual del producto. LongSnap fue un nombre anterior que nunca llegó a publicarse y ahora está retirado.",
       featuresH: "Qué hace",
       f1: "<b>Captura de página completa</b> — une la página entera mediante desplazamiento, gestionando contenido de carga diferida, encabezados fijos y documentos con desplazamiento interno.",
       f2: "<b>Anota y exporta</b> — recorte, lápiz, flechas, resaltados, mosaico, insignias numeradas; exporta a PNG / JPG / PDF / portapapeles, o salta el editor con el guardado rápido.",
-      f3: "<b>Capturas probatorias</b> — incrusta la URL, la hora de captura y un hash SHA-256 de los píxeles en la imagen, con un sello de tiempo confiable RFC 3161 opcional y el MHTML original de la página. Cualquiera puede verificar la integridad en la página de verificación incluida.",
+      f3: "<b>Registros verificables</b> — incrusta la URL, la hora de captura y un hash SHA-256 de los píxeles en la imagen, con un sello de tiempo confiable RFC 3161 opcional y el MHTML original de la página. Cualquiera puede verificar la integridad en la página de verificación incluida.",
       f4: "<b>Captura por lotes</b> — pega una lista de URLs y obtén capturas de página completa en un zip o un solo PDF.",
       f5: "<b>💥 Modo destrucción</b> — desahógate con una capa lúdica sobre la página (y captura el resultado).",
       f6: "<b>Captura programada y detección de cambios</b> — ejecuta cada hora, día, semana o una vez; vigila varias regiones, guarda solo al cambiar y conserva un historial buscable. Funciona localmente mientras Chrome está disponible.",
-      cap1: "El editor con una captura de página completa — la banda probatoria inferior sella URL, hora y hash.",
+      cap1: "El editor con una captura de página completa — la banda inferior registra URL, hora y hash para comprobar después la integridad.",
       cap2: "Modo destrucción: los garabatos se fijan a la página y aparecen en las capturas.",
       privacyH: "Privacidad",
-      privacyBody: "Todo se ejecuta en tu dispositivo. Las imágenes capturadas, el contenido de las páginas y las URLs nunca se envían a ningún servidor. Lee la " + PP("Política de privacidad") + " completa.",
+      privacyBody: "Las funciones principales de captura, edición, programación e historial se ejecutan en tu dispositivo. La activación de la licencia envía a Polar datos limitados de la licencia; la marca de tiempo de confianza opcional envía únicamente un hash de la captura a freetsa.org. Las imágenes capturadas, los archivos MHTML, el contenido de las páginas y las URL no se envían a Queue1Lab. Consulta la " + PP("Política de privacidad") + " completa.",
       pricingH: "Precios",
-      pricingBody: "Gratis: captura y edición de página completa ilimitadas, 3 capturas probatorias al mes, lotes de hasta 3 URLs.<br><b>Licencia de por vida — precio de lanzamiento $9.99, pago único</b> (el precio normal será $19.99): capturas probatorias y captura por lotes ilimitadas, más todas las armas del modo destrucción · <a href=\"terms.html\">términos de licencia</a>",
+      pricingBody: "Gratis: captura de página completa y edición ilimitadas, 3 registros verificables al mes, captura por lotes de hasta 3 URL y los 30 elementos más recientes del historial.<br><b>Lifetime (SnapHolt 1.x) — precio de lanzamiento previsto: $9.99, pago único, hasta 3 dispositivos que poseas o controles</b>: capturas programadas, detección local de cambios, registros, capturas por lotes e historial ilimitados, además de todas las herramientas del modo de destrucción. Todavía no está a la venta; el precio final y los impuestos aplicables se mostrarán al finalizar la compra. Las futuras funciones de la hoja de ruta no están incluidas salvo que se indique expresamente · <a href=\"terms.html\">términos de licencia</a>",
+      limitsH: "Importante",
+      limitsBody: "Las tareas programadas requieren que Chrome y tu dispositivo estén disponibles y no constituyen un servicio de supervisión ininterrumpida garantizado. El historial y los ajustes locales pueden perderse si se elimina la extensión o se restablecen los datos del navegador o del dispositivo, por lo que debes exportar los registros importantes. Los registros verificables ayudan a comprobar la integridad, pero no garantizan su admisibilidad legal · <a href=\"terms.html\">detalles</a>",
+      visionH: "Hacia dónde se dirige SnapHolt",
+      visionBody: "SnapHolt está explorando formas de facilitar la documentación y verificación periódicas.<br><b>Capture Recipe</b> — guarda áreas de captura, retrasos, exclusiones y ajustes de salida.<br><b>Short Clip</b> — graba un flujo breve en la pestaña activa y descárgalo como un clip local fácil de compartir.<br><b>Change Timeline</b> — consulta un historial de cambios más preciso mientras filtras elementos variables como anuncios, marcas de tiempo y animaciones.<br>Si se confirma la demanda, <b>SnapHolt Watch</b> podría supervisar páginas incluso cuando el navegador esté cerrado y enviarte avisos por correo electrónico o Webhook, posiblemente como un servicio o plan independiente.<br><small>Es una dirección, no una promesa: las funciones, fechas, alcance, precios y disponibilidad pueden cambiar según los comentarios y la validación.</small>",
       supportH: "Soporte",
-      supportBody: "¿Encontraste un error o tienes una sugerencia? Abre un issue en " + ISSUES + " o escribe a " + MAIL + ".",
+      supportBody: "Errores técnicos y solicitudes de funciones: " + ISSUES + " (público). Pagos, reembolsos, privacidad y licencias: " + MAIL + ". No publiques claves, ID de pedido, capturas privadas ni datos personales en un issue público.",
       privacyLink: "Política de privacidad",
       termsLink: "Términos de licencia",
     },
     "pt-BR": {
-      title: "SnapHolt — Captura de página inteira e capturas probatórias para Chrome",
-      tag: "Capturas de página inteira, anotações, captura em lote — e capturas probatórias que você pode verificar.",
-      cta: "Chrome Web Store — em breve",
-      originBody: "SnapHolt é o próximo nome e lançamento do LongSnap. A " + LS("página de análise do LongSnap") + " continuará disponível durante a análise atual da Chrome Web Store.",
+      title: "SnapHolt — Captura de página inteira e captura da web para Chrome",
+      tag: "Capture agora. Acompanhe o que muda.",
+      cta: "Chrome Web Store — preparando o lançamento",
+      originBody: "SnapHolt é o nome atual do produto. LongSnap foi um nome anterior que nunca chegou a ser publicado e agora foi descontinuado.",
       featuresH: "O que ele faz",
       f1: "<b>Captura de página inteira</b> — costura a página toda por rolagem, lidando com conteúdo de carregamento tardio, cabeçalhos fixos e documentos com rolagem interna.",
       f2: "<b>Anote e exporte</b> — corte, caneta, setas, destaques, mosaico, selos numerados; exporte para PNG / JPG / PDF / área de transferência, ou pule o editor com o salvamento rápido.",
-      f3: "<b>Capturas probatórias</b> — incorpora a URL, o horário da captura e um hash SHA-256 dos pixels na imagem, com carimbo de tempo confiável RFC 3161 opcional e o MHTML original da página. Qualquer pessoa pode verificar a integridade na página de verificação incluída.",
+      f3: "<b>Registros verificáveis</b> — incorpora a URL, o horário da captura e um hash SHA-256 dos pixels na imagem, com carimbo de tempo confiável RFC 3161 opcional e o MHTML original da página. Qualquer pessoa pode verificar a integridade na página de verificação incluída.",
       f4: "<b>Captura em lote</b> — cole uma lista de URLs e receba capturas de página inteira em um zip ou um único PDF.",
       f5: "<b>💥 Modo destruição</b> — desestresse com uma camada divertida sobre a página (e capture o estrago).",
       f6: "<b>Captura agendada e detecção de mudanças</b> — execute por hora, dia, semana ou uma vez; monitore várias áreas, salve só quando mudar e mantenha um histórico pesquisável. Funciona localmente enquanto o Chrome está disponível.",
-      cap1: "O editor com uma captura de página inteira — a faixa probatória na parte inferior sela URL, horário e hash.",
+      cap1: "O editor com uma captura de página inteira — a faixa inferior registra URL, horário e hash para verificações posteriores de integridade.",
       cap2: "Modo destruição: os rabiscos ficam presos à página e aparecem nas capturas.",
       privacyH: "Privacidade",
-      privacyBody: "Tudo roda no seu dispositivo. Imagens capturadas, conteúdo das páginas e URLs nunca são enviados a nenhum servidor. Leia a " + PP("Política de Privacidade") + " completa.",
+      privacyBody: "As principais funções de captura, edição, agendamento e histórico são executadas no seu dispositivo. A ativação da licença envia dados limitados da licença à Polar; o carimbo de tempo confiável opcional envia somente o hash da captura ao freetsa.org. Imagens capturadas, arquivos MHTML, conteúdo das páginas e URLs não são enviados à Queue1Lab. Leia a " + PP("Política de Privacidade") + " completa.",
       pricingH: "Preços",
-      pricingBody: "Grátis: captura e edição de página inteira ilimitadas, 3 capturas probatórias por mês, lote de até 3 URLs.<br><b>Licença vitalícia — preço de lançamento US$ 9,99, pagamento único</b> (o preço normal será US$ 19,99): capturas probatórias e captura em lote ilimitadas, além de todas as armas do modo destruição · <a href=\"terms.html\">termos da licença</a>",
+      pricingBody: "Grátis: captura de página inteira e edição ilimitadas, 3 registros verificáveis por mês, captura em lote de até 3 URLs e os 30 itens mais recentes do histórico.<br><b>Lifetime (SnapHolt 1.x) — preço de lançamento planejado: $9.99, pagamento único, até 3 dispositivos que você possua ou controle</b>: capturas agendadas, detecção local de alterações, registros, capturas em lote e histórico ilimitados, além de todas as ferramentas do modo de destruição. Ainda não está à venda; o preço final e os impostos aplicáveis serão exibidos no checkout. Recursos futuros do roteiro não estão incluídos, salvo quando isso for declarado expressamente · <a href=\"terms.html\">termos da licença</a>",
+      limitsH: "Importante saber",
+      limitsBody: "As tarefas agendadas exigem que o Chrome e o seu dispositivo estejam disponíveis e não constituem um serviço de monitoramento contínuo garantido. O histórico e as configurações locais podem ser perdidos se a extensão for removida ou se os dados do navegador ou do dispositivo forem redefinidos; portanto, exporte os registros importantes. Registros verificáveis ajudam a conferir a integridade, mas não garantem admissibilidade jurídica · <a href=\"terms.html\">detalhes</a>",
+      visionH: "Para onde o SnapHolt está caminhando",
+      visionBody: "O SnapHolt está explorando formas de facilitar a documentação e a verificação recorrentes.<br><b>Capture Recipe</b> — salve áreas de captura, atrasos, exclusões e configurações de saída.<br><b>Short Clip</b> — grave um fluxo curto na aba ativa e baixe-o como um clipe local fácil de compartilhar.<br><b>Change Timeline</b> — consulte um histórico de alterações mais preciso enquanto filtra ruídos como anúncios, carimbos de data e hora e animações.<br>Se a demanda for validada, o <b>SnapHolt Watch</b> poderá monitorar páginas mesmo quando o navegador estiver fechado e enviar notificações por e-mail ou Webhook, possivelmente como um serviço ou plano separado.<br><small>É uma direção, não uma promessa: recursos, datas, escopo, preços e disponibilidade podem mudar conforme o retorno dos usuários e a validação.</small>",
       supportH: "Suporte",
-      supportBody: "Encontrou um bug ou tem uma sugestão? Abra um issue em " + ISSUES + " ou envie um e-mail para " + MAIL + ".",
+      supportBody: "Bugs técnicos e pedidos de recursos: " + ISSUES + " (público). Pagamentos, reembolsos, privacidade e licenças: " + MAIL + ". Não publique chaves, IDs de pedido, capturas privadas ou dados pessoais em uma issue pública.",
       privacyLink: "Política de Privacidade",
       termsLink: "Termos da licença",
     },
     "de": {
-      title: "SnapHolt — Ganzseitige Screenshots & Beweis-Screenshots für Chrome",
-      tag: "Ganzseitige Screenshots, Anmerkungen, Stapelerfassung — und beweissichere Aufnahmen, die sich verifizieren lassen.",
-      cta: "Chrome Web Store — demnächst",
-      originBody: "SnapHolt ist der nächste Name und die nächste Version von LongSnap. Die " + LS("LongSnap-Prüfseite") + " bleibt während der laufenden Chrome-Web-Store-Prüfung online.",
+      title: "SnapHolt — Ganzseitige Screenshots & Webaufnahmen für Chrome",
+      tag: "Jetzt aufnehmen. Änderungen im Blick behalten.",
+      cta: "Chrome Web Store — Veröffentlichung wird vorbereitet",
+      originBody: "SnapHolt ist der aktuelle Produktname. LongSnap war ein früherer, nie veröffentlichter Name und wird nicht mehr verwendet.",
       featuresH: "Funktionen",
       f1: "<b>Ganzseitige Aufnahme</b> — fügt die gesamte Seite per Scrollen zusammen und meistert dabei nachladende Inhalte, fixierte Kopfzeilen und intern scrollende Dokumente.",
       f2: "<b>Kommentieren &amp; exportieren</b> — Zuschneiden, Stift, Pfeile, Markierungen, Mosaik, nummerierte Badges; Export als PNG / JPG / PDF / Zwischenablage oder per Schnellspeichern direkt am Editor vorbei.",
-      f3: "<b>Beweis-Screenshots</b> — bettet URL, Aufnahmezeit und einen SHA-256-Pixel-Hash ins Bild ein, optional mit vertrauenswürdigem RFC-3161-Zeitstempel und dem Original-MHTML der Seite. Jeder kann die Integrität auf der mitgelieferten Verifizierungsseite prüfen.",
+      f3: "<b>Überprüfbare Aufzeichnungen</b> — bettet URL, Aufnahmezeit und einen SHA-256-Pixel-Hash ins Bild ein, optional mit vertrauenswürdigem RFC-3161-Zeitstempel und dem Original-MHTML der Seite. Jeder kann die Integrität auf der mitgelieferten Verifizierungsseite prüfen.",
       f4: "<b>Stapelerfassung</b> — URL-Liste einfügen und ganzseitige Aufnahmen als Zip oder einzelnes PDF erhalten.",
       f5: "<b>💥 Zerstörungsmodus</b> — Dampf ablassen mit einem verspielten Overlay auf der Seite (und das Ergebnis festhalten).",
       f6: "<b>Geplante Aufnahmen &amp; Änderungserkennung</b> — stündlich, täglich, wöchentlich oder einmal ausführen, mehrere Bereiche beobachten, nur bei Änderungen speichern und im durchsuchbaren Verlauf behalten. Läuft lokal, solange Chrome verfügbar ist.",
-      cap1: "Der Editor mit einer ganzseitigen Aufnahme — das Beweisband unten versiegelt URL, Zeit und Hash.",
+      cap1: "Der Editor mit einer ganzseitigen Aufnahme — das Band unten speichert URL, Zeit und Hash für spätere Integritätsprüfungen.",
       cap2: "Zerstörungsmodus: Kritzeleien haften an der Seite und erscheinen in den Aufnahmen.",
       privacyH: "Datenschutz",
-      privacyBody: "Alles läuft auf deinem Gerät. Aufgenommene Bilder, Seiteninhalte und URLs werden niemals an einen Server gesendet. Lies die vollständige " + PP("Datenschutzerklärung") + ".",
+      privacyBody: "Die zentralen Funktionen für Aufnahme, Bearbeitung, Zeitplanung und Verlauf werden auf deinem Gerät ausgeführt. Bei der Lizenzaktivierung werden begrenzte Lizenzangaben an Polar gesendet; der optionale vertrauenswürdige Zeitstempel sendet ausschließlich einen Hash der Aufnahme an freetsa.org. Aufgenommene Bilder, MHTML-Dateien, Seiteninhalte und URLs werden nicht an Queue1Lab gesendet. Lies die vollständige " + PP("Datenschutzerklärung") + ".",
       pricingH: "Preise",
-      pricingBody: "Kostenlos: unbegrenzte ganzseitige Aufnahmen und Bearbeitung, 3 Beweis-Screenshots pro Monat, Stapel mit bis zu 3 URLs.<br><b>Lifetime-Lizenz — Einführungspreis $9.99, einmalig</b> (regulärer Preis künftig $19.99): unbegrenzte Beweis-Screenshots und Stapelerfassung, dazu alle Waffen des Zerstörungsmodus · <a href=\"terms.html\">Lizenzbedingungen</a>",
+      pricingBody: "Kostenlos: unbegrenzte Ganzseitenaufnahmen und Bearbeitung, 3 überprüfbare Nachweise pro Monat, Stapelerfassung von bis zu 3 URLs und die 30 neuesten Verlaufseinträge.<br><b>Lifetime (SnapHolt 1.x) — geplanter Einführungspreis: $9.99, einmalige Zahlung, auf bis zu drei eigenen oder von dir verwalteten Geräten</b>: geplante Aufnahmen, lokale Änderungserkennung, unbegrenzte Nachweise, Stapelerfassung und Verlauf sowie alle Werkzeuge des Zerstörungsmodus. Noch nicht erhältlich; der endgültige Preis und anfallende Steuern werden beim Bezahlvorgang angezeigt. Zukünftige Roadmap-Funktionen sind nur enthalten, wenn dies ausdrücklich angegeben wird · <a href=\"terms.html\">Lizenzbedingungen</a>",
+      limitsH: "Wichtig zu wissen",
+      limitsBody: "Geplante Aufgaben setzen voraus, dass Chrome und dein Gerät verfügbar sind, und stellen keinen garantiert rund um die Uhr verfügbaren Überwachungsdienst dar. Lokaler Verlauf und lokale Einstellungen können verloren gehen, wenn die Erweiterung entfernt oder Browser- beziehungsweise Gerätedaten zurückgesetzt werden. Exportiere daher wichtige Nachweise. Überprüfbare Nachweise helfen bei der Integritätsprüfung, garantieren jedoch keine rechtliche Zulässigkeit als Beweismittel · <a href=\"terms.html\">Details</a>",
+      visionH: "Wohin sich SnapHolt entwickelt",
+      visionBody: "SnapHolt prüft Möglichkeiten, wiederkehrende Dokumentation und Überprüfung einfacher zu machen.<br><b>Capture Recipe</b> — speichere Aufnahmebereiche, Verzögerungen, Ausschlüsse und Ausgabeeinstellungen.<br><b>Short Clip</b> — zeichne einen kurzen Ablauf im aktiven Tab auf und lade ihn als teilbaren lokalen Clip herunter.<br><b>Change Timeline</b> — prüfe einen präziseren Änderungsverlauf und filtere dabei Störeinflüsse wie Werbung, Zeitstempel und Animationen heraus.<br>Wenn sich ausreichende Nachfrage bestätigt, könnte <b>SnapHolt Watch</b> Seiten auch bei geschlossenem Browser überwachen und dich per E-Mail oder Webhook benachrichtigen, möglicherweise als separater Dienst oder Tarif.<br><small>Eine mögliche Richtung, kein Versprechen: Funktionen, Termine, Umfang, Preise und Verfügbarkeit können sich aufgrund von Feedback und Validierung ändern.</small>",
       supportH: "Support",
-      supportBody: "Fehler gefunden oder einen Wunsch? Eröffne ein Issue unter " + ISSUES + " oder schreib an " + MAIL + ".",
+      supportBody: "Technische Fehler und Funktionswünsche: " + ISSUES + " (öffentlich). Zahlung, Erstattung, Datenschutz und Lizenz: " + MAIL + ". Veröffentliche niemals Schlüssel, Bestell-ID, private Aufnahmen oder personenbezogene Daten in einem öffentlichen Issue.",
       privacyLink: "Datenschutzerklärung",
       termsLink: "Lizenzbedingungen",
     },
     "fr": {
-      title: "SnapHolt — Capture de page entière et captures probantes pour Chrome",
-      tag: "Captures de page entière, annotations, capture par lots — et des captures probantes que vous pouvez vérifier.",
-      cta: "Chrome Web Store — bientôt disponible",
-      originBody: "SnapHolt est le prochain nom et la prochaine version de LongSnap. La " + LS("page LongSnap en cours d'examen") + " reste en ligne pendant l'examen actuel du Chrome Web Store.",
+      title: "SnapHolt — Capture de page entière et capture web pour Chrome",
+      tag: "Capturez maintenant. Surveillez ce qui change.",
+      cta: "Chrome Web Store — lancement en préparation",
+      originBody: "SnapHolt est le nom actuel du produit. LongSnap était un ancien nom qui n’a jamais été publié et qui est désormais retiré.",
       featuresH: "Fonctionnalités",
       f1: "<b>Capture de page entière</b> — assemble toute la page par défilement, en gérant le contenu à chargement différé, les en-têtes fixes et les documents à défilement interne.",
       f2: "<b>Annoter &amp; exporter</b> — recadrage, stylo, flèches, surlignage, mosaïque, badges numérotés ; export en PNG / JPG / PDF / presse-papiers, ou enregistrement rapide sans passer par l'éditeur.",
-      f3: "<b>Captures probantes</b> — intègre l'URL, l'heure de capture et un hachage SHA-256 des pixels dans l'image, avec en option un horodatage de confiance RFC 3161 et le MHTML d'origine de la page. Chacun peut vérifier l'intégrité sur la page de vérification fournie.",
+      f3: "<b>Enregistrements vérifiables</b> — intègre l'URL, l'heure de capture et un hachage SHA-256 des pixels dans l'image, avec en option un horodatage de confiance RFC 3161 et le MHTML d'origine de la page. Chacun peut vérifier l'intégrité sur la page de vérification fournie.",
       f4: "<b>Capture par lots</b> — collez une liste d'URL et obtenez des captures de page entière en zip ou en un seul PDF.",
       f5: "<b>💥 Mode destruction</b> — défoulez-vous avec un calque ludique sur la page (et capturez le résultat).",
       f6: "<b>Captures planifiées et détection des changements</b> — exécution horaire, quotidienne, hebdomadaire ou unique, surveillance de plusieurs zones, enregistrement uniquement en cas de changement et historique consultable. Fonctionne localement lorsque Chrome est disponible.",
-      cap1: "L'éditeur avec une capture de page entière — le bandeau probant en bas scelle l'URL, l'heure et le hachage.",
+      cap1: "L’éditeur avec une capture de page entière — le bandeau inférieur enregistre l’URL, l’heure et l’empreinte pour vérifier ensuite l’intégrité.",
       cap2: "Mode destruction : les gribouillis restent fixés à la page et apparaissent dans les captures.",
       privacyH: "Confidentialité",
-      privacyBody: "Tout s'exécute sur votre appareil. Les images capturées, le contenu des pages et les URL ne sont jamais envoyés à aucun serveur. Consultez la " + PP("politique de confidentialité") + " complète.",
+      privacyBody: "Les principales fonctions de capture, de modification, de planification et d’historique s’exécutent sur votre appareil. L’activation de la licence transmet à Polar des informations limitées sur la licence ; l’horodatage de confiance facultatif transmet uniquement une empreinte de la capture à freetsa.org. Les images capturées, les fichiers MHTML, le contenu des pages et les URL ne sont pas transmis à Queue1Lab. Consultez la " + PP("politique de confidentialité") + " complète.",
       pricingH: "Tarifs",
-      pricingBody: "Gratuit : capture et édition de page entière illimitées, 3 captures probantes par mois, lots jusqu'à 3 URL.<br><b>Licence à vie — prix de lancement 9,99 $, paiement unique</b> (le prix passera ensuite à 19,99 $) : captures probantes et capture par lots illimitées, plus toutes les armes du mode destruction · <a href=\"terms.html\">conditions de licence</a>",
+      pricingBody: "Gratuit : captures pleine page et modification illimitées, 3 enregistrements vérifiables par mois, capture par lot de 3 URL au maximum et les 30 derniers éléments de l’historique.<br><b>Lifetime (SnapHolt 1.x) — prix de lancement envisagé : $9.99, paiement unique, sur un maximum de 3 appareils que vous possédez ou contrôlez</b> : captures planifiées, détection locale des changements, enregistrements, captures par lot et historique illimités, ainsi que tous les outils du mode destruction. Le produit n’est pas encore commercialisé ; le prix définitif et les taxes applicables seront affichés lors du paiement. Les futures fonctionnalités de la feuille de route ne sont pas incluses sauf indication expresse · <a href=\"terms.html\">conditions de licence</a>",
+      limitsH: "À savoir",
+      limitsBody: "Les tâches planifiées nécessitent que Chrome et votre appareil soient disponibles et ne constituent pas un service de surveillance permanente garanti. L’historique et les réglages locaux peuvent être perdus si l’extension est supprimée ou si les données du navigateur ou de l’appareil sont réinitialisées ; exportez donc les enregistrements importants. Les enregistrements vérifiables aident à contrôler l’intégrité, mais ne garantissent pas leur recevabilité juridique · <a href=\"terms.html\">détails</a>",
+      visionH: "La direction envisagée pour SnapHolt",
+      visionBody: "SnapHolt explore des moyens de simplifier la documentation et la vérification récurrentes.<br><b>Capture Recipe</b> — enregistrez les zones de capture, les délais, les exclusions et les paramètres de sortie.<br><b>Short Clip</b> — enregistrez une courte séquence dans l’onglet actif et téléchargez-la sous forme de clip local facile à partager.<br><b>Change Timeline</b> — consultez un historique des changements plus précis tout en filtrant les éléments variables tels que les publicités, les horodatages et les animations.<br>Si la demande est confirmée, <b>SnapHolt Watch</b> pourrait surveiller des pages même lorsque votre navigateur est fermé et vous avertir par e-mail ou Webhook, éventuellement sous la forme d’un service ou d’une offre distincte.<br><small>Il s’agit d’une direction envisagée, sans engagement : les fonctionnalités, les dates, le périmètre, les prix et la disponibilité peuvent évoluer selon les retours et les résultats de validation.</small>",
       supportH: "Assistance",
-      supportBody: "Un bug ou une suggestion ? Ouvrez un ticket sur " + ISSUES + " ou écrivez à " + MAIL + ".",
+      supportBody: "Bugs techniques et demandes de fonctions : " + ISSUES + " (public). Paiement, remboursement, confidentialité et licence : " + MAIL + ". Ne publiez jamais de clé, d’ID de commande, de capture privée ni de données personnelles dans un ticket public.",
       privacyLink: "Politique de confidentialité",
       termsLink: "Conditions de licence",
     },
     "ru": {
-      title: "SnapHolt — Скриншот всей страницы и доказательные снимки для Chrome",
-      tag: "Скриншоты всей страницы, аннотации, пакетный захват — и доказательные снимки, которые можно проверить.",
-      cta: "Chrome Web Store — скоро",
-      originBody: "SnapHolt — следующее название и версия LongSnap. " + LS("Страница проверки LongSnap") + " останется доступной, пока идёт текущая проверка в Chrome Web Store.",
+      title: "SnapHolt — Скриншот всей страницы и веб-захват для Chrome",
+      tag: "Делайте снимки сейчас. Отслеживайте изменения.",
+      cta: "Chrome Web Store — подготовка к выпуску",
+      originBody: "SnapHolt — текущее название продукта. LongSnap было прежним, так и не опубликованным названием и больше не используется.",
       featuresH: "Возможности",
       f1: "<b>Захват всей страницы</b> — сшивает страницу целиком при прокрутке, справляясь с ленивой загрузкой, закреплёнными шапками и документами с внутренней прокруткой.",
       f2: "<b>Аннотации и экспорт</b> — обрезка, перо, стрелки, выделение, мозаика, нумерованные метки; экспорт в PNG / JPG / PDF / буфер обмена или быстрое сохранение без редактора.",
-      f3: "<b>Доказательные снимки</b> — встраивает в изображение URL, время съёмки и SHA-256-хеш пикселей, опционально — доверенную метку времени RFC 3161 и исходный MHTML страницы. Любой может проверить целостность на прилагаемой странице проверки.",
+      f3: "<b>Проверяемые записи</b> — встраивает в изображение URL, время съёмки и SHA-256-хеш пикселей, опционально — доверенную метку времени RFC 3161 и исходный MHTML страницы. Любой может проверить целостность на прилагаемой странице проверки.",
       f4: "<b>Пакетный захват</b> — вставьте список URL и получите снимки всех страниц в zip или одном PDF.",
       f5: "<b>💥 Режим разрушения</b> — выпустите пар с игривым оверлеем поверх страницы (и заснимите результат).",
       f6: "<b>Снимки по расписанию и отслеживание изменений</b> — запускайте каждый час, день, неделю или один раз; следите за несколькими областями, сохраняйте только изменения и используйте поиск по истории. Работает локально, пока доступен Chrome.",
       cap1: "Редактор со снимком всей страницы — доказательная полоса внизу фиксирует URL, время и хеш.",
       cap2: "Режим разрушения: рисунки крепятся к странице и попадают в снимки.",
       privacyH: "Конфиденциальность",
-      privacyBody: "Всё выполняется на вашем устройстве. Снимки, содержимое страниц и URL никогда не отправляются на серверы. Полная " + PP("политика конфиденциальности") + ".",
+      privacyBody: "Основные функции создания и редактирования снимков, планирования и ведения истории работают на вашем устройстве. При активации лицензии ограниченный набор лицензионных данных передаётся Polar; необязательная доверенная метка времени отправляет на freetsa.org только хеш снимка. Снимки, файлы MHTML, содержимое страниц и URL-адреса не передаются Queue1Lab. Ознакомьтесь с полной " + PP("Политикой конфиденциальности") + ".",
       pricingH: "Цены",
-      pricingBody: "Бесплатно: захват и редактирование всей страницы без ограничений, 3 доказательных снимка в месяц, пакет до 3 URL.<br><b>Пожизненная лицензия — стартовая цена $9.99, разовый платёж</b> (далее цена вырастет до $19.99): доказательные снимки и пакетный захват без ограничений, плюс всё оружие режима разрушения · <a href=\"terms.html\">условия лицензии</a>",
+      pricingBody: "Бесплатно: неограниченное создание полноразмерных снимков страниц и их редактирование, 3 проверяемые записи в месяц, пакетная съёмка до 3 URL-адресов и 30 последних элементов истории.<br><b>Lifetime (SnapHolt 1.x) — планируемая стартовая цена $9.99, разовый платёж, до 3 принадлежащих или контролируемых вами устройств</b>: съёмка по расписанию, локальное обнаружение изменений, неограниченные записи, пакетная съёмка и история, а также все инструменты режима уничтожения. Продажи ещё не начались; окончательная цена и применимые налоги будут показаны при оформлении покупки. Будущие функции из плана развития не включены, если это прямо не указано · <a href=\"terms.html\">условия лицензии</a>",
+      limitsH: "Важно знать",
+      limitsBody: "Для выполнения задач по расписанию Chrome и ваше устройство должны быть доступны; эта функция не является гарантированным сервисом круглосуточного мониторинга. Локальная история и настройки могут быть утрачены при удалении расширения или сбросе данных браузера либо устройства, поэтому экспортируйте важные записи. Проверяемые записи помогают проверить целостность, но не гарантируют юридическую допустимость · <a href=\"terms.html\">подробнее</a>",
+      visionH: "Куда развивается SnapHolt",
+      visionBody: "SnapHolt изучает способы упростить регулярное документирование и проверку.<br><b>Capture Recipe</b> — сохраняйте области съёмки, задержки, исключения и параметры вывода.<br><b>Short Clip</b> — записывайте короткую последовательность действий в активной вкладке и загружайте её как локальный клип, которым удобно делиться.<br><b>Change Timeline</b> — просматривайте более точную историю изменений, отфильтровывая помехи вроде рекламы, меток времени и анимации.<br>Если спрос подтвердится, <b>SnapHolt Watch</b> сможет отслеживать страницы даже при закрытом браузере и отправлять уведомления по электронной почте или через Webhook, возможно, как отдельный сервис или тариф.<br><small>Это направление развития, а не обещание: функции, сроки, объём, цены и доступность могут измениться по итогам обратной связи и проверки спроса.</small>",
       supportH: "Поддержка",
-      supportBody: "Нашли ошибку или есть предложение? Создайте issue на " + ISSUES + " или напишите на " + MAIL + ".",
+      supportBody: "Технические ошибки и запросы функций: " + ISSUES + " (публично). Оплата, возвраты, конфиденциальность и лицензии: " + MAIL + ". Не публикуйте ключи, ID заказа, частные снимки или персональные данные в публичном issue.",
       privacyLink: "Политика конфиденциальности",
       termsLink: "Условия лицензии",
     }
