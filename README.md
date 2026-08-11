@@ -4,11 +4,15 @@ Product hub & support pages for Queue1Lab software, served via GitHub Pages.
 
 **Site: https://cs20030834.github.io/queue1lab/**
 
+**SnapHolt is live on the Chrome Web Store:**
+https://chromewebstore.google.com/detail/fdaejfaocgmbnfgmejdccdbiedamhnld
+
 ## Pages
 
 | Page | URL | Notes |
 |---|---|---|
 | Hub | https://cs20030834.github.io/queue1lab/ | Landing page listing all products |
+| SnapHolt (Chrome Web Store) | https://chromewebstore.google.com/detail/fdaejfaocgmbnfgmejdccdbiedamhnld | Published listing — v1.1.3, live since 2026-08-11 |
 | SnapHolt | https://cs20030834.github.io/queue1lab/snapholt/ | Current Chrome extension — full-page capture, local scheduling, change detection, and verifiable records; localized in 10 languages (en·ko·ja·zh-TW·zh-CN·es·pt-BR·de·fr·ru) |
 | SnapHolt Privacy | https://cs20030834.github.io/queue1lab/snapholt/privacy.html | Current privacy policy (en/ko) |
 | SnapHolt License Terms | https://cs20030834.github.io/queue1lab/snapholt/terms.html | Current license, refund, warranty, and liability terms (en/ko) |

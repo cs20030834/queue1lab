@@ -25,6 +25,9 @@
            border-radius:999px; padding:2px 9px; }
   .badge.live { color:var(--accent); border-color:var(--accent); }
   .dot { width:26px; height:26px; border-radius:7px; flex:0 0 auto; }
+  .storelink { margin:-6px 0 22px; padding-left:2px; color:var(--muted); font-size:14px; }
+  .storelink a { color:var(--accent); font-weight:600; text-decoration:none; }
+  .storelink a:hover { text-decoration:underline; }
   footer { margin-top:56px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); padding-top:20px; }
   footer a { color:var(--accent); text-decoration:none; }
 </style>
@@ -36,10 +39,14 @@
 
   <a class="card" href="snapholt/">
     <h2><span class="dot" style="background:linear-gradient(160deg,#6366f1,#4338ca)"></span>
-        SnapHolt <span class="badge live">Chrome · preparing for release</span></h2>
+        SnapHolt <span class="badge live">Chrome · on the Web Store</span></h2>
     <p>Capture full pages, schedule local snapshots, watch selected regions for changes, and
        keep verifiable records. Formerly developed under the LongSnap name.</p>
   </a>
+  <p class="storelink">
+    <a href="https://chromewebstore.google.com/detail/fdaejfaocgmbnfgmejdccdbiedamhnld">Install
+       SnapHolt from the Chrome Web Store</a> — free, no account required.
+  </p>
 
   <a class="card" href="https://cs20030834.github.io/inkholt-support/">
     <h2><span class="dot" style="background:#b7522e"></span>
