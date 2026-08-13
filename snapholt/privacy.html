@@ -28,7 +28,7 @@
 <div class="wrap">
   <nav class="crumb"><a href="./">← SnapHolt</a></nav>
   <h1>SnapHolt Privacy Policy</h1>
-  <p class="eff">Effective date: 2026-08-08 · Controller/contact: Queue1Lab</p>
+  <p class="eff">Effective date: 2026-08-13 · Controller/contact: Queue1Lab</p>
 
   <p class="summary"><b>Short version:</b> SnapHolt does not upload your captures, saved page
      content, MHTML, history, or saved target list to Queue1Lab. Core product data stays in your
@@ -45,8 +45,14 @@
     <li><b>Capture content:</b> screenshots, selected regions, annotations, optional original
         MHTML, thumbnails, and derived SHA-256 hashes are created on your device. Exported files
         are written to your chosen location or Downloads folder.</li>
-    <li><b>History:</b> captured files or references, thumbnails, optional MHTML, page titles,
-        URLs, capture times, and tags are stored in the extension’s local IndexedDB database.</li>
+    <li><b>Short Clip recordings:</b> when you start a short clip, that tab’s screen is recorded
+        as a <b>silent video</b> (up to 10 minutes). No microphone or tab audio is recorded. The
+        video is produced in browser memory (an offscreen document) and is written to your device
+        only when you choose to save it or keep it in history. It is released from memory when you
+        save or discard it, when the tab closes, or after 30 minutes. Video is never uploaded.</li>
+    <li><b>History:</b> captured files or references, clip videos you chose to keep, thumbnails,
+        optional MHTML, page titles, URLs, capture times, and tags are stored in the extension’s
+        local IndexedDB database.</li>
     <li><b>Schedules and settings:</b> scheduled target URLs, schedule options, preferences, and
         local license state are stored in Chrome’s local extension storage.</li>
     <li><b>Open-tab import:</b> only when you click <i>Import open tabs</i>, SnapHolt reads the
@@ -162,8 +168,14 @@
     <li><b>캡처 콘텐츠:</b> 스크린샷, 선택 영역, 주석, 선택적으로 저장하는 원본 MHTML, 썸네일과
         파생 SHA-256 해시는 기기에서 생성됩니다. 내보낸 파일은 사용자가 선택한 위치 또는 다운로드
         폴더에 기록됩니다.</li>
-    <li><b>히스토리:</b> 캡처 파일 또는 참조, 썸네일, 선택적 MHTML, 페이지 제목·URL, 캡처 시각과
-        태그는 확장의 로컬 IndexedDB 데이터베이스에 저장됩니다.</li>
+    <li><b>숏 클립 녹화:</b> 사용자가 숏 클립을 시작하면 그 탭의 화면이 <b>무음 영상</b>으로
+        녹화됩니다(최대 10분). 마이크와 탭 오디오는 수집하지 않습니다. 영상은 브라우저
+        메모리(offscreen 문서)에서 만들어지며, 사용자가 저장하거나 히스토리 보관을 선택할 때만
+        기기에 기록됩니다. 저장·폐기, 탭 종료, 또는 30분이 지나면 메모리에서 해제됩니다. 영상은
+        어디에도 업로드되지 않습니다.</li>
+    <li><b>히스토리:</b> 캡처 파일 또는 참조, 사용자가 보관하기로 한 클립 영상, 썸네일, 선택적
+        MHTML, 페이지 제목·URL, 캡처 시각과 태그는 확장의 로컬 IndexedDB 데이터베이스에
+        저장됩니다.</li>
     <li><b>예약과 설정:</b> 예약 대상 URL, 예약 옵션, 환경설정과 로컬 라이선스 상태는 Chrome의
         확장 로컬 저장소에 저장됩니다.</li>
     <li><b>열린 탭 가져오기:</b> 사용자가 <i>열린 탭 가져오기</i> 버튼을 직접 눌렀을 때만 현재
