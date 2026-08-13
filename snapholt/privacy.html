@@ -49,7 +49,8 @@
         as a <b>silent video</b> (up to 10 minutes). No microphone or tab audio is recorded. The
         video is produced in browser memory (an offscreen document) and is written to your device
         only when you choose to save it or keep it in history. It is released from memory when you
-        save or discard it, when the tab closes, or after 30 minutes. Video is never uploaded.</li>
+        discard or close the preview, when the tab closes, or after 30 minutes — saving alone does
+        not release it, so you can replay the clip right after saving. Video is never uploaded.</li>
     <li><b>History:</b> captured files or references, clip videos you chose to keep, thumbnails,
         optional MHTML, page titles, URLs, capture times, and tags are stored in the extension’s
         local IndexedDB database.</li>
@@ -171,7 +172,8 @@
     <li><b>숏 클립 녹화:</b> 사용자가 숏 클립을 시작하면 그 탭의 화면이 <b>무음 영상</b>으로
         녹화됩니다(최대 10분). 마이크와 탭 오디오는 수집하지 않습니다. 영상은 브라우저
         메모리(offscreen 문서)에서 만들어지며, 사용자가 저장하거나 히스토리 보관을 선택할 때만
-        기기에 기록됩니다. 저장·폐기, 탭 종료, 또는 30분이 지나면 메모리에서 해제됩니다. 영상은
+        기기에 기록됩니다. 미리보기를 폐기하거나 닫을 때, 탭이 닫힐 때, 또는 30분이 지나면 메모리에서
+        해제됩니다(저장 직후에도 다시 재생할 수 있도록, 저장 자체로는 해제하지 않습니다). 영상은
         어디에도 업로드되지 않습니다.</li>
     <li><b>히스토리:</b> 캡처 파일 또는 참조, 사용자가 보관하기로 한 클립 영상, 썸네일, 선택적
         MHTML, 페이지 제목·URL, 캡처 시각과 태그는 확장의 로컬 IndexedDB 데이터베이스에
