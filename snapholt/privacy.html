@@ -51,6 +51,11 @@
         only when you choose to save it or keep it in history. It is released from memory when you
         discard or close the preview, when the tab closes, or after 30 minutes — saving alone does
         not release it, so you can replay the clip right after saving. Video is never uploaded.</li>
+    <li><b>Pointer position and clicks while recording:</b> only while a recording is running,
+        SnapHolt reads the pointer position and clicks to draw a cursor and click marks on screen.
+        The coordinates and click events themselves are not stored or transmitted, and reading stops
+        when the recording ends. The drawn cursor is part of the video you save. Keystrokes are not
+        collected.</li>
     <li><b>History:</b> captured files or references, clip videos you chose to keep, thumbnails,
         optional MHTML, page titles, URLs, capture times, and tags are stored in the extension’s
         local IndexedDB database.</li>
@@ -175,6 +180,10 @@
         기기에 기록됩니다. 미리보기를 폐기하거나 닫을 때, 탭이 닫힐 때, 또는 30분이 지나면 메모리에서
         해제됩니다(저장 직후에도 다시 재생할 수 있도록, 저장 자체로는 해제하지 않습니다). 영상은
         어디에도 업로드되지 않습니다.</li>
+    <li><b>녹화 중 마우스 위치·클릭:</b> 녹화가 도는 동안에만 마우스 위치와 클릭을 읽어 화면에
+        커서와 클릭 표시를 그립니다. 좌표와 클릭 이벤트 자체는 저장하거나 전송하지 않고, 녹화가
+        끝나면 읽기를 멈춥니다. 화면에 그려진 커서는 사용자가 저장하는 영상에 담깁니다. 키 입력은
+        수집하지 않습니다.</li>
     <li><b>히스토리:</b> 캡처 파일 또는 참조, 사용자가 보관하기로 한 클립 영상, 썸네일, 선택적
         MHTML, 페이지 제목·URL, 캡처 시각과 태그는 확장의 로컬 IndexedDB 데이터베이스에
         저장됩니다.</li>
